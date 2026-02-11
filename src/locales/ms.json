@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Cari",
+    "scan": "Imbas",
+    "language": "Bahasa"
+  },
+  "searchBar": {
+    "subtitle": "Imbas atau cari berjuta produk",
+    "api": {
+      "auto": "✨ Auto (disyorkan)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 DB tempatan sahaja"
+    },
+    "apiStatus": {
+      "auto": "Mencari dalam semua sumber",
+      "off": "Mencari dalam Open Food Facts",
+      "spoonacular": "Mencari dalam Spoonacular API"
+    },
+    "placeholder": {
+      "any": "Cari produk...",
+      "local": "Cari dalam pangkalan data tempatan..."
+    },
+    "buttons": {
+      "search": "Cari",
+      "scan": "Imbas"
+    }
+  },
+  "tabs": {
+    "search": "Carian",
+    "ecodes": "E‑kod",
+    "details": "Butiran"
+  },
+  "app": {
+    "recentSearches": "Carian terbaru",
+    "searching_worldwide": "Mencari seluruh dunia...",
+    "searching_local": "Mencari tempatan...",
+    "empty": {
+      "title": "Imbas atau cari",
+      "subtitle": "Taip nama produk atau kod bar"
+    },
+    "apiBox": {
+      "realTitle": "✨ API sebenar aktif!",
+      "realTry": "Cuba: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Atau kod bar: 3017620422003, 5000159484695",
+      "localTitle": "📦 Pangkalan data tempatan",
+      "localTry": "Cuba: Lays, Haribo, Ayam",
+      "localEnable": "Aktifkan API sebenar untuk berjuta produk!"
+    },
+    "noResults": "Tiada produk ditemui.",
+    "noResultsLocalHint": "Cuba aktifkan API sebenar!",
+    "detailsEmpty": "Imbas atau cari untuk melihat butiran produk",
+    "disclaimerTitle": "Penafian:",
+    "disclaimerText": "Aplikasi ini menyediakan analisis automatik berdasarkan bahan dan data pemakanan. Sentiasa sahkan pensijilan halal dengan pengeluar dan badan halal yang dipercayai. Maklumat kesihatan hanya panduan umum. Jika ragu, rujuk ulama Islam yang berpengetahuan atau profesional kesihatan.",
+    "barcodeNotFound": "Kod bar {{barcode}} tidak ditemui dalam pangkalan data."
+  },
+  "product": {
+    "healthAnalysis": "Analisis kesihatan",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Pemakanan per 100 g",
+    "calories": "Kalori",
+    "fat": "Lemak",
+    "carbs": "Karbohidrat",
+    "protein": "Protein",
+    "sugar": "Gula",
+    "salt": "Garam",
+    "healthBenefits": "Manfaat kesihatan",
+    "healthConcerns": "Risiko kesihatan",
+    "halalAnalysis": "Analisis halal:",
+    "ingredients": "Bahan:",
+    "eCodesFound": "E‑kod ditemui:",
+    "verifyManufacturer": "Sahkan dengan pengeluar",
+    "shareResult": "Kongsi hasil",
+    "shareDialogTitle": "Kongsi produk ini",
+    "barcodeLabel": "Kod bar"
+  },
+  "scanner": {
+    "title": "Imbas kod bar",
+    "permissionDenied": "Kebenaran kamera ditolak. Aktifkan dalam tetapan.",
+    "notSupported": "Imbasan kod bar tidak disokong pada peranti ini",
+    "initFailed": "Gagal memulakan pengimbas: {{error}}",
+    "startFailed": "Gagal memulakan imbasan: {{error}}",
+    "manualOnly": "Gunakan input manual — kamera hanya berfungsi pada mudah alih",
+    "pointCamera": "Halakan kamera ke kod bar",
+    "scannerNotAvailable": "Pengimbas tidak tersedia",
+    "cameraOnlyMobile": "Kamera hanya berfungsi pada mudah alih",
+    "manualEntry": "Masukkan kod bar secara manual di bawah",
+    "manualPlaceholder": "Masukkan kod bar",
+    "lookup": "Cari"
+  },
+  "ecodes": {
+    "title": "Rujukan E‑kod",
+    "sourceLabel": "Sumber:",
+    "importantNoteTitle": "Nota penting:",
+    "importantNoteBody": "E‑kod yang ditanda \"Meragukan\" boleh halal atau haram bergantung pada sumber. Sentiasa sahkan dengan pengeluar atau badan halal.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Serangga", "concern": "Diperolehi dari kumbang" },
+      "E441": { "name": "Gelatin", "source": "Biasanya babi", "concern": "Semak sumbernya" },
+      "E542": { "name": "Fosfat tulang", "source": "Tulang haiwan", "concern": "Sumber bukan halal" },
+      "E621": { "name": "MSG", "source": "Tumbuhan", "concern": "Biasanya halal" },
+      "E471": { "name": "Mono/di‑gliserida", "source": "Tumbuhan atau haiwan", "concern": "Semak sumbernya" },
+      "E472e": { "name": "DATEM", "source": "Campuran", "concern": "Semak pengeluar" },
+      "E631": { "name": "Dinatrium inosinat", "source": "Mungkin haiwan", "concern": "Sahkan" },
+      "E627": { "name": "Dinatrium guanilat", "source": "Mungkin haiwan", "concern": "Sahkan" },
+      "E150d": { "name": "Warna karamel", "source": "Gula", "concern": "Halal" },
+      "E338": { "name": "Asid fosforik", "source": "Mineral", "concern": "Halal" },
+      "E171": { "name": "Titanium dioksida", "source": "Mineral", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Meragukan ?",
+    "unknown": "Tidak diketahui"
+  },
+  "analysis": {
+    "no_ingredients": "Maklumat bahan tidak tersedia",
+    "contains": "Mengandungi {{item}}",
+    "contains_haram_ecodes": "Mengandungi E‑kod atau aditif haram",
+    "contains_doubtful": "Mengandungi bahan meragukan — semak pensijilan",
+    "no_haram": "Tiada bahan haram dijumpai"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Penyembelihan bertauliah halal",
+    "halal_certified_beef": "Daging lembu bertauliah halal",
+    "contains_pork": "Mengandungi babi",
+    "pure_dairy": "Tenusu tulen",
+    "may_contain_animal_rennet": "Mungkin mengandungi rennet haiwan",
+    "vegetable_ingredients": "Bahan sayuran",
+    "pork_gelatin": "Gelatin babi",
+    "no_animal_ingredients": "Tiada bahan haiwan"
+  },
+  "ingredients": {
+    "chicken": "Ayam",
+    "beef": "Lembu",
+    "pork": "Babi",
+    "spices": "Rempah",
+    "milk": "Susu",
+    "salt": "Garam",
+    "rennet": "Rennet",
+    "potatoes": "Kentang",
+    "oil": "Minyak",
+    "sugar": "Gula",
+    "gelatin": "Gelatin",
+    "water": "Air",
+    "not_available": "Tiada"
+  },
+  "health": {
+    "high_sugar": "Gula tinggi ({{value}} g per 100 g)",
+    "low_sugar": "Gula rendah",
+    "high_salt": "Garam tinggi ({{value}} g per 100 g)",
+    "low_salt": "Garam rendah",
+    "high_sat_fat": "Lemak tepu tinggi ({{value}} g per 100 g)",
+    "good_fiber": "Sumber serat baik ({{value}} g per 100 g)",
+    "high_protein": "Protein tinggi ({{value}} g per 100 g)",
+    "ultra_processed": "Makanan ultra‑proses — hadkan pengambilan",
+    "minimally_processed": "Makanan minimum proses",
+    "nutriscore": {
+      "excellent": "Kualiti pemakanan cemerlang",
+      "good": "Kualiti pemakanan baik",
+      "average": "Kualiti pemakanan sederhana",
+      "poor": "Kualiti pemakanan lemah",
+      "very_poor": "Kualiti pemakanan sangat lemah"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Tìm kiếm",
+    "scan": "Quét",
+    "language": "Ngôn ngữ"
+  },
+  "searchBar": {
+    "subtitle": "Quét hoặc tìm kiếm hàng triệu sản phẩm",
+    "api": {
+      "auto": "✨ Tự động (khuyến nghị)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Chỉ DB cục bộ"
+    },
+    "apiStatus": {
+      "auto": "Tìm trong tất cả nguồn",
+      "off": "Tìm trong Open Food Facts",
+      "spoonacular": "Tìm trong Spoonacular API"
+    },
+    "placeholder": {
+      "any": "Tìm sản phẩm...",
+      "local": "Tìm trong CSDL cục bộ..."
+    },
+    "buttons": {
+      "search": "Tìm kiếm",
+      "scan": "Quét"
+    }
+  },
+  "tabs": {
+    "search": "Tìm kiếm",
+    "ecodes": "E‑code",
+    "details": "Chi tiết"
+  },
+  "app": {
+    "recentSearches": "Tìm kiếm gần đây",
+    "searching_worldwide": "Đang tìm kiếm toàn cầu...",
+    "searching_local": "Đang tìm kiếm cục bộ...",
+    "empty": {
+      "title": "Quét hoặc tìm kiếm",
+      "subtitle": "Nhập tên sản phẩm hoặc mã vạch"
+    },
+    "apiBox": {
+      "realTitle": "✨ API thật đang hoạt động!",
+      "realTry": "Thử: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Hoặc mã vạch: 3017620422003, 5000159484695",
+      "localTitle": "📦 CSDL cục bộ",
+      "localTry": "Thử: Lays, Haribo, Gà",
+      "localEnable": "Bật API thật cho hàng triệu sản phẩm!"
+    },
+    "noResults": "Không tìm thấy sản phẩm.",
+    "noResultsLocalHint": "Hãy thử bật API thật!",
+    "detailsEmpty": "Quét hoặc tìm để xem chi tiết sản phẩm",
+    "disclaimerTitle": "Tuyên bố miễn trừ:",
+    "disclaimerText": "Ứng dụng cung cấp phân tích tự động dựa trên thành phần và dữ liệu dinh dưỡng. Luôn xác minh chứng nhận halal với nhà sản xuất và các cơ quan halal đáng tin cậy. Thông tin sức khỏe chỉ mang tính hướng dẫn chung. Khi nghi ngờ, hãy hỏi học giả Hồi giáo có hiểu biết hoặc chuyên gia y tế.",
+    "barcodeNotFound": "Mã vạch {{barcode}} không có trong cơ sở dữ liệu."
+  },
+  "product": {
+    "healthAnalysis": "Phân tích sức khỏe",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Dinh dưỡng trên 100 g",
+    "calories": "Calo",
+    "fat": "Chất béo",
+    "carbs": "Carb",
+    "protein": "Protein",
+    "sugar": "Đường",
+    "salt": "Muối",
+    "healthBenefits": "Lợi ích sức khỏe",
+    "healthConcerns": "Rủi ro sức khỏe",
+    "halalAnalysis": "Phân tích halal:",
+    "ingredients": "Thành phần:",
+    "eCodesFound": "E‑code tìm thấy:",
+    "verifyManufacturer": "Xác minh với nhà sản xuất",
+    "shareResult": "Chia sẻ kết quả",
+    "shareDialogTitle": "Chia sẻ sản phẩm này",
+    "barcodeLabel": "Mã vạch"
+  },
+  "scanner": {
+    "title": "Quét mã vạch",
+    "permissionDenied": "Quyền camera bị từ chối. Hãy bật trong cài đặt.",
+    "notSupported": "Thiết bị này không hỗ trợ quét mã vạch",
+    "initFailed": "Không thể khởi tạo máy quét: {{error}}",
+    "startFailed": "Không thể bắt đầu quét: {{error}}",
+    "manualOnly": "Vui lòng nhập thủ công — camera chỉ hoạt động trên thiết bị di động",
+    "pointCamera": "Hướng camera vào mã vạch",
+    "scannerNotAvailable": "Máy quét không khả dụng",
+    "cameraOnlyMobile": "Camera chỉ hoạt động trên thiết bị di động",
+    "manualEntry": "Nhập mã vạch thủ công bên dưới",
+    "manualPlaceholder": "Nhập mã vạch",
+    "lookup": "Tìm"
+  },
+  "ecodes": {
+    "title": "Tham khảo E‑code",
+    "sourceLabel": "Nguồn:",
+    "importantNoteTitle": "Lưu ý quan trọng:",
+    "importantNoteBody": "E‑code được đánh dấu \"Đáng nghi\" có thể halal hoặc haram tùy nguồn gốc. Luôn xác minh với nhà sản xuất hoặc cơ quan halal.",
+    "items": {
+      "E120": { "name": "Carmine", "source": "Côn trùng", "concern": "Từ bọ cánh cứng" },
+      "E441": { "name": "Gelatin", "source": "Thường từ thịt lợn", "concern": "Kiểm tra nguồn" },
+      "E542": { "name": "Phosphate xương", "source": "Xương động vật", "concern": "Nguồn không halal" },
+      "E621": { "name": "MSG", "source": "Thực vật", "concern": "Thường là halal" },
+      "E471": { "name": "Mono/di‑glyceride", "source": "Thực vật hoặc động vật", "concern": "Kiểm tra nguồn" },
+      "E472e": { "name": "DATEM", "source": "Hỗn hợp", "concern": "Kiểm tra nhà sản xuất" },
+      "E631": { "name": "Disodium inosinate", "source": "Có thể từ động vật", "concern": "Xác minh" },
+      "E627": { "name": "Disodium guanylate", "source": "Có thể từ động vật", "concern": "Xác minh" },
+      "E150d": { "name": "Màu caramel", "source": "Đường", "concern": "Halal" },
+      "E338": { "name": "Acid phosphoric", "source": "Khoáng", "concern": "Halal" },
+      "E171": { "name": "Titanium dioxide", "source": "Khoáng", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Đáng nghi ?",
+    "unknown": "Không rõ"
+  },
+  "analysis": {
+    "no_ingredients": "Không có thông tin thành phần",
+    "contains": "Chứa {{item}}",
+    "contains_haram_ecodes": "Chứa E‑code hoặc phụ gia haram",
+    "contains_doubtful": "Chứa thành phần đáng nghi — kiểm tra chứng nhận",
+    "no_haram": "Không phát hiện thành phần haram"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Giết mổ chứng nhận halal",
+    "halal_certified_beef": "Thịt bò chứng nhận halal",
+    "contains_pork": "Chứa thịt lợn",
+    "pure_dairy": "Sản phẩm sữa nguyên chất",
+    "may_contain_animal_rennet": "Có thể chứa rennet động vật",
+    "vegetable_ingredients": "Thành phần thực vật",
+    "pork_gelatin": "Gelatin lợn",
+    "no_animal_ingredients": "Không có thành phần động vật"
+  },
+  "ingredients": {
+    "chicken": "Gà",
+    "beef": "Thịt bò",
+    "pork": "Thịt lợn",
+    "spices": "Gia vị",
+    "milk": "Sữa",
+    "salt": "Muối",
+    "rennet": "Rennet",
+    "potatoes": "Khoai tây",
+    "oil": "Dầu",
+    "sugar": "Đường",
+    "gelatin": "Gelatin",
+    "water": "Nước",
+    "not_available": "Không có"
+  },
+  "health": {
+    "high_sugar": "Đường cao ({{value}} g trên 100 g)",
+    "low_sugar": "Đường thấp",
+    "high_salt": "Muối cao ({{value}} g trên 100 g)",
+    "low_salt": "Muối thấp",
+    "high_sat_fat": "Chất béo bão hòa cao ({{value}} g trên 100 g)",
+    "good_fiber": "Nguồn chất xơ tốt ({{value}} g trên 100 g)",
+    "high_protein": "Protein cao ({{value}} g trên 100 g)",
+    "ultra_processed": "Thực phẩm siêu chế biến — hạn chế tiêu dùng",
+    "minimally_processed": "Thực phẩm chế biến tối thiểu",
+    "nutriscore": {
+      "excellent": "Chất lượng dinh dưỡng xuất sắc",
+      "good": "Chất lượng dinh dưỡng tốt",
+      "average": "Chất lượng dinh dưỡng trung bình",
+      "poor": "Chất lượng dinh dưỡng kém",
+      "very_poor": "Chất lượng dinh dưỡng rất kém"
+    }
+  }
+}

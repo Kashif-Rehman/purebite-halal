@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Ara",
+    "scan": "Tara",
+    "language": "Dil"
+  },
+  "searchBar": {
+    "subtitle": "Milyonlarca ürünü tara veya ara",
+    "api": {
+      "auto": "✨ Otomatik (önerilen)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Yalnızca yerel DB"
+    },
+    "apiStatus": {
+      "auto": "Mevcut tüm kaynaklarda aranıyor",
+      "off": "Open Food Facts'ta aranıyor",
+      "spoonacular": "Spoonacular API'sinde aranıyor"
+    },
+    "placeholder": {
+      "any": "Ürün ara...",
+      "local": "Yerel veritabanında ara..."
+    },
+    "buttons": {
+      "search": "Ara",
+      "scan": "Tara"
+    }
+  },
+  "tabs": {
+    "search": "Arama",
+    "ecodes": "E‑kodları",
+    "details": "Detaylar"
+  },
+  "app": {
+    "recentSearches": "Son aramalar",
+    "searching_worldwide": "Dünya genelinde aranıyor...",
+    "searching_local": "Yerelde aranıyor...",
+    "empty": {
+      "title": "Tara veya ara",
+      "subtitle": "Ürün adı veya barkod yazın"
+    },
+    "apiBox": {
+      "realTitle": "✨ Gerçek API aktif!",
+      "realTry": "Deneyin: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Veya barkodlar: 3017620422003, 5000159484695",
+      "localTitle": "📦 Yerel veritabanı",
+      "localTry": "Deneyin: Lays, Haribo, Tavuk",
+      "localEnable": "Milyonlarca ürün için gerçek API'yi etkinleştirin!"
+    },
+    "noResults": "Ürün bulunamadı.",
+    "noResultsLocalHint": "Gerçek API'yi etkinleştirmeyi deneyin!",
+    "detailsEmpty": "Ürün detaylarını görmek için tara veya ara",
+    "disclaimerTitle": "Uyarı:",
+    "disclaimerText": "Bu uygulama, içerik ve besin verilerine dayalı otomatik analiz sağlar. Halal sertifikasını üreticiler ve güvenilir halal kuruluşlarıyla her zaman doğrulayın. Sağlık bilgileri genel rehberlik içindir. Şüphede, yetkin bir İslami âlim veya sağlık uzmanına danışın.",
+    "barcodeNotFound": "{{barcode}} barkodu veritabanında bulunamadı."
+  },
+  "product": {
+    "healthAnalysis": "Sağlık analizi",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "100 g için besin değeri",
+    "calories": "Kalori",
+    "fat": "Yağ",
+    "carbs": "Karbonhidrat",
+    "protein": "Protein",
+    "sugar": "Şeker",
+    "salt": "Tuz",
+    "healthBenefits": "Sağlık faydaları",
+    "healthConcerns": "Sağlık riskleri",
+    "halalAnalysis": "Helal analizi:",
+    "ingredients": "İçindekiler:",
+    "eCodesFound": "Bulunan E‑kodları:",
+    "verifyManufacturer": "Üreticiyle doğrulayın",
+    "shareResult": "Sonucu paylaş",
+    "shareDialogTitle": "Bu ürünü paylaş",
+    "barcodeLabel": "Barkod"
+  },
+  "scanner": {
+    "title": "Barkod tara",
+    "permissionDenied": "Kamera izni reddedildi. Ayarlardan etkinleştirin.",
+    "notSupported": "Barkod tarama bu cihazda desteklenmiyor",
+    "initFailed": "Tarayıcı başlatılamadı: {{error}}",
+    "startFailed": "Tarama başlatılamadı: {{error}}",
+    "manualOnly": "Lütfen manuel giriş kullanın — kamera yalnızca mobilde çalışır",
+    "pointCamera": "Kamerayı barkoda tutun",
+    "scannerNotAvailable": "Tarayıcı mevcut değil",
+    "cameraOnlyMobile": "Kamera yalnızca mobilde çalışır",
+    "manualEntry": "Barkodu aşağıya manuel girin",
+    "manualPlaceholder": "Barkod girin",
+    "lookup": "Ara"
+  },
+  "ecodes": {
+    "title": "E‑kodları referansı",
+    "sourceLabel": "Kaynak:",
+    "importantNoteTitle": "Önemli not:",
+    "importantNoteBody": "\"Şüpheli\" E‑kodları kaynağa göre helal veya haram olabilir. Her zaman üretici veya halal kuruluşlarıyla doğrulayın.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Böcekler", "concern": "Böceklerden türetilir" },
+      "E441": { "name": "Jelatin", "source": "Genellikle domuz", "concern": "Kaynağı kontrol edin" },
+      "E542": { "name": "Kemik fosfat", "source": "Hayvan kemikleri", "concern": "Helal olmayan kaynak" },
+      "E621": { "name": "MSG", "source": "Bitkisel", "concern": "Genellikle helal" },
+      "E471": { "name": "Mono/Di‑gliseritler", "source": "Bitkisel veya hayvansal", "concern": "Kaynağı doğrulayın" },
+      "E472e": { "name": "DATEM", "source": "Karışık", "concern": "Üreticiyi kontrol edin" },
+      "E631": { "name": "Disodyum inosinat", "source": "Hayvansal olabilir", "concern": "Doğrulayın" },
+      "E627": { "name": "Disodyum guanilat", "source": "Hayvansal olabilir", "concern": "Doğrulayın" },
+      "E150d": { "name": "Karamel rengi", "source": "Şeker", "concern": "Helal" },
+      "E338": { "name": "Fosforik asit", "source": "Mineral", "concern": "Helal" },
+      "E171": { "name": "Titanyum dioksit", "source": "Mineral", "concern": "Helal" }
+    }
+  },
+  "status": {
+    "halal": "Helal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Şüpheli ?",
+    "unknown": "Bilinmiyor"
+  },
+  "analysis": {
+    "no_ingredients": "İçerik bilgisi yok",
+    "contains": "İçerir: {{item}}",
+    "contains_haram_ecodes": "Haram E‑kodları veya katkılar içerir",
+    "contains_doubtful": "Şüpheli içerikler içerir — sertifikayı doğrulayın",
+    "no_haram": "Haram içerik tespit edilmedi"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Helal sertifikalı kesim",
+    "halal_certified_beef": "Helal sertifikalı dana",
+    "contains_pork": "Domuz içerir",
+    "pure_dairy": "Saf süt ürünü",
+    "may_contain_animal_rennet": "Hayvansal mayadan olabilir",
+    "vegetable_ingredients": "Bitkisel içerikler",
+    "pork_gelatin": "Domuz jelatini",
+    "no_animal_ingredients": "Hayvansal içerik yok"
+  },
+  "ingredients": {
+    "chicken": "Tavuk",
+    "beef": "Dana",
+    "pork": "Domuz",
+    "spices": "Baharatlar",
+    "milk": "Süt",
+    "salt": "Tuz",
+    "rennet": "Maya",
+    "potatoes": "Patates",
+    "oil": "Yağ",
+    "sugar": "Şeker",
+    "gelatin": "Jelatin",
+    "water": "Su",
+    "not_available": "Mevcut değil"
+  },
+  "health": {
+    "high_sugar": "Yüksek şeker ({{value}} g / 100 g)",
+    "low_sugar": "Düşük şeker",
+    "high_salt": "Yüksek tuz ({{value}} g / 100 g)",
+    "low_salt": "Düşük tuz",
+    "high_sat_fat": "Yüksek doymuş yağ ({{value}} g / 100 g)",
+    "good_fiber": "İyi lif kaynağı ({{value}} g / 100 g)",
+    "high_protein": "Yüksek protein ({{value}} g / 100 g)",
+    "ultra_processed": "Ultra işlenmiş gıda — tüketimi sınırlayın",
+    "minimally_processed": "Az işlenmiş gıda",
+    "nutriscore": {
+      "excellent": "Mükemmel beslenme kalitesi",
+      "good": "İyi beslenme kalitesi",
+      "average": "Orta beslenme kalitesi",
+      "poor": "Zayıf beslenme kalitesi",
+      "very_poor": "Çok zayıf beslenme kalitesi"
+    }
+  }
+}

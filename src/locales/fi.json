@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Hae",
+    "scan": "Skannaa",
+    "language": "Kieli"
+  },
+  "searchBar": {
+    "subtitle": "Skannaa tai hae miljoonia tuotteita",
+    "api": {
+      "auto": "✨ Auto (suositeltu)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Vain paikallinen DB"
+    },
+    "apiStatus": {
+      "auto": "Haetaan kaikista saatavilla olevista lähteistä",
+      "off": "Haetaan Open Food Factsista",
+      "spoonacular": "Haetaan Spoonacular‑API:sta"
+    },
+    "placeholder": {
+      "any": "Hae tuotetta...",
+      "local": "Hae paikallisesta tietokannasta..."
+    },
+    "buttons": {
+      "search": "Hae",
+      "scan": "Skannaa"
+    }
+  },
+  "tabs": {
+    "search": "Haku",
+    "ecodes": "E‑koodit",
+    "details": "Tiedot"
+  },
+  "app": {
+    "recentSearches": "Viimeisimmät haut",
+    "searching_worldwide": "Haetaan maailmanlaajuisesti...",
+    "searching_local": "Haetaan paikallisesti...",
+    "empty": {
+      "title": "Skannaa tai hae",
+      "subtitle": "Kirjoita tuotteen nimi tai viivakoodi"
+    },
+    "apiBox": {
+      "realTitle": "✨ Oikea API käytössä!",
+      "realTry": "Kokeile: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Tai viivakoodit: 3017620422003, 5000159484695",
+      "localTitle": "📦 Paikallinen tietokanta",
+      "localTry": "Kokeile: Lays, Haribo, Kana",
+      "localEnable": "Ota oikea API käyttöön miljoonia tuotteita varten!"
+    },
+    "noResults": "Tuotteita ei löytynyt.",
+    "noResultsLocalHint": "Kokeile oikean API:n käyttöönottoa!",
+    "detailsEmpty": "Skannaa tai hae nähdäksesi tuotetiedot",
+    "disclaimerTitle": "Vastuuvapauslauseke:",
+    "disclaimerText": "Sovellus tarjoaa automaattisen analyysin ainesosien ja ravintotietojen perusteella. Varmista halal‑sertifiointi aina valmistajalta ja luotettavilta halal‑tahoilta. Terveystiedot ovat yleisluonteisia. Epäselvissä tapauksissa kysy islamilta oppineelta tai terveydenhuollon ammattilaiselta.",
+    "barcodeNotFound": "Viivakoodia {{barcode}} ei löytynyt tietokannasta."
+  },
+  "product": {
+    "healthAnalysis": "Terveysanalyysi",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Ravintoarvot per 100 g",
+    "calories": "Kalorit",
+    "fat": "Rasva",
+    "carbs": "Hiilihydraatit",
+    "protein": "Proteiini",
+    "sugar": "Sokeri",
+    "salt": "Suola",
+    "healthBenefits": "Terveyshyödyt",
+    "healthConcerns": "Terveyshuolet",
+    "halalAnalysis": "Halal‑analyysi:",
+    "ingredients": "Ainesosat:",
+    "eCodesFound": "Löydetyt E‑koodit:",
+    "verifyManufacturer": "Varmista valmistajalta",
+    "shareResult": "Jaa tulos",
+    "shareDialogTitle": "Jaa tämä tuote",
+    "barcodeLabel": "Viivakoodi"
+  },
+  "scanner": {
+    "title": "Skannaa viivakoodi",
+    "permissionDenied": "Kameran käyttöoikeus evätty. Ota käyttöön asetuksista.",
+    "notSupported": "Viivakoodin skannaus ei ole tuettu tällä laitteella",
+    "initFailed": "Skannerin alustus epäonnistui: {{error}}",
+    "startFailed": "Skannauksen aloitus epäonnistui: {{error}}",
+    "manualOnly": "Käytä manuaalista syöttöä — kamera toimii vain mobiilissa",
+    "pointCamera": "Kohdista kamera viivakoodiin",
+    "scannerNotAvailable": "Skanneri ei ole käytettävissä",
+    "cameraOnlyMobile": "Kamera toimii vain mobiilissa",
+    "manualEntry": "Syötä viivakoodi käsin alla",
+    "manualPlaceholder": "Syötä viivakoodi",
+    "lookup": "Hae"
+  },
+  "ecodes": {
+    "title": "E‑koodien viite",
+    "sourceLabel": "Lähde:",
+    "importantNoteTitle": "Tärkeä huomautus:",
+    "importantNoteBody": "\"Epävarma\"‑merkityt E‑koodit voivat olla halal tai haram lähteestä riippuen. Varmista aina valmistajalta tai halal‑tahoilta.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Hyönteiset", "concern": "Johdettu kovakuoriaisista" },
+      "E441": { "name": "Gelatiini", "source": "Yleensä sianliha", "concern": "Tarkista lähde" },
+      "E542": { "name": "Luufosfaatti", "source": "Eläinten luut", "concern": "Ei‑halal‑lähde" },
+      "E621": { "name": "MSG", "source": "Kasvipohjainen", "concern": "Yleensä halal" },
+      "E471": { "name": "Mono/di‑glyseridit", "source": "Kasvi tai eläin", "concern": "Tarkista lähde" },
+      "E472e": { "name": "DATEM", "source": "Sekoitettu", "concern": "Tarkista valmistaja" },
+      "E631": { "name": "Dinatriuminosinaatti", "source": "Voi olla eläinperäinen", "concern": "Varmista" },
+      "E627": { "name": "Dinatriumguanylaatti", "source": "Voi olla eläinperäinen", "concern": "Varmista" },
+      "E150d": { "name": "Karamelliväri", "source": "Sokeri", "concern": "Halal" },
+      "E338": { "name": "Fosforihappo", "source": "Mineraali", "concern": "Halal" },
+      "E171": { "name": "Titaanidioksidi", "source": "Mineraali", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Epävarma ?",
+    "unknown": "Tuntematon"
+  },
+  "analysis": {
+    "no_ingredients": "Ei saatavilla ainesosatietoja",
+    "contains": "Sisältää {{item}}",
+    "contains_haram_ecodes": "Sisältää haram E‑koodeja tai lisäaineita",
+    "contains_doubtful": "Sisältää epävarmoja ainesosia — varmista sertifiointi",
+    "no_haram": "Haram‑ainesosia ei havaittu"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal‑sertifioitu teurastus",
+    "halal_certified_beef": "Halal‑sertifioitu naudanliha",
+    "contains_pork": "Sisältää sianlihaa",
+    "pure_dairy": "Puhdas maitotuote",
+    "may_contain_animal_rennet": "Saattaa sisältää eläinperäistä juoksutetta",
+    "vegetable_ingredients": "Kasviperäiset ainesosat",
+    "pork_gelatin": "Sianliha‑gelatiini",
+    "no_animal_ingredients": "Ei eläinperäisiä ainesosia"
+  },
+  "ingredients": {
+    "chicken": "Kana",
+    "beef": "Naudanliha",
+    "pork": "Sianliha",
+    "spices": "Mausteet",
+    "milk": "Maito",
+    "salt": "Suola",
+    "rennet": "Juoksute",
+    "potatoes": "Perunat",
+    "oil": "Öljy",
+    "sugar": "Sokeri",
+    "gelatin": "Gelatiini",
+    "water": "Vesi",
+    "not_available": "Ei saatavilla"
+  },
+  "health": {
+    "high_sugar": "Korkea sokeripitoisuus ({{value}} g / 100 g)",
+    "low_sugar": "Matala sokeripitoisuus",
+    "high_salt": "Korkea suolapitoisuus ({{value}} g / 100 g)",
+    "low_salt": "Matala suolapitoisuus",
+    "high_sat_fat": "Korkea tyydyttyneiden rasvojen määrä ({{value}} g / 100 g)",
+    "good_fiber": "Hyvä kuidun lähde ({{value}} g / 100 g)",
+    "high_protein": "Korkea proteiinipitoisuus ({{value}} g / 100 g)",
+    "ultra_processed": "Erittäin prosessoitu ruoka — rajoita käyttöä",
+    "minimally_processed": "Vähän prosessoitu ruoka",
+    "nutriscore": {
+      "excellent": "Erinomainen ravitsemuslaatu",
+      "good": "Hyvä ravitsemuslaatu",
+      "average": "Keskimääräinen ravitsemuslaatu",
+      "poor": "Huono ravitsemuslaatu",
+      "very_poor": "Erittäin huono ravitsemuslaatu"
+    }
+  }
+}

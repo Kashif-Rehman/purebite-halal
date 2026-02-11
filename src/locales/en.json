@@ -1,0 +1,185 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Search",
+    "scan": "Scan",
+    "language": "Language"
+  },
+  "searchBar": {
+    "subtitle": "Scan or search millions of products",
+    "api": {
+      "auto": "✨ Auto (Recommended)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Local DB Only"
+    },
+    "apiStatus": {
+      "auto": "Searching all available sources",
+      "off": "Searching Open Food Facts",
+      "spoonacular": "Searching Spoonacular API"
+    },
+    "placeholder": {
+      "any": "Search any product...",
+      "local": "Search local database..."
+    },
+    "buttons": {
+      "search": "Search",
+      "scan": "Scan"
+    }
+  },
+  "tabs": {
+    "search": "Search",
+    "ecodes": "E-Codes",
+    "details": "Details"
+  },
+  "app": {
+    "recentSearches": "Recent Searches",
+    "searching_worldwide": "Searching worldwide...",
+    "searching_local": "Searching locally...",
+    "empty": {
+      "title": "Scan or Search",
+      "subtitle": "Type product name or barcode"
+    },
+    "apiBox": {
+      "realTitle": "✨ Real API Active!",
+      "realTry": "Try: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Or barcodes: 3017620422003, 5000159484695",
+      "localTitle": "📦 Local Database",
+      "localTry": "Try: Lays, Haribo, Chicken",
+      "localEnable": "Enable Real API for millions of products!"
+    },
+    "noResults": "No products found.",
+    "noResultsLocalHint": "Try enabling Real API!",
+    "detailsEmpty": "Scan or search to view product details",
+    "disclaimerTitle": "Disclaimer:",
+    "disclaimerText": "This app provides automated analysis based on ingredients and nutritional data. Always verify halal certification with manufacturers and trusted halal certification bodies. Health information is for general guidance only. When in doubt, consult with a knowledgeable Islamic scholar or healthcare professional.",
+    "barcodeNotFound": "Barcode {{barcode}} not found in database."
+  },
+  "product": {
+    "healthAnalysis": "Health Analysis",
+    "nutriScore": "Nutri-Score",
+    "nutritionPer100g": "Nutrition per 100g",
+    "calories": "Calories",
+    "fat": "Fat",
+    "carbs": "Carbs",
+    "protein": "Protein",
+    "sugar": "Sugar",
+    "salt": "Salt",
+    "healthBenefits": "Health Benefits",
+    "healthConcerns": "Health Concerns",
+    "halalAnalysis": "Halal Analysis:",
+    "ingredients": "Ingredients:",
+    "eCodesFound": "E-Codes Found:",
+    "verifyManufacturer": "Verify with manufacturer",
+    "shareResult": "Share Result",
+    "shareDialogTitle": "Share this product",
+    "barcodeLabel": "Barcode"
+  },
+  "scanner": {
+    "title": "Scan Barcode",
+    "permissionDenied": "Camera permission denied. Please enable in settings.",
+    "notSupported": "Barcode scanning not supported on this device",
+    "initFailed": "Failed to initialize scanner: {{error}}",
+    "startFailed": "Failed to start scanner: {{error}}",
+    "manualOnly": "Please use manual entry - camera only works on mobile devices",
+    "pointCamera": "Point camera at barcode",
+    "scannerNotAvailable": "Scanner not available",
+    "cameraOnlyMobile": "Camera only works on mobile",
+    "manualEntry": "Please enter barcode manually below",
+    "manualPlaceholder": "Enter barcode manually",
+    "lookup": "Lookup"
+  },
+  "ecodes": {
+    "title": "E-Codes Reference",
+    "sourceLabel": "Source:",
+    "importantNoteTitle": "Important Note:",
+    "importantNoteBody": "E-codes marked as \"Doubtful\" can be halal or haram depending on their source. Always verify with manufacturers or halal certification bodies.",
+    "items": {
+      "E120": { "name": "Carmine", "source": "Insects", "concern": "Derived from beetles" },
+      "E441": { "name": "Gelatin", "source": "Usually pork", "concern": "Check source" },
+      "E542": { "name": "Bone Phosphate", "source": "Animal bones", "concern": "Non-halal source" },
+      "E621": { "name": "MSG", "source": "Plant-based", "concern": "Generally halal" },
+      "E471": { "name": "Mono/Diglycerides", "source": "Plant or animal", "concern": "Verify source" },
+      "E472e": { "name": "DATEM", "source": "Mixed", "concern": "Check manufacturer" },
+      "E631": { "name": "Disodium Inosinate", "source": "Can be animal", "concern": "Verify" },
+      "E627": { "name": "Disodium Guanylate", "source": "Can be animal", "concern": "Verify" },
+      "E150d": { "name": "Caramel Color", "source": "Sugar", "concern": "Halal" },
+      "E338": { "name": "Phosphoric Acid", "source": "Mineral", "concern": "Halal" },
+      "E171": { "name": "Titanium Dioxide", "source": "Mineral", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Doubtful ?",
+    "unknown": "Unknown"
+  },
+  "analysis": {
+    "no_ingredients": "No ingredient information available",
+    "contains": "Contains {{item}}",
+    "contains_haram_ecodes": "Contains haram E-codes or additives",
+    "contains_doubtful": "Contains doubtful ingredients - verify certification",
+    "no_haram": "No haram ingredients detected"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal certified slaughter",
+    "halal_certified_beef": "Halal certified beef",
+    "contains_pork": "Contains pork",
+    "pure_dairy": "Pure dairy",
+    "may_contain_animal_rennet": "May contain animal rennet",
+    "vegetable_ingredients": "Vegetable ingredients",
+    "pork_gelatin": "Pork gelatin",
+    "no_animal_ingredients": "No animal ingredients"
+  },
+  "ingredients": {
+    "chicken": "Chicken",
+    "beef": "Beef",
+    "pork": "Pork",
+    "spices": "Spices",
+    "milk": "Milk",
+    "salt": "Salt",
+    "rennet": "Rennet",
+    "potatoes": "Potatoes",
+    "oil": "Oil",
+    "sugar": "Sugar",
+    "gelatin": "Gelatin",
+    "water": "Water",
+    "not_available": "Not available"
+  },
+  "health": {
+    "high_sugar": "High sugar content ({{value}}g per 100g)",
+    "low_sugar": "Low sugar content",
+    "high_salt": "High salt content ({{value}}g per 100g)",
+    "low_salt": "Low salt content",
+    "high_sat_fat": "High saturated fat ({{value}}g per 100g)",
+    "good_fiber": "Good fiber source ({{value}}g per 100g)",
+    "high_protein": "High protein content ({{value}}g per 100g)",
+    "ultra_processed": "Ultra-processed food - limit consumption",
+    "minimally_processed": "Minimally processed food",
+    "nutriscore": {
+      "excellent": "Excellent nutritional quality",
+      "good": "Good nutritional quality",
+      "average": "Average nutritional quality",
+      "poor": "Poor nutritional quality",
+      "very_poor": "Very poor nutritional quality"
+    }
+  },
+  "about": {
+    "aboutTitle": "About This App",
+    "aboutText": "PureBite Halal helps Muslims and conscious consumers identify halal products and make informed food choices. Scan barcodes or search millions of products to get instant halal analysis, health insights, and ingredient information.",
+    "dataSourcesTitle": "Data Sources",
+    "privacyTitle": "Privacy & Security",
+    "privacyText": "All your data is stored locally on your device. We do not collect, store, or share your personal information. Your search history and favorites never leave your device.",
+    "readPrivacyPolicy": "Read Full Privacy Policy",
+    "acknowledgmentsTitle": "Acknowledgments",
+    "acknowledgmentsText": "This app uses data from Open Food Facts (a collaborative database) and Spoonacular API. We are grateful to these communities for making food information accessible to everyone.",
+    "communityTitle": "Community Driven",
+    "communityText": "Help improve food data accuracy by contributing to Open Food Facts. Together we can make halal food identification easier for everyone.",
+    "contactTitle": "Contact & Support",
+    "contactText": "Have questions, feedback, or need support? We'd love to hear from you!",
+    "contactEmail": "support@purebitehalal.com",
+    "disclaimerTitle": "Important Disclaimer",
+    "disclaimerText": "This app provides automated analysis based on ingredients and nutritional data. Always verify halal certification with manufacturers and trusted halal certification bodies. When in doubt, consult knowledgeable Islamic scholars or health professionals.",
+    "close": "Close"
+  }
+}

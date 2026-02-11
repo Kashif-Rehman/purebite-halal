@@ -21,3 +21,28 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Capacitor
+android/app/build/
+android/build/
+android/.gradle/
+android/app/release/
+android/app/debug/
+ios/App/Pods/
+ios/App/build/
+ios/DerivedData/
+
+# Keystore files (IMPORTANT: Keep these secret!)
+keystore/
+*.jks
+keystore.properties
+
+# Firebase
+.firebase/
+
+# History
+.history/
+
+# IDE
+.vscode/
+.idea/

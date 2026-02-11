@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Zoeken",
+    "scan": "Scannen",
+    "language": "Taal"
+  },
+  "searchBar": {
+    "subtitle": "Scan of zoek miljoenen producten",
+    "api": {
+      "auto": "✨ Auto (aanbevolen)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Alleen lokale DB"
+    },
+    "apiStatus": {
+      "auto": "Zoekt in alle beschikbare bronnen",
+      "off": "Zoekt in Open Food Facts",
+      "spoonacular": "Zoekt in de Spoonacular‑API"
+    },
+    "placeholder": {
+      "any": "Zoek een product...",
+      "local": "Zoek in de lokale database..."
+    },
+    "buttons": {
+      "search": "Zoeken",
+      "scan": "Scannen"
+    }
+  },
+  "tabs": {
+    "search": "Zoeken",
+    "ecodes": "E‑codes",
+    "details": "Details"
+  },
+  "app": {
+    "recentSearches": "Recente zoekopdrachten",
+    "searching_worldwide": "Wereldwijd zoeken...",
+    "searching_local": "Lokaal zoeken...",
+    "empty": {
+      "title": "Scan of zoek",
+      "subtitle": "Typ de productnaam of barcode"
+    },
+    "apiBox": {
+      "realTitle": "✨ Echte API actief!",
+      "realTry": "Probeer: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Of barcodes: 3017620422003, 5000159484695",
+      "localTitle": "📦 Lokale database",
+      "localTry": "Probeer: Lays, Haribo, Kip",
+      "localEnable": "Schakel de echte API in voor miljoenen producten!"
+    },
+    "noResults": "Geen producten gevonden.",
+    "noResultsLocalHint": "Probeer de echte API te activeren!",
+    "detailsEmpty": "Scan of zoek om productdetails te bekijken",
+    "disclaimerTitle": "Disclaimer:",
+    "disclaimerText": "Deze app geeft een geautomatiseerde analyse op basis van ingrediënten en voedingsgegevens. Controleer altijd halal‑certificering bij fabrikanten en betrouwbare halal‑instanties. Gezondheidsinformatie is slechts algemene richtlijn. Raadpleeg bij twijfel een islamitische geleerde of zorgprofessional.",
+    "barcodeNotFound": "Barcode {{barcode}} niet gevonden in de database."
+  },
+  "product": {
+    "healthAnalysis": "Gezondheidsanalyse",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Voeding per 100 g",
+    "calories": "Calorieën",
+    "fat": "Vetten",
+    "carbs": "Koolhydraten",
+    "protein": "Eiwit",
+    "sugar": "Suiker",
+    "salt": "Zout",
+    "healthBenefits": "Gezondheidsvoordelen",
+    "healthConcerns": "Gezondheidsrisico's",
+    "halalAnalysis": "Halal‑analyse:",
+    "ingredients": "Ingrediënten:",
+    "eCodesFound": "E‑codes gevonden:",
+    "verifyManufacturer": "Controleer bij fabrikant",
+    "shareResult": "Resultaat delen",
+    "shareDialogTitle": "Deel dit product",
+    "barcodeLabel": "Barcode"
+  },
+  "scanner": {
+    "title": "Barcode scannen",
+    "permissionDenied": "Cameratoestemming geweigerd. Schakel in bij instellingen.",
+    "notSupported": "Barcode scannen wordt niet ondersteund op dit apparaat",
+    "initFailed": "Scanner initialiseren mislukt: {{error}}",
+    "startFailed": "Scannen starten mislukt: {{error}}",
+    "manualOnly": "Gebruik handmatige invoer — camera werkt alleen op mobiel",
+    "pointCamera": "Richt de camera op de barcode",
+    "scannerNotAvailable": "Scanner niet beschikbaar",
+    "cameraOnlyMobile": "Camera werkt alleen op mobiel",
+    "manualEntry": "Voer hieronder de barcode handmatig in",
+    "manualPlaceholder": "Barcode invoeren",
+    "lookup": "Opzoeken"
+  },
+  "ecodes": {
+    "title": "E‑codes referentie",
+    "sourceLabel": "Bron:",
+    "importantNoteTitle": "Belangrijke opmerking:",
+    "importantNoteBody": "E‑codes met status \"Twijfelachtig\" kunnen halal of haram zijn afhankelijk van de bron. Controleer altijd bij fabrikanten of halal‑instanties.",
+    "items": {
+      "E120": { "name": "Carmijn", "source": "Insecten", "concern": "Afgeleid van kevers" },
+      "E441": { "name": "Gelatine", "source": "Meestal varkens", "concern": "Controleer bron" },
+      "E542": { "name": "Botfosfaat", "source": "Dierlijke botten", "concern": "Niet‑halal bron" },
+      "E621": { "name": "MSG", "source": "Plantaardig", "concern": "Over het algemeen halal" },
+      "E471": { "name": "Mono/di‑glyceriden", "source": "Plantaardig of dierlijk", "concern": "Controleer bron" },
+      "E472e": { "name": "DATEM", "source": "Gemengd", "concern": "Controleer fabrikant" },
+      "E631": { "name": "Dinatrium‑inosinaat", "source": "Kan dierlijk zijn", "concern": "Verifiëren" },
+      "E627": { "name": "Dinatrium‑guanlylaat", "source": "Kan dierlijk zijn", "concern": "Verifiëren" },
+      "E150d": { "name": "Karamelkleur", "source": "Suiker", "concern": "Halal" },
+      "E338": { "name": "Fosforzuur", "source": "Mineraal", "concern": "Halal" },
+      "E171": { "name": "Titaandioxide", "source": "Mineraal", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Twijfelachtig ?",
+    "unknown": "Onbekend"
+  },
+  "analysis": {
+    "no_ingredients": "Geen informatie over ingrediënten beschikbaar",
+    "contains": "Bevat {{item}}",
+    "contains_haram_ecodes": "Bevat haram E‑codes of additieven",
+    "contains_doubtful": "Bevat twijfelachtige ingrediënten — certificering controleren",
+    "no_haram": "Geen haram‑ingrediënten gedetecteerd"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal‑gecertificeerde slacht",
+    "halal_certified_beef": "Halal‑gecertificeerd rundvlees",
+    "contains_pork": "Bevat varkensvlees",
+    "pure_dairy": "Pure zuivel",
+    "may_contain_animal_rennet": "Kan dierlijk stremsel bevatten",
+    "vegetable_ingredients": "Plantaardige ingrediënten",
+    "pork_gelatin": "Varkensgelatine",
+    "no_animal_ingredients": "Geen dierlijke ingrediënten"
+  },
+  "ingredients": {
+    "chicken": "Kip",
+    "beef": "Rundvlees",
+    "pork": "Varkensvlees",
+    "spices": "Specerijen",
+    "milk": "Melk",
+    "salt": "Zout",
+    "rennet": "Stremsel",
+    "potatoes": "Aardappelen",
+    "oil": "Olie",
+    "sugar": "Suiker",
+    "gelatin": "Gelatine",
+    "water": "Water",
+    "not_available": "Niet beschikbaar"
+  },
+  "health": {
+    "high_sugar": "Hoog suikergehalte ({{value}} g per 100 g)",
+    "low_sugar": "Laag suikergehalte",
+    "high_salt": "Hoog zoutgehalte ({{value}} g per 100 g)",
+    "low_salt": "Laag zoutgehalte",
+    "high_sat_fat": "Hoog verzadigd vet ({{value}} g per 100 g)",
+    "good_fiber": "Goede vezelbron ({{value}} g per 100 g)",
+    "high_protein": "Hoog eiwitgehalte ({{value}} g per 100 g)",
+    "ultra_processed": "Ultra‑bewerkt voedsel — consumptie beperken",
+    "minimally_processed": "Minimaal bewerkt voedsel",
+    "nutriscore": {
+      "excellent": "Uitstekende voedingskwaliteit",
+      "good": "Goede voedingskwaliteit",
+      "average": "Gemiddelde voedingskwaliteit",
+      "poor": "Slechte voedingskwaliteit",
+      "very_poor": "Zeer slechte voedingskwaliteit"
+    }
+  }
+}

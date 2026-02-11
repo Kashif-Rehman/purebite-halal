@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Søk",
+    "scan": "Skann",
+    "language": "Språk"
+  },
+  "searchBar": {
+    "subtitle": "Skann eller søk i millioner av produkter",
+    "api": {
+      "auto": "✨ Auto (anbefalt)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Kun lokal DB"
+    },
+    "apiStatus": {
+      "auto": "Søker i alle tilgjengelige kilder",
+      "off": "Søker i Open Food Facts",
+      "spoonacular": "Søker i Spoonacular‑API"
+    },
+    "placeholder": {
+      "any": "Søk etter produkt...",
+      "local": "Søk i lokal database..."
+    },
+    "buttons": {
+      "search": "Søk",
+      "scan": "Skann"
+    }
+  },
+  "tabs": {
+    "search": "Søk",
+    "ecodes": "E‑koder",
+    "details": "Detaljer"
+  },
+  "app": {
+    "recentSearches": "Nylige søk",
+    "searching_worldwide": "Søker globalt...",
+    "searching_local": "Søker lokalt...",
+    "empty": {
+      "title": "Skann eller søk",
+      "subtitle": "Skriv produktnavn eller strekkode"
+    },
+    "apiBox": {
+      "realTitle": "✨ Ekte API aktiv!",
+      "realTry": "Prøv: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Eller strekkoder: 3017620422003, 5000159484695",
+      "localTitle": "📦 Lokal database",
+      "localTry": "Prøv: Lays, Haribo, Kylling",
+      "localEnable": "Aktiver ekte API for millioner av produkter!"
+    },
+    "noResults": "Ingen produkter funnet.",
+    "noResultsLocalHint": "Prøv å aktivere ekte API!",
+    "detailsEmpty": "Skann eller søk for å se produktdetaljer",
+    "disclaimerTitle": "Ansvarsfraskrivelse:",
+    "disclaimerText": "Denne appen gir en automatisk analyse basert på ingredienser og ernæringsdata. Verifiser alltid halal‑sertifisering med produsenter og betrodde halal‑organer. Helseinformasjon er kun generell veiledning. Ved tvil, kontakt en kunnskapsrik islamsk lærd eller helsepersonell.",
+    "barcodeNotFound": "Strekkoden {{barcode}} finnes ikke i databasen."
+  },
+  "product": {
+    "healthAnalysis": "Helseanalyse",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Ernæring per 100 g",
+    "calories": "Kalorier",
+    "fat": "Fett",
+    "carbs": "Karbohydrater",
+    "protein": "Protein",
+    "sugar": "Sukker",
+    "salt": "Salt",
+    "healthBenefits": "Helsefordeler",
+    "healthConcerns": "Helsebekymringer",
+    "halalAnalysis": "Halal‑analyse:",
+    "ingredients": "Ingredienser:",
+    "eCodesFound": "E‑koder funnet:",
+    "verifyManufacturer": "Bekreft med produsenten",
+    "shareResult": "Del resultat",
+    "shareDialogTitle": "Del dette produktet",
+    "barcodeLabel": "Strekkode"
+  },
+  "scanner": {
+    "title": "Skann strekkode",
+    "permissionDenied": "Kameratillatelse avslått. Aktiver i innstillinger.",
+    "notSupported": "Strekkodeskanning støttes ikke på denne enheten",
+    "initFailed": "Kunne ikke starte skanner: {{error}}",
+    "startFailed": "Kunne ikke starte skanning: {{error}}",
+    "manualOnly": "Bruk manuell inntasting — kamera fungerer bare på mobil",
+    "pointCamera": "Rett kameraet mot strekkoden",
+    "scannerNotAvailable": "Skanner ikke tilgjengelig",
+    "cameraOnlyMobile": "Kamera fungerer bare på mobil",
+    "manualEntry": "Skriv inn strekkoden manuelt nedenfor",
+    "manualPlaceholder": "Skriv inn strekkode",
+    "lookup": "Søk"
+  },
+  "ecodes": {
+    "title": "E‑kode‑referanse",
+    "sourceLabel": "Kilde:",
+    "importantNoteTitle": "Viktig merknad:",
+    "importantNoteBody": "E‑koder merket som \"Tvil\" kan være halal eller haram avhengig av kilden. Verifiser alltid med produsenter eller halal‑organer.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Insekter", "concern": "Utvunnet fra biller" },
+      "E441": { "name": "Gelatin", "source": "Vanligvis svin", "concern": "Sjekk kilde" },
+      "E542": { "name": "Benfosfat", "source": "Dyrebein", "concern": "Ikke‑halal kilde" },
+      "E621": { "name": "MSG", "source": "Plantebasert", "concern": "Generelt halal" },
+      "E471": { "name": "Mono/di‑glyserider", "source": "Plante eller animalsk", "concern": "Sjekk kilde" },
+      "E472e": { "name": "DATEM", "source": "Blandet", "concern": "Sjekk produsent" },
+      "E631": { "name": "Dinatriuminosinat", "source": "Kan være animalsk", "concern": "Verifiser" },
+      "E627": { "name": "Dinatriumguanylat", "source": "Kan være animalsk", "concern": "Verifiser" },
+      "E150d": { "name": "Karamellfarge", "source": "Sukker", "concern": "Halal" },
+      "E338": { "name": "Fosforsyre", "source": "Mineral", "concern": "Halal" },
+      "E171": { "name": "Titandioksid", "source": "Mineral", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Tvil ?",
+    "unknown": "Ukjent"
+  },
+  "analysis": {
+    "no_ingredients": "Ingen ingrediensinformasjon tilgjengelig",
+    "contains": "Inneholder {{item}}",
+    "contains_haram_ecodes": "Inneholder haram E‑koder eller tilsetninger",
+    "contains_doubtful": "Inneholder tvilsomme ingredienser — verifiser sertifisering",
+    "no_haram": "Ingen haram‑ingredienser funnet"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal‑sertifisert slakt",
+    "halal_certified_beef": "Halal‑sertifisert storfekjøtt",
+    "contains_pork": "Inneholder svin",
+    "pure_dairy": "Ren meierivare",
+    "may_contain_animal_rennet": "Kan inneholde animalsk løpe",
+    "vegetable_ingredients": "Vegetabilske ingredienser",
+    "pork_gelatin": "Svinegelatin",
+    "no_animal_ingredients": "Ingen animalske ingredienser"
+  },
+  "ingredients": {
+    "chicken": "Kylling",
+    "beef": "Storfekjøtt",
+    "pork": "Svin",
+    "spices": "Krydder",
+    "milk": "Melk",
+    "salt": "Salt",
+    "rennet": "Løpe",
+    "potatoes": "Poteter",
+    "oil": "Olje",
+    "sugar": "Sukker",
+    "gelatin": "Gelatin",
+    "water": "Vann",
+    "not_available": "Ikke tilgjengelig"
+  },
+  "health": {
+    "high_sugar": "Høyt sukkerinnhold ({{value}} g per 100 g)",
+    "low_sugar": "Lavt sukkerinnhold",
+    "high_salt": "Høyt saltinnhold ({{value}} g per 100 g)",
+    "low_salt": "Lavt saltinnhold",
+    "high_sat_fat": "Høyt mettet fett ({{value}} g per 100 g)",
+    "good_fiber": "God fiberkilde ({{value}} g per 100 g)",
+    "high_protein": "Høyt proteininnhold ({{value}} g per 100 g)",
+    "ultra_processed": "Ultraprosessert mat — begrens forbruk",
+    "minimally_processed": "Minimalt prosessert mat",
+    "nutriscore": {
+      "excellent": "Utmerket ernæringskvalitet",
+      "good": "God ernæringskvalitet",
+      "average": "Gjennomsnittlig ernæringskvalitet",
+      "poor": "Dårlig ernæringskvalitet",
+      "very_poor": "Svært dårlig ernæringskvalitet"
+    }
+  }
+}

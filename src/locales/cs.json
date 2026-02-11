@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Hledat",
+    "scan": "Skenovat",
+    "language": "Jazyk"
+  },
+  "searchBar": {
+    "subtitle": "Skenujte nebo hledejte miliony produktů",
+    "api": {
+      "auto": "✨ Auto (doporučeno)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Jen místní DB"
+    },
+    "apiStatus": {
+      "auto": "Vyhledávání ve všech dostupných zdrojích",
+      "off": "Vyhledávání v Open Food Facts",
+      "spoonacular": "Vyhledávání v API Spoonacular"
+    },
+    "placeholder": {
+      "any": "Hledat produkt...",
+      "local": "Hledat v místní databázi..."
+    },
+    "buttons": {
+      "search": "Hledat",
+      "scan": "Skenovat"
+    }
+  },
+  "tabs": {
+    "search": "Hledání",
+    "ecodes": "E‑kódy",
+    "details": "Detaily"
+  },
+  "app": {
+    "recentSearches": "Nedávná hledání",
+    "searching_worldwide": "Vyhledávání po celém světě...",
+    "searching_local": "Lokální vyhledávání...",
+    "empty": {
+      "title": "Skenovat nebo hledat",
+      "subtitle": "Zadejte název produktu nebo čárový kód"
+    },
+    "apiBox": {
+      "realTitle": "✨ Skutečné API aktivní!",
+      "realTry": "Zkuste: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Nebo čárové kódy: 3017620422003, 5000159484695",
+      "localTitle": "📦 Místní databáze",
+      "localTry": "Zkuste: Lays, Haribo, Kuře",
+      "localEnable": "Aktivujte skutečné API pro miliony produktů!"
+    },
+    "noResults": "Žádné produkty nenalezeny.",
+    "noResultsLocalHint": "Zkuste zapnout skutečné API!",
+    "detailsEmpty": "Skenujte nebo hledejte pro zobrazení detailů produktu",
+    "disclaimerTitle": "Upozornění:",
+    "disclaimerText": "Aplikace poskytuje automatickou analýzu na základě ingrediencí a výživových dat. Vždy ověřujte halal certifikaci u výrobců a důvěryhodných halal orgánů. Zdravotní informace jsou pouze obecné. V případě pochybností se poraďte s islámským učencem nebo zdravotníkem.",
+    "barcodeNotFound": "Čárový kód {{barcode}} nebyl nalezen v databázi."
+  },
+  "product": {
+    "healthAnalysis": "Zdravotní analýza",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Výživa na 100 g",
+    "calories": "Kalorie",
+    "fat": "Tuky",
+    "carbs": "Sacharidy",
+    "protein": "Bílkoviny",
+    "sugar": "Cukr",
+    "salt": "Sůl",
+    "healthBenefits": "Zdravotní přínosy",
+    "healthConcerns": "Zdravotní rizika",
+    "halalAnalysis": "Halal analýza:",
+    "ingredients": "Ingredience:",
+    "eCodesFound": "Nalezené E‑kódy:",
+    "verifyManufacturer": "Ověřit u výrobce",
+    "shareResult": "Sdílet výsledek",
+    "shareDialogTitle": "Sdílet tento produkt",
+    "barcodeLabel": "Čárový kód"
+  },
+  "scanner": {
+    "title": "Skenovat čárový kód",
+    "permissionDenied": "Přístup ke kameře byl zamítnut. Povolte v nastavení.",
+    "notSupported": "Skenování čárového kódu není na tomto zařízení podporováno",
+    "initFailed": "Nepodařilo se inicializovat skener: {{error}}",
+    "startFailed": "Nepodařilo se spustit skenování: {{error}}",
+    "manualOnly": "Použijte ruční zadání — kamera funguje jen na mobilu",
+    "pointCamera": "Namiřte kameru na čárový kód",
+    "scannerNotAvailable": "Skener není dostupný",
+    "cameraOnlyMobile": "Kamera funguje jen na mobilu",
+    "manualEntry": "Zadejte čárový kód ručně níže",
+    "manualPlaceholder": "Zadejte čárový kód",
+    "lookup": "Hledat"
+  },
+  "ecodes": {
+    "title": "Přehled E‑kódů",
+    "sourceLabel": "Zdroj:",
+    "importantNoteTitle": "Důležitá poznámka:",
+    "importantNoteBody": "E‑kódy označené jako \"Sporné\" mohou být halal nebo haram podle zdroje. Vždy ověřujte u výrobce nebo halal orgánů.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Hmyz", "concern": "Odvozeno z brouků" },
+      "E441": { "name": "Želatina", "source": "Obvykle vepřové", "concern": "Zkontrolujte zdroj" },
+      "E542": { "name": "Kostní fosfát", "source": "Zvířecí kosti", "concern": "Ne‑halal zdroj" },
+      "E621": { "name": "MSG", "source": "Rostlinný", "concern": "Obecně halal" },
+      "E471": { "name": "Mono/di‑glyceridy", "source": "Rostlinný nebo živočišný", "concern": "Zkontrolujte zdroj" },
+      "E472e": { "name": "DATEM", "source": "Smíšené", "concern": "Zkontrolujte výrobce" },
+      "E631": { "name": "Disodný inosinát", "source": "Může být živočišný", "concern": "Ověřit" },
+      "E627": { "name": "Disodný guanylát", "source": "Může být živočišný", "concern": "Ověřit" },
+      "E150d": { "name": "Karamelové barvivo", "source": "Cukr", "concern": "Halal" },
+      "E338": { "name": "Kyselina fosforečná", "source": "Minerál", "concern": "Halal" },
+      "E171": { "name": "Oxid titaničitý", "source": "Minerál", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Sporné ?",
+    "unknown": "Neznámé"
+  },
+  "analysis": {
+    "no_ingredients": "Nejsou dostupné informace o ingrediencích",
+    "contains": "Obsahuje {{item}}",
+    "contains_haram_ecodes": "Obsahuje haram E‑kódy nebo aditiva",
+    "contains_doubtful": "Obsahuje sporné ingredience — ověřte certifikaci",
+    "no_haram": "Nebyly zjištěny haram ingredience"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal certifikovaná porážka",
+    "halal_certified_beef": "Halal certifikované hovězí",
+    "contains_pork": "Obsahuje vepřové",
+    "pure_dairy": "Čistý mléčný výrobek",
+    "may_contain_animal_rennet": "Může obsahovat živočišné syřidlo",
+    "vegetable_ingredients": "Rostlinné ingredience",
+    "pork_gelatin": "Vepřová želatina",
+    "no_animal_ingredients": "Žádné živočišné ingredience"
+  },
+  "ingredients": {
+    "chicken": "Kuře",
+    "beef": "Hovězí",
+    "pork": "Vepřové",
+    "spices": "Koření",
+    "milk": "Mléko",
+    "salt": "Sůl",
+    "rennet": "Syřidlo",
+    "potatoes": "Brambory",
+    "oil": "Olej",
+    "sugar": "Cukr",
+    "gelatin": "Želatina",
+    "water": "Voda",
+    "not_available": "Nedostupné"
+  },
+  "health": {
+    "high_sugar": "Vysoký obsah cukru ({{value}} g na 100 g)",
+    "low_sugar": "Nízký obsah cukru",
+    "high_salt": "Vysoký obsah soli ({{value}} g na 100 g)",
+    "low_salt": "Nízký obsah soli",
+    "high_sat_fat": "Vysoký obsah nasycených tuků ({{value}} g na 100 g)",
+    "good_fiber": "Dobrý zdroj vlákniny ({{value}} g na 100 g)",
+    "high_protein": "Vysoký obsah bílkovin ({{value}} g na 100 g)",
+    "ultra_processed": "Ultra‑zpracovaná potravina — omezte spotřebu",
+    "minimally_processed": "Minimálně zpracovaná potravina",
+    "nutriscore": {
+      "excellent": "Vynikající nutriční kvalita",
+      "good": "Dobrá nutriční kvalita",
+      "average": "Průměrná nutriční kvalita",
+      "poor": "Špatná nutriční kvalita",
+      "very_poor": "Velmi špatná nutriční kvalita"
+    }
+  }
+}

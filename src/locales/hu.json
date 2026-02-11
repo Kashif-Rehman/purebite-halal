@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Keresés",
+    "scan": "Szkennelés",
+    "language": "Nyelv"
+  },
+  "searchBar": {
+    "subtitle": "Szkennelj vagy keress milliónyi terméket",
+    "api": {
+      "auto": "✨ Automatikus (ajánlott)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Csak helyi DB"
+    },
+    "apiStatus": {
+      "auto": "Keresés minden elérhető forrásban",
+      "off": "Keresés az Open Food Facts-ben",
+      "spoonacular": "Keresés a Spoonacular API-ban"
+    },
+    "placeholder": {
+      "any": "Termék keresése...",
+      "local": "Keresés a helyi adatbázisban..."
+    },
+    "buttons": {
+      "search": "Keresés",
+      "scan": "Szkennelés"
+    }
+  },
+  "tabs": {
+    "search": "Keresés",
+    "ecodes": "E‑kódok",
+    "details": "Részletek"
+  },
+  "app": {
+    "recentSearches": "Legutóbbi keresések",
+    "searching_worldwide": "Keresés világszerte...",
+    "searching_local": "Helyi keresés...",
+    "empty": {
+      "title": "Szkennelés vagy keresés",
+      "subtitle": "Írd be a termék nevét vagy vonalkódját"
+    },
+    "apiBox": {
+      "realTitle": "✨ Valódi API aktív!",
+      "realTry": "Próbáld: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Vagy vonalkódok: 3017620422003, 5000159484695",
+      "localTitle": "📦 Helyi adatbázis",
+      "localTry": "Próbáld: Lays, Haribo, Csirke",
+      "localEnable": "Kapcsold be a valódi API-t millióknyi termékhez!"
+    },
+    "noResults": "Nincs találat.",
+    "noResultsLocalHint": "Próbáld bekapcsolni a valódi API‑t!",
+    "detailsEmpty": "Szkennelj vagy keress a részletekért",
+    "disclaimerTitle": "Felelősségkizárás:",
+    "disclaimerText": "Az alkalmazás automatikus elemzést ad az összetevők és táplálkozási adatok alapján. Mindig ellenőrizd a halal tanúsítást a gyártónál és megbízható halal szervezeteknél. Az egészségügyi információk általános jellegűek. Kétség esetén kérdezz hozzáértő iszlám tudóst vagy egészségügyi szakembert.",
+    "barcodeNotFound": "A(z) {{barcode}} vonalkód nem található az adatbázisban."
+  },
+  "product": {
+    "healthAnalysis": "Egészségügyi elemzés",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Tápérték 100 g‑ra",
+    "calories": "Kalória",
+    "fat": "Zsír",
+    "carbs": "Szénhidrát",
+    "protein": "Fehérje",
+    "sugar": "Cukor",
+    "salt": "Só",
+    "healthBenefits": "Egészségügyi előnyök",
+    "healthConcerns": "Egészségügyi kockázatok",
+    "halalAnalysis": "Halal elemzés:",
+    "ingredients": "Összetevők:",
+    "eCodesFound": "Talált E‑kódok:",
+    "verifyManufacturer": "Ellenőrzés a gyártónál",
+    "shareResult": "Eredmény megosztása",
+    "shareDialogTitle": "Termék megosztása",
+    "barcodeLabel": "Vonalkód"
+  },
+  "scanner": {
+    "title": "Vonalkód szkennelése",
+    "permissionDenied": "Kameraengedély megtagadva. Engedélyezd a beállításokban.",
+    "notSupported": "A vonalkód‑szkennelés nem támogatott ezen az eszközön",
+    "initFailed": "Nem sikerült inicializálni a szkennert: {{error}}",
+    "startFailed": "Nem sikerült elindítani a szkennelést: {{error}}",
+    "manualOnly": "Használj kézi bevitelt — a kamera csak mobilon működik",
+    "pointCamera": "Irányítsd a kamerát a vonalkódra",
+    "scannerNotAvailable": "A szkenner nem elérhető",
+    "cameraOnlyMobile": "A kamera csak mobilon működik",
+    "manualEntry": "Add meg kézzel a vonalkódot lent",
+    "manualPlaceholder": "Vonalkód megadása",
+    "lookup": "Keresés"
+  },
+  "ecodes": {
+    "title": "E‑kód referencia",
+    "sourceLabel": "Forrás:",
+    "importantNoteTitle": "Fontos megjegyzés:",
+    "importantNoteBody": "A \"Kétes\" E‑kódok forrástól függően halal vagy haram lehetnek. Mindig ellenőrizd a gyártónál vagy halal szervezeteknél.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Rovarok", "concern": "Bogarakból származik" },
+      "E441": { "name": "Zselatin", "source": "Általában sertés", "concern": "Forrás ellenőrzése" },
+      "E542": { "name": "Csontfoszfát", "source": "Állati csontok", "concern": "Nem‑halal forrás" },
+      "E621": { "name": "MSG", "source": "Növényi alapú", "concern": "Általában halal" },
+      "E471": { "name": "Mono/di‑gliceridek", "source": "Növényi vagy állati", "concern": "Forrás ellenőrzése" },
+      "E472e": { "name": "DATEM", "source": "Vegyes", "concern": "Gyártó ellenőrzése" },
+      "E631": { "name": "Dinátrium‑inozinát", "source": "Lehet állati", "concern": "Ellenőrizd" },
+      "E627": { "name": "Dinátrium‑guanilát", "source": "Lehet állati", "concern": "Ellenőrizd" },
+      "E150d": { "name": "Karamell színezék", "source": "Cukor", "concern": "Halal" },
+      "E338": { "name": "Foszforsav", "source": "Ásványi", "concern": "Halal" },
+      "E171": { "name": "Titán‑dioxid", "source": "Ásványi", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Kétes ?",
+    "unknown": "Ismeretlen"
+  },
+  "analysis": {
+    "no_ingredients": "Nincs elérhető összetevő‑információ",
+    "contains": "Tartalmazza: {{item}}",
+    "contains_haram_ecodes": "Haram E‑kódokat vagy adalékokat tartalmaz",
+    "contains_doubtful": "Kétes összetevőket tartalmaz — ellenőrizd a tanúsítást",
+    "no_haram": "Nem találtunk haram összetevőket"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal‑tanúsított vágás",
+    "halal_certified_beef": "Halal‑tanúsított marhahús",
+    "contains_pork": "Sertést tartalmaz",
+    "pure_dairy": "Tiszta tejtermék",
+    "may_contain_animal_rennet": "Tartalmazhat állati oltóenzimet",
+    "vegetable_ingredients": "Növényi összetevők",
+    "pork_gelatin": "Sertészselatin",
+    "no_animal_ingredients": "Nincsenek állati összetevők"
+  },
+  "ingredients": {
+    "chicken": "Csirke",
+    "beef": "Marhahús",
+    "pork": "Sertés",
+    "spices": "Fűszerek",
+    "milk": "Tej",
+    "salt": "Só",
+    "rennet": "Oltóenzim",
+    "potatoes": "Burgonya",
+    "oil": "Olaj",
+    "sugar": "Cukor",
+    "gelatin": "Zselatin",
+    "water": "Víz",
+    "not_available": "Nem elérhető"
+  },
+  "health": {
+    "high_sugar": "Magas cukortartalom ({{value}} g / 100 g)",
+    "low_sugar": "Alacsony cukortartalom",
+    "high_salt": "Magas sótartalom ({{value}} g / 100 g)",
+    "low_salt": "Alacsony sótartalom",
+    "high_sat_fat": "Magas telítettzsír‑tartalom ({{value}} g / 100 g)",
+    "good_fiber": "Jó rostforrás ({{value}} g / 100 g)",
+    "high_protein": "Magas fehérjetartalom ({{value}} g / 100 g)",
+    "ultra_processed": "Ultra‑feldolgozott élelmiszer — korlátozd a fogyasztást",
+    "minimally_processed": "Minimálisan feldolgozott élelmiszer",
+    "nutriscore": {
+      "excellent": "Kiváló tápérték",
+      "good": "Jó tápérték",
+      "average": "Átlagos tápérték",
+      "poor": "Rossz tápérték",
+      "very_poor": "Nagyon rossz tápérték"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Suchen",
+    "scan": "Scannen",
+    "language": "Sprache"
+  },
+  "searchBar": {
+    "subtitle": "Scanne oder suche Millionen von Produkten",
+    "api": {
+      "auto": "✨ Auto (Empfohlen)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Nur lokale DB"
+    },
+    "apiStatus": {
+      "auto": "Suche in allen verfügbaren Quellen",
+      "off": "Suche in Open Food Facts",
+      "spoonacular": "Suche in der Spoonacular-API"
+    },
+    "placeholder": {
+      "any": "Beliebiges Produkt suchen...",
+      "local": "Lokale Datenbank durchsuchen..."
+    },
+    "buttons": {
+      "search": "Suchen",
+      "scan": "Scannen"
+    }
+  },
+  "tabs": {
+    "search": "Suchen",
+    "ecodes": "E-Codes",
+    "details": "Details"
+  },
+  "app": {
+    "recentSearches": "Letzte Suchanfragen",
+    "searching_worldwide": "Weltweit wird gesucht...",
+    "searching_local": "Lokal wird gesucht...",
+    "empty": {
+      "title": "Scannen oder Suchen",
+      "subtitle": "Produktname oder Barcode eingeben"
+    },
+    "apiBox": {
+      "realTitle": "✨ Echte API aktiv!",
+      "realTry": "Versuche: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Oder Barcodes: 3017620422003, 5000159484695",
+      "localTitle": "📦 Lokale Datenbank",
+      "localTry": "Versuche: Lays, Haribo, Chicken",
+      "localEnable": "Aktiviere die echte API für Millionen Produkte!"
+    },
+    "noResults": "Keine Produkte gefunden.",
+    "noResultsLocalHint": "Versuche die echte API zu aktivieren!",
+    "detailsEmpty": "Scanne oder suche, um Produktdetails zu sehen",
+    "disclaimerTitle": "Haftungsausschluss:",
+    "disclaimerText": "Diese App liefert eine automatische Analyse anhand von Zutaten und Nährwertdaten. Bitte immer die Halal-Zertifizierung bei Herstellern und vertrauenswürdigen Halal-Zertifizierungsstellen prüfen. Gesundheitsinformationen dienen nur der allgemeinen Orientierung. Im Zweifel einen qualifizierten islamischen Gelehrten oder medizinischen Fachmann konsultieren.",
+    "barcodeNotFound": "Barcode {{barcode}} nicht in der Datenbank gefunden."
+  },
+  "product": {
+    "healthAnalysis": "Gesundheitsanalyse",
+    "nutriScore": "Nutri-Score",
+    "nutritionPer100g": "Nährwerte pro 100 g",
+    "calories": "Kalorien",
+    "fat": "Fett",
+    "carbs": "Kohlenhydrate",
+    "protein": "Protein",
+    "sugar": "Zucker",
+    "salt": "Salz",
+    "healthBenefits": "Gesundheitsvorteile",
+    "healthConcerns": "Gesundheitsrisiken",
+    "halalAnalysis": "Halal-Analyse:",
+    "ingredients": "Zutaten:",
+    "eCodesFound": "Gefundene E-Codes:",
+    "verifyManufacturer": "Mit dem Hersteller prüfen",
+    "shareResult": "Ergebnis teilen",
+    "shareDialogTitle": "Dieses Produkt teilen",
+    "barcodeLabel": "Barcode"
+  },
+  "scanner": {
+    "title": "Barcode scannen",
+    "permissionDenied": "Kameraberechtigung verweigert. Bitte in den Einstellungen aktivieren.",
+    "notSupported": "Barcode-Scan wird auf diesem Gerät nicht unterstützt",
+    "initFailed": "Scanner konnte nicht initialisiert werden: {{error}}",
+    "startFailed": "Scan konnte nicht gestartet werden: {{error}}",
+    "manualOnly": "Bitte manuell eingeben – Kamera funktioniert nur auf Mobilgeräten",
+    "pointCamera": "Kamera auf den Barcode richten",
+    "scannerNotAvailable": "Scanner nicht verfügbar",
+    "cameraOnlyMobile": "Kamera funktioniert nur auf Mobilgeräten",
+    "manualEntry": "Barcode unten manuell eingeben",
+    "manualPlaceholder": "Barcode manuell eingeben",
+    "lookup": "Suchen"
+  },
+  "ecodes": {
+    "title": "E-Codes Referenz",
+    "sourceLabel": "Quelle:",
+    "importantNoteTitle": "Wichtiger Hinweis:",
+    "importantNoteBody": "E-Codes mit dem Status \"Zweifelhaft\" können je nach Herkunft halal oder haram sein. Immer mit Herstellern oder Halal-Zertifizierungsstellen prüfen.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Insekten", "concern": "Aus Käfern gewonnen" },
+      "E441": { "name": "Gelatine", "source": "Meist Schwein", "concern": "Quelle prüfen" },
+      "E542": { "name": "Knochenphosphat", "source": "Tierknochen", "concern": "Nicht-halale Quelle" },
+      "E621": { "name": "MSG", "source": "Pflanzlich", "concern": "In der Regel halal" },
+      "E471": { "name": "Mono-/Diglyceride", "source": "Pflanzlich oder tierisch", "concern": "Quelle prüfen" },
+      "E472e": { "name": "DATEM", "source": "Gemischt", "concern": "Hersteller prüfen" },
+      "E631": { "name": "Dinatriuminosinat", "source": "Kann tierisch sein", "concern": "Prüfen" },
+      "E627": { "name": "Dinatriumguanylat", "source": "Kann tierisch sein", "concern": "Prüfen" },
+      "E150d": { "name": "Zuckerkulör", "source": "Zucker", "concern": "Halal" },
+      "E338": { "name": "Phosphorsäure", "source": "Mineral", "concern": "Halal" },
+      "E171": { "name": "Titandioxid", "source": "Mineral", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Zweifelhaft ?",
+    "unknown": "Unbekannt"
+  },
+  "analysis": {
+    "no_ingredients": "Keine Zutateninformationen verfügbar",
+    "contains": "Enthält {{item}}",
+    "contains_haram_ecodes": "Enthält haram E-Codes oder Zusatzstoffe",
+    "contains_doubtful": "Enthält zweifelhafte Zutaten – Zertifizierung prüfen",
+    "no_haram": "Keine haram Zutaten gefunden"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Halal-zertifizierte Schlachtung",
+    "halal_certified_beef": "Halal-zertifiziertes Rindfleisch",
+    "contains_pork": "Enthält Schwein",
+    "pure_dairy": "Reines Milchprodukt",
+    "may_contain_animal_rennet": "Kann tierisches Lab enthalten",
+    "vegetable_ingredients": "Pflanzliche Zutaten",
+    "pork_gelatin": "Schweinegelatine",
+    "no_animal_ingredients": "Keine tierischen Zutaten"
+  },
+  "ingredients": {
+    "chicken": "Huhn",
+    "beef": "Rind",
+    "pork": "Schwein",
+    "spices": "Gewürze",
+    "milk": "Milch",
+    "salt": "Salz",
+    "rennet": "Lab",
+    "potatoes": "Kartoffeln",
+    "oil": "Öl",
+    "sugar": "Zucker",
+    "gelatin": "Gelatine",
+    "water": "Wasser",
+    "not_available": "Nicht verfügbar"
+  },
+  "health": {
+    "high_sugar": "Hoher Zuckergehalt ({{value}} g pro 100 g)",
+    "low_sugar": "Niedriger Zuckergehalt",
+    "high_salt": "Hoher Salzgehalt ({{value}} g pro 100 g)",
+    "low_salt": "Niedriger Salzgehalt",
+    "high_sat_fat": "Hoher Anteil gesättigter Fette ({{value}} g pro 100 g)",
+    "good_fiber": "Gute Ballaststoffquelle ({{value}} g pro 100 g)",
+    "high_protein": "Hoher Proteingehalt ({{value}} g pro 100 g)",
+    "ultra_processed": "Hochverarbeitetes Lebensmittel – Konsum begrenzen",
+    "minimally_processed": "Minimal verarbeitetes Lebensmittel",
+    "nutriscore": {
+      "excellent": "Ausgezeichnete Nährwertqualität",
+      "good": "Gute Nährwertqualität",
+      "average": "Durchschnittliche Nährwertqualität",
+      "poor": "Schlechte Nährwertqualität",
+      "very_poor": "Sehr schlechte Nährwertqualität"
+    }
+  }
+}

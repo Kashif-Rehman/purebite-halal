@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Αναζήτηση",
+    "scan": "Σάρωση",
+    "language": "Γλώσσα"
+  },
+  "searchBar": {
+    "subtitle": "Σαρώστε ή αναζητήστε εκατομμύρια προϊόντα",
+    "api": {
+      "auto": "✨ Αυτόματο (προτείνεται)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Μόνο τοπική ΒΔ"
+    },
+    "apiStatus": {
+      "auto": "Αναζήτηση σε όλες τις διαθέσιμες πηγές",
+      "off": "Αναζήτηση στο Open Food Facts",
+      "spoonacular": "Αναζήτηση στο API Spoonacular"
+    },
+    "placeholder": {
+      "any": "Αναζήτηση προϊόντος...",
+      "local": "Αναζήτηση στην τοπική βάση..."
+    },
+    "buttons": {
+      "search": "Αναζήτηση",
+      "scan": "Σάρωση"
+    }
+  },
+  "tabs": {
+    "search": "Αναζήτηση",
+    "ecodes": "E‑codes",
+    "details": "Λεπτομέρειες"
+  },
+  "app": {
+    "recentSearches": "Πρόσφατες αναζητήσεις",
+    "searching_worldwide": "Αναζήτηση παγκοσμίως...",
+    "searching_local": "Τοπική αναζήτηση...",
+    "empty": {
+      "title": "Σάρωση ή αναζήτηση",
+      "subtitle": "Πληκτρολογήστε όνομα προϊόντος ή barcode"
+    },
+    "apiBox": {
+      "realTitle": "✨ Πραγματικό API ενεργό!",
+      "realTry": "Δοκιμάστε: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Ή barcodes: 3017620422003, 5000159484695",
+      "localTitle": "📦 Τοπική βάση",
+      "localTry": "Δοκιμάστε: Lays, Haribo, Κοτόπουλο",
+      "localEnable": "Ενεργοποιήστε το πραγματικό API για εκατομμύρια προϊόντα!"
+    },
+    "noResults": "Δεν βρέθηκαν προϊόντα.",
+    "noResultsLocalHint": "Δοκιμάστε να ενεργοποιήσετε το πραγματικό API!",
+    "detailsEmpty": "Σαρώστε ή αναζητήστε για να δείτε λεπτομέρειες προϊόντος",
+    "disclaimerTitle": "Αποποίηση ευθύνης:",
+    "disclaimerText": "Η εφαρμογή παρέχει αυτοματοποιημένη ανάλυση με βάση συστατικά και διατροφικά δεδομένα. Ελέγχετε πάντα την πιστοποίηση halal με τους κατασκευαστές και αξιόπιστους φορείς halal. Οι πληροφορίες υγείας είναι γενικές. Σε περίπτωση αμφιβολίας, συμβουλευτείτε γνώστη ισλαμικό λόγιο ή επαγγελματία υγείας.",
+    "barcodeNotFound": "Το barcode {{barcode}} δεν βρέθηκε στη βάση δεδομένων."
+  },
+  "product": {
+    "healthAnalysis": "Ανάλυση υγείας",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Διατροφικά ανά 100 g",
+    "calories": "Θερμίδες",
+    "fat": "Λίπος",
+    "carbs": "Υδατάνθρακες",
+    "protein": "Πρωτεΐνη",
+    "sugar": "Ζάχαρη",
+    "salt": "Αλάτι",
+    "healthBenefits": "Οφέλη υγείας",
+    "healthConcerns": "Κίνδυνοι υγείας",
+    "halalAnalysis": "Ανάλυση halal:",
+    "ingredients": "Συστατικά:",
+    "eCodesFound": "Βρέθηκαν E‑codes:",
+    "verifyManufacturer": "Επαλήθευση με τον κατασκευαστή",
+    "shareResult": "Κοινή χρήση αποτελέσματος",
+    "shareDialogTitle": "Κοινή χρήση αυτού του προϊόντος",
+    "barcodeLabel": "Barcode"
+  },
+  "scanner": {
+    "title": "Σάρωση barcode",
+    "permissionDenied": "Η άδεια κάμερας απορρίφθηκε. Ενεργοποιήστε στις ρυθμίσεις.",
+    "notSupported": "Η σάρωση barcode δεν υποστηρίζεται σε αυτή τη συσκευή",
+    "initFailed": "Αποτυχία αρχικοποίησης σαρωτή: {{error}}",
+    "startFailed": "Αποτυχία έναρξης σάρωσης: {{error}}",
+    "manualOnly": "Χρησιμοποιήστε χειροκίνητη εισαγωγή — η κάμερα λειτουργεί μόνο σε κινητά",
+    "pointCamera": "Στρέψτε την κάμερα στο barcode",
+    "scannerNotAvailable": "Ο σαρωτής δεν είναι διαθέσιμος",
+    "cameraOnlyMobile": "Η κάμερα λειτουργεί μόνο σε κινητά",
+    "manualEntry": "Εισάγετε χειροκίνητα το barcode παρακάτω",
+    "manualPlaceholder": "Εισαγωγή barcode",
+    "lookup": "Αναζήτηση"
+  },
+  "ecodes": {
+    "title": "Αναφορά E‑codes",
+    "sourceLabel": "Πηγή:",
+    "importantNoteTitle": "Σημαντική σημείωση:",
+    "importantNoteBody": "Τα E‑codes με σήμανση \"Αμφίβολα\" μπορεί να είναι halal ή haram ανάλογα με την πηγή. Ελέγχετε πάντα με τον κατασκευαστή ή φορείς halal.",
+    "items": {
+      "E120": { "name": "Καρμίνιο", "source": "Έντομα", "concern": "Παράγεται από σκαθάρια" },
+      "E441": { "name": "Ζελατίνη", "source": "Συνήθως χοιρινό", "concern": "Ελέγξτε την πηγή" },
+      "E542": { "name": "Φωσφορικό οστών", "source": "Οστά ζώων", "concern": "Μη χαλάλ πηγή" },
+      "E621": { "name": "MSG", "source": "Φυτικής προέλευσης", "concern": "Γενικά χαλάλ" },
+      "E471": { "name": "Μονο/δι‑γλυκερίδια", "source": "Φυτικό ή ζωικό", "concern": "Ελέγξτε την πηγή" },
+      "E472e": { "name": "DATEM", "source": "Μικτό", "concern": "Ελέγξτε τον κατασκευαστή" },
+      "E631": { "name": "Δινάτριο ινοσινικό", "source": "Μπορεί να είναι ζωικό", "concern": "Επαλήθευση" },
+      "E627": { "name": "Δινάτριο γουανυλικό", "source": "Μπορεί να είναι ζωικό", "concern": "Επαλήθευση" },
+      "E150d": { "name": "Χρώμα καραμέλας", "source": "Ζάχαρη", "concern": "Χαλάλ" },
+      "E338": { "name": "Φωσφορικό οξύ", "source": "Ορυκτό", "concern": "Χαλάλ" },
+      "E171": { "name": "Διοξείδιο τιτανίου", "source": "Ορυκτό", "concern": "Χαλάλ" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Αμφίβολο ?",
+    "unknown": "Άγνωστο"
+  },
+  "analysis": {
+    "no_ingredients": "Δεν υπάρχουν διαθέσιμες πληροφορίες συστατικών",
+    "contains": "Περιέχει {{item}}",
+    "contains_haram_ecodes": "Περιέχει χαράμ E‑codes ή πρόσθετα",
+    "contains_doubtful": "Περιέχει αμφίβολα συστατικά — επαληθεύστε την πιστοποίηση",
+    "no_haram": "Δεν εντοπίστηκαν χαράμ συστατικά"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Σφαγή πιστοποιημένη χαλάλ",
+    "halal_certified_beef": "Μοσχάρι πιστοποιημένο χαλάλ",
+    "contains_pork": "Περιέχει χοιρινό",
+    "pure_dairy": "Καθαρό γαλακτοκομικό",
+    "may_contain_animal_rennet": "Μπορεί να περιέχει ζωική πυτιά",
+    "vegetable_ingredients": "Φυτικά συστατικά",
+    "pork_gelatin": "Ζελατίνη χοιρινού",
+    "no_animal_ingredients": "Χωρίς ζωικά συστατικά"
+  },
+  "ingredients": {
+    "chicken": "Κοτόπουλο",
+    "beef": "Μοσχάρι",
+    "pork": "Χοιρινό",
+    "spices": "Μπαχαρικά",
+    "milk": "Γάλα",
+    "salt": "Αλάτι",
+    "rennet": "Πυτιά",
+    "potatoes": "Πατάτες",
+    "oil": "Λάδι",
+    "sugar": "Ζάχαρη",
+    "gelatin": "Ζελατίνη",
+    "water": "Νερό",
+    "not_available": "Μη διαθέσιμο"
+  },
+  "health": {
+    "high_sugar": "Υψηλή περιεκτικότητα σε ζάχαρη ({{value}} g/100 g)",
+    "low_sugar": "Χαμηλή περιεκτικότητα σε ζάχαρη",
+    "high_salt": "Υψηλή περιεκτικότητα σε αλάτι ({{value}} g/100 g)",
+    "low_salt": "Χαμηλή περιεκτικότητα σε αλάτι",
+    "high_sat_fat": "Υψηλά κορεσμένα λιπαρά ({{value}} g/100 g)",
+    "good_fiber": "Καλή πηγή φυτικών ινών ({{value}} g/100 g)",
+    "high_protein": "Υψηλή περιεκτικότητα σε πρωτεΐνη ({{value}} g/100 g)",
+    "ultra_processed": "Υπερ‑επεξεργασμένο τρόφιμο — περιορίστε την κατανάλωση",
+    "minimally_processed": "Ελάχιστα επεξεργασμένο τρόφιμο",
+    "nutriscore": {
+      "excellent": "Εξαιρετική θρεπτική ποιότητα",
+      "good": "Καλή θρεπτική ποιότητα",
+      "average": "Μέση θρεπτική ποιότητα",
+      "poor": "Κακή θρεπτική ποιότητα",
+      "very_poor": "Πολύ κακή θρεπτική ποιότητα"
+    }
+  }
+}

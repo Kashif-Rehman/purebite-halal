@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Szukaj",
+    "scan": "Skanuj",
+    "language": "Język"
+  },
+  "searchBar": {
+    "subtitle": "Skanuj lub wyszukuj miliony produktów",
+    "api": {
+      "auto": "✨ Auto (zalecane)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Tylko lokalna baza"
+    },
+    "apiStatus": {
+      "auto": "Wyszukiwanie we wszystkich dostępnych źródłach",
+      "off": "Wyszukiwanie w Open Food Facts",
+      "spoonacular": "Wyszukiwanie w API Spoonacular"
+    },
+    "placeholder": {
+      "any": "Szukaj produktu...",
+      "local": "Szukaj w lokalnej bazie..."
+    },
+    "buttons": {
+      "search": "Szukaj",
+      "scan": "Skanuj"
+    }
+  },
+  "tabs": {
+    "search": "Wyszukiwanie",
+    "ecodes": "E‑kody",
+    "details": "Szczegóły"
+  },
+  "app": {
+    "recentSearches": "Ostatnie wyszukiwania",
+    "searching_worldwide": "Wyszukiwanie globalne...",
+    "searching_local": "Wyszukiwanie lokalne...",
+    "empty": {
+      "title": "Skanuj lub szukaj",
+      "subtitle": "Wpisz nazwę produktu lub kod kreskowy"
+    },
+    "apiBox": {
+      "realTitle": "✨ Prawdziwe API aktywne!",
+      "realTry": "Spróbuj: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Lub kody kreskowe: 3017620422003, 5000159484695",
+      "localTitle": "📦 Lokalna baza",
+      "localTry": "Spróbuj: Lays, Haribo, Kurczak",
+      "localEnable": "Włącz prawdziwe API dla milionów produktów!"
+    },
+    "noResults": "Nie znaleziono produktów.",
+    "noResultsLocalHint": "Spróbuj włączyć prawdziwe API!",
+    "detailsEmpty": "Skanuj lub szukaj, aby zobaczyć szczegóły produktu",
+    "disclaimerTitle": "Zastrzeżenie:",
+    "disclaimerText": "Ta aplikacja zapewnia automatyczną analizę na podstawie składników i danych odżywczych. Zawsze weryfikuj certyfikację halal u producentów i zaufanych instytucji halal. Informacje zdrowotne są ogólne. W razie wątpliwości skonsultuj się z uczonym islamskim lub specjalistą medycznym.",
+    "barcodeNotFound": "Kod kreskowy {{barcode}} nie został znaleziony w bazie danych."
+  },
+  "product": {
+    "healthAnalysis": "Analiza zdrowia",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Wartości na 100 g",
+    "calories": "Kalorie",
+    "fat": "Tłuszcz",
+    "carbs": "Węglowodany",
+    "protein": "Białko",
+    "sugar": "Cukier",
+    "salt": "Sól",
+    "healthBenefits": "Korzyści zdrowotne",
+    "healthConcerns": "Ryzyka zdrowotne",
+    "halalAnalysis": "Analiza halal:",
+    "ingredients": "Składniki:",
+    "eCodesFound": "Znalezione E‑kody:",
+    "verifyManufacturer": "Zweryfikuj u producenta",
+    "shareResult": "Udostępnij wynik",
+    "shareDialogTitle": "Udostępnij produkt",
+    "barcodeLabel": "Kod kreskowy"
+  },
+  "scanner": {
+    "title": "Skanuj kod kreskowy",
+    "permissionDenied": "Odmowa dostępu do aparatu. Włącz w ustawieniach.",
+    "notSupported": "Skanowanie kodów kreskowych nie jest obsługiwane na tym urządzeniu",
+    "initFailed": "Nie udało się zainicjować skanera: {{error}}",
+    "startFailed": "Nie udało się rozpocząć skanowania: {{error}}",
+    "manualOnly": "Użyj ręcznego wprowadzania — aparat działa tylko na telefonie",
+    "pointCamera": "Skieruj aparat na kod kreskowy",
+    "scannerNotAvailable": "Skaner niedostępny",
+    "cameraOnlyMobile": "Aparat działa tylko na telefonie",
+    "manualEntry": "Wpisz kod kreskowy poniżej",
+    "manualPlaceholder": "Wpisz kod kreskowy",
+    "lookup": "Szukaj"
+  },
+  "ecodes": {
+    "title": "Referencja E‑kodów",
+    "sourceLabel": "Źródło:",
+    "importantNoteTitle": "Ważna uwaga:",
+    "importantNoteBody": "E‑kody oznaczone jako \"Wątpliwe\" mogą być halal lub haram w zależności od źródła. Zawsze weryfikuj u producentów lub instytucji halal.",
+    "items": {
+      "E120": { "name": "Karmin", "source": "Owady", "concern": "Pochodny z chrząszczy" },
+      "E441": { "name": "Żelatyna", "source": "Zwykle wieprzowina", "concern": "Sprawdź źródło" },
+      "E542": { "name": "Fosforan kostny", "source": "Kości zwierzęce", "concern": "Źródło nie‑halal" },
+      "E621": { "name": "MSG", "source": "Roślinne", "concern": "Zwykle halal" },
+      "E471": { "name": "Mono/Di‑glicerydy", "source": "Roślinne lub zwierzęce", "concern": "Sprawdź źródło" },
+      "E472e": { "name": "DATEM", "source": "Mieszane", "concern": "Sprawdź producenta" },
+      "E631": { "name": "Inozynian disodowy", "source": "Może być zwierzęce", "concern": "Zweryfikuj" },
+      "E627": { "name": "Guanylan disodowy", "source": "Może być zwierzęce", "concern": "Zweryfikuj" },
+      "E150d": { "name": "Barwnik karmelowy", "source": "Cukier", "concern": "Halal" },
+      "E338": { "name": "Kwas fosforowy", "source": "Minerał", "concern": "Halal" },
+      "E171": { "name": "Dwutlenek tytanu", "source": "Minerał", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Wątpliwe ?",
+    "unknown": "Nieznane"
+  },
+  "analysis": {
+    "no_ingredients": "Brak informacji o składnikach",
+    "contains": "Zawiera {{item}}",
+    "contains_haram_ecodes": "Zawiera haram E‑kody lub dodatki",
+    "contains_doubtful": "Zawiera wątpliwe składniki — sprawdź certyfikację",
+    "no_haram": "Nie wykryto składników haram"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Ubój certyfikowany halal",
+    "halal_certified_beef": "Wołowina certyfikowana halal",
+    "contains_pork": "Zawiera wieprzowinę",
+    "pure_dairy": "Czysty nabiał",
+    "may_contain_animal_rennet": "Może zawierać podpuszczkę zwierzęcą",
+    "vegetable_ingredients": "Składniki roślinne",
+    "pork_gelatin": "Żelatyna wieprzowa",
+    "no_animal_ingredients": "Brak składników zwierzęcych"
+  },
+  "ingredients": {
+    "chicken": "Kurczak",
+    "beef": "Wołowina",
+    "pork": "Wieprzowina",
+    "spices": "Przyprawy",
+    "milk": "Mleko",
+    "salt": "Sól",
+    "rennet": "Podpuszczka",
+    "potatoes": "Ziemniaki",
+    "oil": "Olej",
+    "sugar": "Cukier",
+    "gelatin": "Żelatyna",
+    "water": "Woda",
+    "not_available": "Niedostępne"
+  },
+  "health": {
+    "high_sugar": "Wysoka zawartość cukru ({{value}} g na 100 g)",
+    "low_sugar": "Niska zawartość cukru",
+    "high_salt": "Wysoka zawartość soli ({{value}} g na 100 g)",
+    "low_salt": "Niska zawartość soli",
+    "high_sat_fat": "Wysoka zawartość tłuszczów nasyconych ({{value}} g na 100 g)",
+    "good_fiber": "Dobre źródło błonnika ({{value}} g na 100 g)",
+    "high_protein": "Wysoka zawartość białka ({{value}} g na 100 g)",
+    "ultra_processed": "Żywność ultra‑przetworzona — ogranicz spożycie",
+    "minimally_processed": "Żywność minimalnie przetworzona",
+    "nutriscore": {
+      "excellent": "Doskonała jakość odżywcza",
+      "good": "Dobra jakość odżywcza",
+      "average": "Przeciętna jakość odżywcza",
+      "poor": "Słaba jakość odżywcza",
+      "very_poor": "Bardzo słaba jakość odżywcza"
+    }
+  }
+}

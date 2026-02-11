@@ -1,0 +1,167 @@
+{
+  "general": {
+    "appName": "PureBite Halal",
+    "search": "Caută",
+    "scan": "Scanează",
+    "language": "Limbă"
+  },
+  "searchBar": {
+    "subtitle": "Scanează sau caută milioane de produse",
+    "api": {
+      "auto": "✨ Auto (recomandat)",
+      "off": "🌍 Open Food Facts",
+      "spoonacular": "🥄 Spoonacular",
+      "local": "📦 Doar BD locală"
+    },
+    "apiStatus": {
+      "auto": "Căutare în toate sursele disponibile",
+      "off": "Căutare în Open Food Facts",
+      "spoonacular": "Căutare în API‑ul Spoonacular"
+    },
+    "placeholder": {
+      "any": "Caută un produs...",
+      "local": "Caută în baza locală..."
+    },
+    "buttons": {
+      "search": "Caută",
+      "scan": "Scanează"
+    }
+  },
+  "tabs": {
+    "search": "Căutare",
+    "ecodes": "E‑coduri",
+    "details": "Detalii"
+  },
+  "app": {
+    "recentSearches": "Căutări recente",
+    "searching_worldwide": "Căutare globală...",
+    "searching_local": "Căutare locală...",
+    "empty": {
+      "title": "Scanează sau caută",
+      "subtitle": "Scrie numele produsului sau codul de bare"
+    },
+    "apiBox": {
+      "realTitle": "✨ API real activ!",
+      "realTry": "Încearcă: Nutella, Oreo, Pepsi, Kit Kat",
+      "realBarcodes": "Sau coduri de bare: 3017620422003, 5000159484695",
+      "localTitle": "📦 Bază locală",
+      "localTry": "Încearcă: Lays, Haribo, Pui",
+      "localEnable": "Activează API‑ul real pentru milioane de produse!"
+    },
+    "noResults": "Nu s‑au găsit produse.",
+    "noResultsLocalHint": "Încearcă să activezi API‑ul real!",
+    "detailsEmpty": "Scanează sau caută pentru a vedea detaliile produsului",
+    "disclaimerTitle": "Declinare de responsabilitate:",
+    "disclaimerText": "Aplicația oferă o analiză automată pe baza ingredientelor și a datelor nutriționale. Verifică întotdeauna certificarea halal la producători și organisme halal de încredere. Informațiile de sănătate sunt doar orientative. Dacă ai dubii, consultă un savant islamic sau un profesionist medical.",
+    "barcodeNotFound": "Codul de bare {{barcode}} nu a fost găsit în baza de date."
+  },
+  "product": {
+    "healthAnalysis": "Analiză de sănătate",
+    "nutriScore": "Nutri‑Score",
+    "nutritionPer100g": "Nutriție per 100 g",
+    "calories": "Calorii",
+    "fat": "Grăsimi",
+    "carbs": "Carbohidrați",
+    "protein": "Proteine",
+    "sugar": "Zahăr",
+    "salt": "Sare",
+    "healthBenefits": "Beneficii pentru sănătate",
+    "healthConcerns": "Riscuri pentru sănătate",
+    "halalAnalysis": "Analiză halal:",
+    "ingredients": "Ingrediente:",
+    "eCodesFound": "E‑coduri găsite:",
+    "verifyManufacturer": "Verifică cu producătorul",
+    "shareResult": "Distribuie rezultatul",
+    "shareDialogTitle": "Distribuie acest produs",
+    "barcodeLabel": "Cod de bare"
+  },
+  "scanner": {
+    "title": "Scanează codul de bare",
+    "permissionDenied": "Permisiunea camerei a fost refuzată. Activează din setări.",
+    "notSupported": "Scanarea codului de bare nu este acceptată pe acest dispozitiv",
+    "initFailed": "Nu s‑a putut inițializa scanerul: {{error}}",
+    "startFailed": "Nu s‑a putut porni scanarea: {{error}}",
+    "manualOnly": "Folosește introducerea manuală — camera funcționează doar pe mobil",
+    "pointCamera": "Îndreaptă camera către codul de bare",
+    "scannerNotAvailable": "Scaner indisponibil",
+    "cameraOnlyMobile": "Camera funcționează doar pe mobil",
+    "manualEntry": "Introdu manual codul de bare mai jos",
+    "manualPlaceholder": "Introdu codul de bare",
+    "lookup": "Caută"
+  },
+  "ecodes": {
+    "title": "Referință E‑coduri",
+    "sourceLabel": "Sursă:",
+    "importantNoteTitle": "Notă importantă:",
+    "importantNoteBody": "E‑codurile marcate \"Îndoielnic\" pot fi halal sau haram în funcție de sursă. Verifică întotdeauna cu producătorul sau organismele halal.",
+    "items": {
+      "E120": { "name": "Carmin", "source": "Insecte", "concern": "Derivat din gândaci" },
+      "E441": { "name": "Gelatină", "source": "De obicei porc", "concern": "Verifică sursa" },
+      "E542": { "name": "Fosfat de os", "source": "Oase animale", "concern": "Sursă ne‑halal" },
+      "E621": { "name": "MSG", "source": "Pe bază vegetală", "concern": "De obicei halal" },
+      "E471": { "name": "Mono/di‑gliceride", "source": "Vegetal sau animal", "concern": "Verifică sursa" },
+      "E472e": { "name": "DATEM", "source": "Mixt", "concern": "Verifică producătorul" },
+      "E631": { "name": "Inozinat disodic", "source": "Poate fi animal", "concern": "Verifică" },
+      "E627": { "name": "Guanylat disodic", "source": "Poate fi animal", "concern": "Verifică" },
+      "E150d": { "name": "Culoare caramel", "source": "Zahăr", "concern": "Halal" },
+      "E338": { "name": "Acid fosforic", "source": "Mineral", "concern": "Halal" },
+      "E171": { "name": "Dioxid de titan", "source": "Mineral", "concern": "Halal" }
+    }
+  },
+  "status": {
+    "halal": "Halal ✓",
+    "haram": "Haram ✗",
+    "doubtful": "Îndoielnic ?",
+    "unknown": "Necunoscut"
+  },
+  "analysis": {
+    "no_ingredients": "Nu există informații despre ingrediente",
+    "contains": "Conține {{item}}",
+    "contains_haram_ecodes": "Conține E‑coduri sau aditivi haram",
+    "contains_doubtful": "Conține ingrediente îndoielnice — verifică certificarea",
+    "no_haram": "Nu s‑au detectat ingrediente haram"
+  },
+  "reasons": {
+    "halal_certified_slaughter": "Tăiere certificată halal",
+    "halal_certified_beef": "Vită certificată halal",
+    "contains_pork": "Conține porc",
+    "pure_dairy": "Lactate pure",
+    "may_contain_animal_rennet": "Poate conține cheag animal",
+    "vegetable_ingredients": "Ingrediente vegetale",
+    "pork_gelatin": "Gelatină de porc",
+    "no_animal_ingredients": "Fără ingrediente animale"
+  },
+  "ingredients": {
+    "chicken": "Pui",
+    "beef": "Vită",
+    "pork": "Porc",
+    "spices": "Condimente",
+    "milk": "Lapte",
+    "salt": "Sare",
+    "rennet": "Cheag",
+    "potatoes": "Cartofi",
+    "oil": "Ulei",
+    "sugar": "Zahăr",
+    "gelatin": "Gelatină",
+    "water": "Apă",
+    "not_available": "Indisponibil"
+  },
+  "health": {
+    "high_sugar": "Conținut ridicat de zahăr ({{value}} g per 100 g)",
+    "low_sugar": "Conținut scăzut de zahăr",
+    "high_salt": "Conținut ridicat de sare ({{value}} g per 100 g)",
+    "low_salt": "Conținut scăzut de sare",
+    "high_sat_fat": "Grăsimi saturate ridicate ({{value}} g per 100 g)",
+    "good_fiber": "Sursă bună de fibre ({{value}} g per 100 g)",
+    "high_protein": "Conținut ridicat de proteine ({{value}} g per 100 g)",
+    "ultra_processed": "Aliment ultraprocesat — limitați consumul",
+    "minimally_processed": "Aliment minim procesat",
+    "nutriscore": {
+      "excellent": "Calitate nutrițională excelentă",
+      "good": "Calitate nutrițională bună",
+      "average": "Calitate nutrițională medie",
+      "poor": "Calitate nutrițională slabă",
+      "very_poor": "Calitate nutrițională foarte slabă"
+    }
+  }
+}
