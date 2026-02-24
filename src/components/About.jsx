@@ -5,7 +5,7 @@ import { Browser } from '@capacitor/browser';
 
 export default function About({ onClose }) {
   const { t } = useTranslation();
-  const appVersion = '1.0.5';
+  const appVersion = '1.0.6';
   
   const openPrivacyPolicy = async () => {
     try {
