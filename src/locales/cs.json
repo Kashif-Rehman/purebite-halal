@@ -95,17 +95,61 @@
     "importantNoteTitle": "Důležitá poznámka:",
     "importantNoteBody": "E‑kódy označené jako \"Sporné\" mohou být halal nebo haram podle zdroje. Vždy ověřujte u výrobce nebo halal orgánů.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Hmyz", "concern": "Odvozeno z brouků" },
-      "E441": { "name": "Želatina", "source": "Obvykle vepřové", "concern": "Zkontrolujte zdroj" },
-      "E542": { "name": "Kostní fosfát", "source": "Zvířecí kosti", "concern": "Ne‑halal zdroj" },
-      "E621": { "name": "MSG", "source": "Rostlinný", "concern": "Obecně halal" },
-      "E471": { "name": "Mono/di‑glyceridy", "source": "Rostlinný nebo živočišný", "concern": "Zkontrolujte zdroj" },
-      "E472e": { "name": "DATEM", "source": "Smíšené", "concern": "Zkontrolujte výrobce" },
-      "E631": { "name": "Disodný inosinát", "source": "Může být živočišný", "concern": "Ověřit" },
-      "E627": { "name": "Disodný guanylát", "source": "Může být živočišný", "concern": "Ověřit" },
-      "E150d": { "name": "Karamelové barvivo", "source": "Cukr", "concern": "Halal" },
-      "E338": { "name": "Kyselina fosforečná", "source": "Minerál", "concern": "Halal" },
-      "E171": { "name": "Oxid titaničitý", "source": "Minerál", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Hmyz",
+        "concern": "Odvozeno z brouků"
+      },
+      "E441": {
+        "name": "Želatina",
+        "source": "Obvykle vepřové",
+        "concern": "Zkontrolujte zdroj"
+      },
+      "E542": {
+        "name": "Kostní fosfát",
+        "source": "Zvířecí kosti",
+        "concern": "Ne‑halal zdroj"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Rostlinný",
+        "concern": "Obecně halal"
+      },
+      "E471": {
+        "name": "Mono/di‑glyceridy",
+        "source": "Rostlinný nebo živočišný",
+        "concern": "Zkontrolujte zdroj"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Smíšené",
+        "concern": "Zkontrolujte výrobce"
+      },
+      "E631": {
+        "name": "Disodný inosinát",
+        "source": "Může být živočišný",
+        "concern": "Ověřit"
+      },
+      "E627": {
+        "name": "Disodný guanylát",
+        "source": "Může být živočišný",
+        "concern": "Ověřit"
+      },
+      "E150d": {
+        "name": "Karamelové barvivo",
+        "source": "Cukr",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Kyselina fosforečná",
+        "source": "Minerál",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Oxid titaničitý",
+        "source": "Minerál",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Špatná nutriční kvalita",
       "very_poor": "Velmi špatná nutriční kvalita"
     }
+  },
+  "about": {
+    "aboutTitle": "O této aplikaci",
+    "aboutText": "PureBite Halal pomáhá muslimům a uvědomělým spotřebitelům identifikovat halal produkty a informovaně si vybírat potraviny. Naskenujte čárové kódy nebo prohledejte miliony produktů a získejte okamžitou halal analýzu, informace o zdraví a informace o přísadách.",
+    "dataSourcesTitle": "Zdroje dat",
+    "privacyTitle": "Ochrana osobních údajů a zabezpečení",
+    "privacyLocalStorage": "Místní úložiště",
+    "privacyLocalStorageDesc": "Veškerá vaše historie vyhledávání a oblíbené položky jsou uloženy lokálně ve vašem zařízení. Vaše údaje nenahráváme, neshromažďujeme ani nesdílíme.",
+    "privacyCamera": "Povolení fotoaparátu",
+    "privacyCameraDesc": "Kamera se používá pouze pro snímání čárových kódů. Nezaznamenáváme, neukládáme ani nezpřístupňujeme snímky z kamer. Vaše skeny jsou zpracovávány lokálně.",
+    "privacyThirdParty": "Rozhraní API třetích stran",
+    "privacyThirdPartyDesc": "Při vyhledávání jsou dotazy odesílány do Open Food Facts a Spoonacular. Přečtěte si prosím jejich zásady ochrany osobních údajů na příslušných webových stránkách.",
+    "privacyRights": "Vaše práva",
+    "privacyRightsDesc": "Svá data můžete kdykoli smazat, zrušit oprávnění ke kameře nebo aplikaci odinstalovat. Při odinstalaci budou vaše data smazána.",
+    "readPrivacyPolicy": "Přečtěte si úplné zásady ochrany osobních údajů",
+    "acknowledgmentsTitle": "Poděkování",
+    "acknowledgmentsText": "Tato aplikace využívá data z Open Food Facts (databáze pro spolupráci) a Spoonacular API. Jsme vděčni těmto komunitám za zpřístupnění informací o potravinách všem.",
+    "communityTitle": "Řízené komunitou",
+    "communityText": "Pomozte zlepšit přesnost údajů o jídle tím, že přispějete do Open Food Facts. Společně můžeme usnadnit identifikaci halal potravin pro každého.",
+    "contactTitle": "Kontakt a podpora",
+    "contactText": "Máte dotazy, zpětnou vazbu nebo potřebujete podporu? Rádi bychom od vás slyšeli!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Důležité upozornění",
+    "disclaimerText": "Tato aplikace poskytuje automatizovanou analýzu založenou na složkách a nutričních datech. Vždy ověřte halal certifikaci u výrobců a důvěryhodných halal certifikačních orgánů. V případě pochybností se poraďte se znalými islámskými učenci nebo zdravotníky.",
+    "close": "Blízko"
   }
 }

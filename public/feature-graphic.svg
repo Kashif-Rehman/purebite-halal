@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="55%" stop-color="#0E7C66"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF6E6"/>
+      <stop offset="100%" stop-color="#FCE7C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <circle cx="130" cy="120" r="180" fill="url(#cream)" opacity="0.12"/>
+  <circle cx="930" cy="420" r="220" fill="url(#cream)" opacity="0.1"/>
+  <path d="M0 370 C 180 330, 320 420, 520 390 C 720 360, 860 430, 1024 400 L1024 500 L0 500 Z" fill="#0B5D55" opacity="0.55"/>
+
+  <g transform="translate(92,110)">
+    <rect x="0" y="0" width="150" height="150" rx="36" fill="url(#cream)"/>
+    <circle cx="75" cy="75" r="38" fill="#0F766E"/>
+    <path d="M60 78 L72 90 L98 64" fill="none" stroke="#FCE7C7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="'Georgia', 'Times New Roman', serif" fill="#FFF6E6">
+    <text x="270" y="190" font-size="52" font-weight="700">PureBite Halal</text>
+    <text x="270" y="245" font-size="44" font-weight="600">Food Checker</text>
+  </g>
+
+  <g font-family="'Trebuchet MS', 'Segoe UI', sans-serif" fill="#FCE7C7">
+    <text x="270" y="305" font-size="26" letter-spacing="0.5">Scan ingredients. Eat with confidence.</text>
+  </g>
+
+  <g font-family="'Trebuchet MS', 'Segoe UI', sans-serif" fill="#E7F6F0" opacity="0.95">
+    <text x="270" y="355" font-size="20">Barcode scan • E-code insight • Halal guidance</text>
+  </g>
+</svg>

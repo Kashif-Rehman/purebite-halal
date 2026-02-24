@@ -95,17 +95,61 @@
     "importantNoteTitle": "Ważna uwaga:",
     "importantNoteBody": "E‑kody oznaczone jako \"Wątpliwe\" mogą być halal lub haram w zależności od źródła. Zawsze weryfikuj u producentów lub instytucji halal.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Owady", "concern": "Pochodny z chrząszczy" },
-      "E441": { "name": "Żelatyna", "source": "Zwykle wieprzowina", "concern": "Sprawdź źródło" },
-      "E542": { "name": "Fosforan kostny", "source": "Kości zwierzęce", "concern": "Źródło nie‑halal" },
-      "E621": { "name": "MSG", "source": "Roślinne", "concern": "Zwykle halal" },
-      "E471": { "name": "Mono/Di‑glicerydy", "source": "Roślinne lub zwierzęce", "concern": "Sprawdź źródło" },
-      "E472e": { "name": "DATEM", "source": "Mieszane", "concern": "Sprawdź producenta" },
-      "E631": { "name": "Inozynian disodowy", "source": "Może być zwierzęce", "concern": "Zweryfikuj" },
-      "E627": { "name": "Guanylan disodowy", "source": "Może być zwierzęce", "concern": "Zweryfikuj" },
-      "E150d": { "name": "Barwnik karmelowy", "source": "Cukier", "concern": "Halal" },
-      "E338": { "name": "Kwas fosforowy", "source": "Minerał", "concern": "Halal" },
-      "E171": { "name": "Dwutlenek tytanu", "source": "Minerał", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Owady",
+        "concern": "Pochodny z chrząszczy"
+      },
+      "E441": {
+        "name": "Żelatyna",
+        "source": "Zwykle wieprzowina",
+        "concern": "Sprawdź źródło"
+      },
+      "E542": {
+        "name": "Fosforan kostny",
+        "source": "Kości zwierzęce",
+        "concern": "Źródło nie‑halal"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Roślinne",
+        "concern": "Zwykle halal"
+      },
+      "E471": {
+        "name": "Mono/Di‑glicerydy",
+        "source": "Roślinne lub zwierzęce",
+        "concern": "Sprawdź źródło"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Mieszane",
+        "concern": "Sprawdź producenta"
+      },
+      "E631": {
+        "name": "Inozynian disodowy",
+        "source": "Może być zwierzęce",
+        "concern": "Zweryfikuj"
+      },
+      "E627": {
+        "name": "Guanylan disodowy",
+        "source": "Może być zwierzęce",
+        "concern": "Zweryfikuj"
+      },
+      "E150d": {
+        "name": "Barwnik karmelowy",
+        "source": "Cukier",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Kwas fosforowy",
+        "source": "Minerał",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Dwutlenek tytanu",
+        "source": "Minerał",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Słaba jakość odżywcza",
       "very_poor": "Bardzo słaba jakość odżywcza"
     }
+  },
+  "about": {
+    "aboutTitle": "O tej aplikacji",
+    "aboutText": "PureBite Halal pomaga muzułmanom i świadomym konsumentom identyfikować produkty halal i dokonywać świadomych wyborów żywieniowych. Skanuj kody kreskowe lub przeszukuj miliony produktów, aby uzyskać natychmiastową analizę halal, statystyki zdrowotne i informacje o składnikach.",
+    "dataSourcesTitle": "Źródła danych",
+    "privacyTitle": "Prywatność i bezpieczeństwo",
+    "privacyLocalStorage": "Magazyn lokalny",
+    "privacyLocalStorageDesc": "Cała Twoja historia wyszukiwania i ulubione są przechowywane lokalnie na Twoim urządzeniu. Nie przesyłamy, nie gromadzimy ani nie udostępniamy Twoich danych.",
+    "privacyCamera": "Pozwolenie na kamerę",
+    "privacyCameraDesc": "Kamera służy wyłącznie do skanowania kodów kreskowych. Nie nagrywamy, nie przechowujemy ani nie uzyskujemy dostępu do obrazów z kamer. Twoje skany są przetwarzane lokalnie.",
+    "privacyThirdParty": "Interfejsy API innych firm",
+    "privacyThirdPartyDesc": "Podczas wyszukiwania zapytania są wysyłane do Open Food Facts i Spoonacular. Prosimy o zapoznanie się z ich polityką prywatności na odpowiednich stronach internetowych.",
+    "privacyRights": "Twoje prawa",
+    "privacyRightsDesc": "Możesz w każdej chwili usunąć swoje dane, cofnąć uprawnienia aparatu lub odinstalować aplikację. Twoje dane zostaną usunięte po odinstalowaniu.",
+    "readPrivacyPolicy": "Przeczytaj pełną Politykę prywatności",
+    "acknowledgmentsTitle": "Podziękowanie",
+    "acknowledgmentsText": "Ta aplikacja wykorzystuje dane z Open Food Facts (wspólna baza danych) i Spoonacular API. Jesteśmy wdzięczni tym społecznościom za udostępnienie wszystkim informacji na temat żywności.",
+    "communityTitle": "Kierowany przez społeczność",
+    "communityText": "Pomóż poprawić dokładność danych dotyczących żywności, przyczyniając się do powstania Open Food Facts. Razem możemy ułatwić wszystkim identyfikację żywności halal.",
+    "contactTitle": "Kontakt i wsparcie",
+    "contactText": "Masz pytania, uwagi lub potrzebujesz wsparcia? Bardzo chcielibyśmy usłyszeć od Ciebie!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Ważne zastrzeżenie",
+    "disclaimerText": "Ta aplikacja zapewnia automatyczną analizę na podstawie składników i danych odżywczych. Zawsze sprawdzaj certyfikację halal u producentów i zaufanych jednostek certyfikujących halal. W razie wątpliwości skonsultuj się z doświadczonymi islamskimi uczonymi lub pracownikami służby zdrowia.",
+    "close": "Zamknąć"
   }
 }

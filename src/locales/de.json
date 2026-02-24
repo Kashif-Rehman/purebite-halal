@@ -95,17 +95,61 @@
     "importantNoteTitle": "Wichtiger Hinweis:",
     "importantNoteBody": "E-Codes mit dem Status \"Zweifelhaft\" können je nach Herkunft halal oder haram sein. Immer mit Herstellern oder Halal-Zertifizierungsstellen prüfen.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Insekten", "concern": "Aus Käfern gewonnen" },
-      "E441": { "name": "Gelatine", "source": "Meist Schwein", "concern": "Quelle prüfen" },
-      "E542": { "name": "Knochenphosphat", "source": "Tierknochen", "concern": "Nicht-halale Quelle" },
-      "E621": { "name": "MSG", "source": "Pflanzlich", "concern": "In der Regel halal" },
-      "E471": { "name": "Mono-/Diglyceride", "source": "Pflanzlich oder tierisch", "concern": "Quelle prüfen" },
-      "E472e": { "name": "DATEM", "source": "Gemischt", "concern": "Hersteller prüfen" },
-      "E631": { "name": "Dinatriuminosinat", "source": "Kann tierisch sein", "concern": "Prüfen" },
-      "E627": { "name": "Dinatriumguanylat", "source": "Kann tierisch sein", "concern": "Prüfen" },
-      "E150d": { "name": "Zuckerkulör", "source": "Zucker", "concern": "Halal" },
-      "E338": { "name": "Phosphorsäure", "source": "Mineral", "concern": "Halal" },
-      "E171": { "name": "Titandioxid", "source": "Mineral", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Insekten",
+        "concern": "Aus Käfern gewonnen"
+      },
+      "E441": {
+        "name": "Gelatine",
+        "source": "Meist Schwein",
+        "concern": "Quelle prüfen"
+      },
+      "E542": {
+        "name": "Knochenphosphat",
+        "source": "Tierknochen",
+        "concern": "Nicht-halale Quelle"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Pflanzlich",
+        "concern": "In der Regel halal"
+      },
+      "E471": {
+        "name": "Mono-/Diglyceride",
+        "source": "Pflanzlich oder tierisch",
+        "concern": "Quelle prüfen"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Gemischt",
+        "concern": "Hersteller prüfen"
+      },
+      "E631": {
+        "name": "Dinatriuminosinat",
+        "source": "Kann tierisch sein",
+        "concern": "Prüfen"
+      },
+      "E627": {
+        "name": "Dinatriumguanylat",
+        "source": "Kann tierisch sein",
+        "concern": "Prüfen"
+      },
+      "E150d": {
+        "name": "Zuckerkulör",
+        "source": "Zucker",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Phosphorsäure",
+        "source": "Mineral",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titandioxid",
+        "source": "Mineral",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Schlechte Nährwertqualität",
       "very_poor": "Sehr schlechte Nährwertqualität"
     }
+  },
+  "about": {
+    "aboutTitle": "Über diese App",
+    "aboutText": "PureBite Halal hilft Muslimen und bewussten Verbraucherinnen und Verbrauchern, Halal-Produkte zu erkennen und informierte Lebensmittelentscheidungen zu treffen. Scannen Sie Barcodes oder durchsuchen Sie Millionen Produkte, um sofortige Halal-Analysen, Gesundheitsinformationen und Zutatenangaben zu erhalten.",
+    "dataSourcesTitle": "Datenquellen",
+    "privacyTitle": "Datenschutz und Sicherheit",
+    "privacyLocalStorage": "Lokale Speicherung",
+    "privacyLocalStorageDesc": "Ihr Suchverlauf und Ihre Favoriten werden lokal auf Ihrem Gerät gespeichert. Wir laden Ihre Daten nicht hoch, erfassen sie nicht und geben sie nicht weiter.",
+    "privacyCamera": "Kameraberechtigung",
+    "privacyCameraDesc": "Die Kamera wird nur zum Barcode-Scannen verwendet. Wir zeichnen keine Kamerabilder auf, speichern sie nicht und greifen nicht darauf zu. Ihre Scans werden lokal verarbeitet.",
+    "privacyThirdParty": "Drittanbieter-APIs",
+    "privacyThirdPartyDesc": "Bei Suchanfragen werden Anfragen an Open Food Facts und Spoonacular gesendet. Bitte lesen Sie deren Datenschutzerklärungen auf den jeweiligen Websites.",
+    "privacyRights": "Ihre Rechte",
+    "privacyRightsDesc": "Sie können Ihre Daten jederzeit löschen, die Kameraberechtigung widerrufen oder die App deinstallieren. Bei der Deinstallation werden Ihre Daten gelöscht.",
+    "readPrivacyPolicy": "Vollständige Datenschutzerklärung lesen",
+    "acknowledgmentsTitle": "Danksagungen",
+    "acknowledgmentsText": "Diese App verwendet Daten von Open Food Facts (eine kollaborative Datenbank) und der Spoonacular API. Wir danken diesen Communities dafür, Lebensmittelinformationen für alle zugänglich zu machen.",
+    "communityTitle": "Community-getrieben",
+    "communityText": "Helfen Sie mit, die Genauigkeit von Lebensmitteldaten durch Beiträge zu Open Food Facts zu verbessern. Gemeinsam können wir die Erkennung halal-konformer Lebensmittel für alle erleichtern.",
+    "contactTitle": "Kontakt und Support",
+    "contactText": "Fragen, Feedback oder Unterstützung benötigt? Wir freuen uns, von Ihnen zu hören!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Wichtiger Hinweis",
+    "disclaimerText": "Diese App bietet eine automatisierte Analyse auf Basis von Zutaten und Nährwertdaten. Überprüfen Sie Halal-Zertifizierungen immer bei Herstellern und vertrauenswürdigen Halal-Zertifizierungsstellen. Im Zweifel konsultieren Sie sachkundige islamische Gelehrte oder medizinisches Fachpersonal.",
+    "close": "Schließen"
   }
 }

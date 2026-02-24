@@ -19,3 +19,29 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Capacitor core
+-keep class com.getcapacitor.** { *; }
+-keep @com.getcapacitor.annotation.CapacitorPlugin class * { *; }
+-keepclassmembers class * {
+    @com.getcapacitor.annotation.* <methods>;
+}
+
+# ML Kit barcode scanning (Capacitor ML Kit plugin)
+-keep class com.google.mlkit.** { *; }
+-keep class com.google.android.gms.internal.** { *; }
+-keep class com.google.android.gms.vision.** { *; }
+-dontwarn com.google.mlkit.**
+-dontwarn com.google.android.gms.**
+
+# Capacitor ML Kit Barcode Scanning plugin
+-keep class com.capacitormlkit.barcodescanning.** { *; }
+
+# Keep JavaScript interface for Capacitor WebView bridge
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# AndroidX Camera (if used by barcode scanner)
+-keep class androidx.camera.** { *; }
+-dontwarn androidx.camera.**

@@ -95,17 +95,61 @@
     "importantNoteTitle": "Önemli not:",
     "importantNoteBody": "\"Şüpheli\" E‑kodları kaynağa göre helal veya haram olabilir. Her zaman üretici veya halal kuruluşlarıyla doğrulayın.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Böcekler", "concern": "Böceklerden türetilir" },
-      "E441": { "name": "Jelatin", "source": "Genellikle domuz", "concern": "Kaynağı kontrol edin" },
-      "E542": { "name": "Kemik fosfat", "source": "Hayvan kemikleri", "concern": "Helal olmayan kaynak" },
-      "E621": { "name": "MSG", "source": "Bitkisel", "concern": "Genellikle helal" },
-      "E471": { "name": "Mono/Di‑gliseritler", "source": "Bitkisel veya hayvansal", "concern": "Kaynağı doğrulayın" },
-      "E472e": { "name": "DATEM", "source": "Karışık", "concern": "Üreticiyi kontrol edin" },
-      "E631": { "name": "Disodyum inosinat", "source": "Hayvansal olabilir", "concern": "Doğrulayın" },
-      "E627": { "name": "Disodyum guanilat", "source": "Hayvansal olabilir", "concern": "Doğrulayın" },
-      "E150d": { "name": "Karamel rengi", "source": "Şeker", "concern": "Helal" },
-      "E338": { "name": "Fosforik asit", "source": "Mineral", "concern": "Helal" },
-      "E171": { "name": "Titanyum dioksit", "source": "Mineral", "concern": "Helal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Böcekler",
+        "concern": "Böceklerden türetilir"
+      },
+      "E441": {
+        "name": "Jelatin",
+        "source": "Genellikle domuz",
+        "concern": "Kaynağı kontrol edin"
+      },
+      "E542": {
+        "name": "Kemik fosfat",
+        "source": "Hayvan kemikleri",
+        "concern": "Helal olmayan kaynak"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Bitkisel",
+        "concern": "Genellikle helal"
+      },
+      "E471": {
+        "name": "Mono/Di‑gliseritler",
+        "source": "Bitkisel veya hayvansal",
+        "concern": "Kaynağı doğrulayın"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Karışık",
+        "concern": "Üreticiyi kontrol edin"
+      },
+      "E631": {
+        "name": "Disodyum inosinat",
+        "source": "Hayvansal olabilir",
+        "concern": "Doğrulayın"
+      },
+      "E627": {
+        "name": "Disodyum guanilat",
+        "source": "Hayvansal olabilir",
+        "concern": "Doğrulayın"
+      },
+      "E150d": {
+        "name": "Karamel rengi",
+        "source": "Şeker",
+        "concern": "Helal"
+      },
+      "E338": {
+        "name": "Fosforik asit",
+        "source": "Mineral",
+        "concern": "Helal"
+      },
+      "E171": {
+        "name": "Titanyum dioksit",
+        "source": "Mineral",
+        "concern": "Helal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Zayıf beslenme kalitesi",
       "very_poor": "Çok zayıf beslenme kalitesi"
     }
+  },
+  "about": {
+    "aboutTitle": "Bu Uygulama Hakkında",
+    "aboutText": "PureBite Halal, Müslümanların ve bilinçli tüketicilerin helal ürünleri belirlemesine ve daha doğru gıda tercihleri yapmasına yardımcı olur. Barkod tarayın veya milyonlarca üründe arama yaparak anında helal analizi, sağlık içgörüleri ve içerik bilgileri alın.",
+    "dataSourcesTitle": "Veri Kaynakları",
+    "privacyTitle": "Gizlilik ve Güvenlik",
+    "privacyLocalStorage": "Yerel Depolama",
+    "privacyLocalStorageDesc": "Arama geçmişiniz ve favorileriniz cihazınızda yerel olarak saklanır. Verilerinizi yüklemeyiz, toplamayız veya paylaşmayız.",
+    "privacyCamera": "Kamera İzni",
+    "privacyCameraDesc": "Kamera yalnızca barkod tarama için kullanılır. Kamera görüntülerini kaydetmeyiz, saklamayız veya erişmeyiz. Taramalarınız yerel olarak işlenir.",
+    "privacyThirdParty": "Üçüncü Taraf API'ler",
+    "privacyThirdPartyDesc": "Arama sırasında sorgular Open Food Facts ve Spoonacular'a gönderilir. Lütfen ilgili web sitelerindeki gizlilik politikalarını inceleyin.",
+    "privacyRights": "Haklarınız",
+    "privacyRightsDesc": "Verilerinizi istediğiniz zaman silebilir, kamera iznini geri alabilir veya uygulamayı kaldırabilirsiniz. Uygulamayı kaldırdığınızda verileriniz silinir.",
+    "readPrivacyPolicy": "Tam Gizlilik Politikasını Oku",
+    "acknowledgmentsTitle": "Teşekkürler",
+    "acknowledgmentsText": "Bu uygulama Open Food Facts (iş birliğine dayalı bir veritabanı) ve Spoonacular API verilerini kullanır. Gıda bilgilerini herkes için erişilebilir kılan bu topluluklara teşekkür ederiz.",
+    "communityTitle": "Topluluk Odaklı",
+    "communityText": "Open Food Facts'e katkıda bulunarak gıda verilerinin doğruluğunu artırmaya yardımcı olun. Birlikte helal gıda tespitini herkes için kolaylaştırabiliriz.",
+    "contactTitle": "İletişim ve Destek",
+    "contactText": "Sorularınız, geri bildiriminiz veya desteğe ihtiyacınız mı var? Sizden haber almak isteriz!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Önemli Uyarı",
+    "disclaimerText": "Bu uygulama içerik ve beslenme verilerine dayalı otomatik analiz sağlar. Helal sertifikasını her zaman üreticiler ve güvenilir helal sertifikasyon kuruluşlarıyla doğrulayın. Şüphe durumunda bilgili İslam alimlerine veya sağlık uzmanlarına danışın.",
+    "close": "Kapat"
   }
 }

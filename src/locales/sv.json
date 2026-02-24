@@ -95,17 +95,61 @@
     "importantNoteTitle": "Viktigt:",
     "importantNoteBody": "E‑koder markerade som \"Tveksamma\" kan vara halal eller haram beroende på källa. Verifiera alltid med tillverkare eller halal‑organ.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Insekter", "concern": "Framställt från skalbaggar" },
-      "E441": { "name": "Gelatin", "source": "Vanligen fläsk", "concern": "Kontrollera källa" },
-      "E542": { "name": "Benfosfat", "source": "Djurben", "concern": "Icke‑halal källa" },
-      "E621": { "name": "MSG", "source": "Växtbaserad", "concern": "Vanligtvis halal" },
-      "E471": { "name": "Mono/di‑glycerider", "source": "Växt eller animalisk", "concern": "Kontrollera källa" },
-      "E472e": { "name": "DATEM", "source": "Blandad", "concern": "Kontrollera tillverkare" },
-      "E631": { "name": "Dinatriuminosinat", "source": "Kan vara animalisk", "concern": "Verifiera" },
-      "E627": { "name": "Dinatriumguanylat", "source": "Kan vara animalisk", "concern": "Verifiera" },
-      "E150d": { "name": "Karamellfärg", "source": "Socker", "concern": "Halal" },
-      "E338": { "name": "Fosforsyra", "source": "Mineral", "concern": "Halal" },
-      "E171": { "name": "Titandioxid", "source": "Mineral", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Insekter",
+        "concern": "Framställt från skalbaggar"
+      },
+      "E441": {
+        "name": "Gelatin",
+        "source": "Vanligen fläsk",
+        "concern": "Kontrollera källa"
+      },
+      "E542": {
+        "name": "Benfosfat",
+        "source": "Djurben",
+        "concern": "Icke‑halal källa"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Växtbaserad",
+        "concern": "Vanligtvis halal"
+      },
+      "E471": {
+        "name": "Mono/di‑glycerider",
+        "source": "Växt eller animalisk",
+        "concern": "Kontrollera källa"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Blandad",
+        "concern": "Kontrollera tillverkare"
+      },
+      "E631": {
+        "name": "Dinatriuminosinat",
+        "source": "Kan vara animalisk",
+        "concern": "Verifiera"
+      },
+      "E627": {
+        "name": "Dinatriumguanylat",
+        "source": "Kan vara animalisk",
+        "concern": "Verifiera"
+      },
+      "E150d": {
+        "name": "Karamellfärg",
+        "source": "Socker",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Fosforsyra",
+        "source": "Mineral",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titandioxid",
+        "source": "Mineral",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Dålig näringskvalitet",
       "very_poor": "Mycket dålig näringskvalitet"
     }
+  },
+  "about": {
+    "aboutTitle": "Om denna app",
+    "aboutText": "PureBite Halal hjälper muslimer och medvetna konsumenter att identifiera halalprodukter och göra välgrundade matval. Skanna streckkoder eller sök i miljontals produkter för att få omedelbar halalanalys, hälsoinsikter och ingrediensinformation.",
+    "dataSourcesTitle": "Datakällor",
+    "privacyTitle": "Sekretess och säkerhet",
+    "privacyLocalStorage": "Lokal förvaring",
+    "privacyLocalStorageDesc": "All din sökhistorik och favoriter lagras lokalt på din enhet. Vi laddar inte upp, samlar in eller delar din data.",
+    "privacyCamera": "Kameratillstånd",
+    "privacyCameraDesc": "Kameran används endast för streckkodsskanning. Vi spelar inte in, lagrar eller kommer åt kamerabilder. Dina skanningar bearbetas lokalt.",
+    "privacyThirdParty": "Tredje parts API:er",
+    "privacyThirdPartyDesc": "Vid sökning skickas frågor till Open Food Facts och Spoonacular. Läs deras sekretesspolicyer på deras respektive webbplatser.",
+    "privacyRights": "Dina rättigheter",
+    "privacyRightsDesc": "Du kan radera din data när som helst, återkalla kameratillstånd eller avinstallera appen. Din data raderas när du avinstallerar.",
+    "readPrivacyPolicy": "Läs hela sekretesspolicyn",
+    "acknowledgmentsTitle": "Erkännanden",
+    "acknowledgmentsText": "Denna app använder data från Open Food Facts (en samarbetsdatabas) och Spoonacular API. Vi är tacksamma mot dessa samhällen för att de gör matinformation tillgänglig för alla.",
+    "communityTitle": "Gemenskapsdriven",
+    "communityText": "Hjälp till att förbättra matdatanoggrannheten genom att bidra till Open Food Facts. Tillsammans kan vi göra identifiering av halalmat lättare för alla.",
+    "contactTitle": "Kontakt & Support",
+    "contactText": "Har du frågor, feedback eller behöver du stöd? Vi vill gärna höra från dig!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Viktig ansvarsfriskrivning",
+    "disclaimerText": "Denna app ger automatisk analys baserad på ingredienser och näringsdata. Verifiera alltid halalcertifiering med tillverkare och betrodda halalcertifieringsorgan. När du är osäker, rådfråga kunniga islamiska forskare eller sjukvårdspersonal.",
+    "close": "Nära"
   }
 }

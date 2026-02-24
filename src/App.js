@@ -70,19 +70,31 @@ export default function App() {
     if (savedFavorites) setFavorites(savedFavorites);
   };
 
-  const handleSearch = async () => {
-    if (!searchQuery.trim()) {
+  const handleSearch = async (queryOverride) => {
+    const submittedQuery = (queryOverride ?? searchQuery).trim();
+    console.log('=== SEARCH FLOW START ===');
+    console.log('QueryOverride:', queryOverride);
+    console.log('SearchQuery State:', searchQuery);
+    console.log('Submitted Query:', submittedQuery);
+    console.log('API Source:', apiSource);
+
+    if (!submittedQuery) {
+      console.log('Empty query, clearing results');
       setSearchResults([]);
       return;
     }
 
     setIsLoading(true);
-    const results = await searchProducts(searchQuery, apiSource);
+    console.log('Calling searchProducts with:', submittedQuery, apiSource);
+    const results = await searchProducts(submittedQuery, apiSource);
+    console.log('Results received from searchProducts:', results.length, 'items');
+    console.log('Result names:', results.map(r => r.name));
     setSearchResults(results);
     setIsLoading(false);
+    console.log('=== SEARCH FLOW END ===')
 
     // Update search history
-    const newHistory = [searchQuery, ...searchHistory.filter(h => h !== searchQuery)].slice(0, 10);
+    const newHistory = [submittedQuery, ...searchHistory.filter(h => h !== submittedQuery)].slice(0, 10);
     setSearchHistory(newHistory);
   };
 
@@ -173,7 +185,7 @@ export default function App() {
                         key={idx}
                         onClick={() => {
                           setSearchQuery(query);
-                          setTimeout(() => handleSearch(), 0);
+                          setTimeout(() => handleSearch(query), 0);
                         }}
                         style={{
                           padding: '6px 16px',

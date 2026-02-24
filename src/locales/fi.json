@@ -95,17 +95,61 @@
     "importantNoteTitle": "Tärkeä huomautus:",
     "importantNoteBody": "\"Epävarma\"‑merkityt E‑koodit voivat olla halal tai haram lähteestä riippuen. Varmista aina valmistajalta tai halal‑tahoilta.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Hyönteiset", "concern": "Johdettu kovakuoriaisista" },
-      "E441": { "name": "Gelatiini", "source": "Yleensä sianliha", "concern": "Tarkista lähde" },
-      "E542": { "name": "Luufosfaatti", "source": "Eläinten luut", "concern": "Ei‑halal‑lähde" },
-      "E621": { "name": "MSG", "source": "Kasvipohjainen", "concern": "Yleensä halal" },
-      "E471": { "name": "Mono/di‑glyseridit", "source": "Kasvi tai eläin", "concern": "Tarkista lähde" },
-      "E472e": { "name": "DATEM", "source": "Sekoitettu", "concern": "Tarkista valmistaja" },
-      "E631": { "name": "Dinatriuminosinaatti", "source": "Voi olla eläinperäinen", "concern": "Varmista" },
-      "E627": { "name": "Dinatriumguanylaatti", "source": "Voi olla eläinperäinen", "concern": "Varmista" },
-      "E150d": { "name": "Karamelliväri", "source": "Sokeri", "concern": "Halal" },
-      "E338": { "name": "Fosforihappo", "source": "Mineraali", "concern": "Halal" },
-      "E171": { "name": "Titaanidioksidi", "source": "Mineraali", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Hyönteiset",
+        "concern": "Johdettu kovakuoriaisista"
+      },
+      "E441": {
+        "name": "Gelatiini",
+        "source": "Yleensä sianliha",
+        "concern": "Tarkista lähde"
+      },
+      "E542": {
+        "name": "Luufosfaatti",
+        "source": "Eläinten luut",
+        "concern": "Ei‑halal‑lähde"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Kasvipohjainen",
+        "concern": "Yleensä halal"
+      },
+      "E471": {
+        "name": "Mono/di‑glyseridit",
+        "source": "Kasvi tai eläin",
+        "concern": "Tarkista lähde"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Sekoitettu",
+        "concern": "Tarkista valmistaja"
+      },
+      "E631": {
+        "name": "Dinatriuminosinaatti",
+        "source": "Voi olla eläinperäinen",
+        "concern": "Varmista"
+      },
+      "E627": {
+        "name": "Dinatriumguanylaatti",
+        "source": "Voi olla eläinperäinen",
+        "concern": "Varmista"
+      },
+      "E150d": {
+        "name": "Karamelliväri",
+        "source": "Sokeri",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Fosforihappo",
+        "source": "Mineraali",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titaanidioksidi",
+        "source": "Mineraali",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Huono ravitsemuslaatu",
       "very_poor": "Erittäin huono ravitsemuslaatu"
     }
+  },
+  "about": {
+    "aboutTitle": "Tietoja tästä sovelluksesta",
+    "aboutText": "PureBite Halal auttaa muslimeja ja tietoisia kuluttajia tunnistamaan halal-tuotteet ja tekemään tietoisia ruokavalintoja. Skannaa viivakoodeja tai hae miljoonista tuotteista saadaksesi välittömän halal-analyysin, terveystietoja ja ainesosia.",
+    "dataSourcesTitle": "Tietolähteet",
+    "privacyTitle": "Yksityisyys ja turvallisuus",
+    "privacyLocalStorage": "Paikallinen tallennustila",
+    "privacyLocalStorageDesc": "Kaikki hakuhistoriasi ja suosikkisi tallennetaan paikallisesti laitteellesi. Emme lataa, kerää tai jaa tietojasi.",
+    "privacyCamera": "Kameran lupa",
+    "privacyCameraDesc": "Kameraa käytetään vain viivakoodin skannaukseen. Emme tallenna, tallenna tai käytä kamerakuvia. Skannaukset käsitellään paikallisesti.",
+    "privacyThirdParty": "Kolmannen osapuolen sovellusliittymät",
+    "privacyThirdPartyDesc": "Haun yhteydessä kyselyt lähetetään Open Food Factsiin ja Spoonaculariin. Tutustu heidän tietosuojakäytäntöihinsä heidän verkkosivustoillaan.",
+    "privacyRights": "Sinun oikeutesi",
+    "privacyRightsDesc": "Voit poistaa tietosi milloin tahansa, peruuttaa kameran käyttöoikeuden tai poistaa sovelluksen. Tietosi poistetaan, kun poistat asennuksen.",
+    "readPrivacyPolicy": "Lue koko tietosuojakäytäntö",
+    "acknowledgmentsTitle": "Kiitokset",
+    "acknowledgmentsText": "Tämä sovellus käyttää tietoja Open Food Factsista (yhteistyötietokanta) ja Spoonacular API:sta. Olemme kiitollisia näille yhteisöille siitä, että ruokatiedot ovat kaikkien saatavilla.",
+    "communityTitle": "Yhteisölähtöinen",
+    "communityText": "Auta parantamaan ruokatietojen tarkkuutta osallistumalla Open Food Factsiin. Yhdessä voimme tehdä halal-ruoan tunnistamisesta helpompaa kaikille.",
+    "contactTitle": "Ota yhteyttä ja tuki",
+    "contactText": "Onko sinulla kysyttävää, palautetta tai tarvitsetko tukea? Haluaisimme kuulla sinusta!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Tärkeä vastuuvapauslauseke",
+    "disclaimerText": "Tämä sovellus tarjoaa automaattisen analyysin ainesosien ja ravintoarvotietojen perusteella. Tarkista aina halal-sertifiointi valmistajilta ja luotettavilta halal-sertifiointielimiltä. Jos olet epävarma, ota yhteyttä asiantunteviin islamitutkijoihin tai terveydenhuollon ammattilaisiin.",
+    "close": "Lähellä"
   }
 }

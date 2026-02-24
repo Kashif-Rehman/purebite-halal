@@ -95,17 +95,61 @@
     "importantNoteTitle": "Vigtig note:",
     "importantNoteBody": "E‑koder markeret som \"Tvivlsom\" kan være halal eller haram afhængigt af kilden. Verificér altid hos producenter eller halal‑organer.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Insekter", "concern": "Udvundet fra biller" },
-      "E441": { "name": "Gelatine", "source": "Oftest svinekød", "concern": "Tjek kilde" },
-      "E542": { "name": "Benfosfat", "source": "Dyreknogler", "concern": "Ikke‑halal kilde" },
-      "E621": { "name": "MSG", "source": "Plantebaseret", "concern": "Generelt halal" },
-      "E471": { "name": "Mono/di‑glycerider", "source": "Plante eller animalsk", "concern": "Tjek kilde" },
-      "E472e": { "name": "DATEM", "source": "Blandet", "concern": "Tjek producent" },
-      "E631": { "name": "Dinatriuminosinat", "source": "Kan være animalsk", "concern": "Verificer" },
-      "E627": { "name": "Dinatriumguanylat", "source": "Kan være animalsk", "concern": "Verificer" },
-      "E150d": { "name": "Karamelfarve", "source": "Sukker", "concern": "Halal" },
-      "E338": { "name": "Fosforsyre", "source": "Mineral", "concern": "Halal" },
-      "E171": { "name": "Titandioxid", "source": "Mineral", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Insekter",
+        "concern": "Udvundet fra biller"
+      },
+      "E441": {
+        "name": "Gelatine",
+        "source": "Oftest svinekød",
+        "concern": "Tjek kilde"
+      },
+      "E542": {
+        "name": "Benfosfat",
+        "source": "Dyreknogler",
+        "concern": "Ikke‑halal kilde"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Plantebaseret",
+        "concern": "Generelt halal"
+      },
+      "E471": {
+        "name": "Mono/di‑glycerider",
+        "source": "Plante eller animalsk",
+        "concern": "Tjek kilde"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Blandet",
+        "concern": "Tjek producent"
+      },
+      "E631": {
+        "name": "Dinatriuminosinat",
+        "source": "Kan være animalsk",
+        "concern": "Verificer"
+      },
+      "E627": {
+        "name": "Dinatriumguanylat",
+        "source": "Kan være animalsk",
+        "concern": "Verificer"
+      },
+      "E150d": {
+        "name": "Karamelfarve",
+        "source": "Sukker",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Fosforsyre",
+        "source": "Mineral",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titandioxid",
+        "source": "Mineral",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Dårlig ernæringskvalitet",
       "very_poor": "Meget dårlig ernæringskvalitet"
     }
+  },
+  "about": {
+    "aboutTitle": "Om denne app",
+    "aboutText": "PureBite Halal hjælper muslimer og bevidste forbrugere med at identificere halalprodukter og træffe informerede madvalg. Scan stregkoder, eller søg i millioner af produkter for at få øjeblikkelig halalanalyse, sundhedsindsigt og ingrediensoplysninger.",
+    "dataSourcesTitle": "Datakilder",
+    "privacyTitle": "Privatliv og sikkerhed",
+    "privacyLocalStorage": "Lokal opbevaring",
+    "privacyLocalStorageDesc": "Al din søgehistorik og dine favoritter gemmes lokalt på din enhed. Vi uploader, indsamler eller deler ikke dine data.",
+    "privacyCamera": "Kameratilladelse",
+    "privacyCameraDesc": "Kameraet bruges kun til stregkodescanning. Vi optager, gemmer eller tilgår ikke kamerabilleder. Dine scanninger behandles lokalt.",
+    "privacyThirdParty": "Tredjeparts API'er",
+    "privacyThirdPartyDesc": "Ved søgning sendes forespørgsler til Open Food Facts og Spoonacular. Gennemgå venligst deres privatlivspolitikker på deres respektive websteder.",
+    "privacyRights": "Dine rettigheder",
+    "privacyRightsDesc": "Du kan til enhver tid slette dine data, tilbagekalde kameratilladelse eller afinstallere appen. Dine data slettes, når du afinstallerer.",
+    "readPrivacyPolicy": "Læs den fulde privatlivspolitik",
+    "acknowledgmentsTitle": "Anerkendelser",
+    "acknowledgmentsText": "Denne app bruger data fra Open Food Facts (en samarbejdsdatabase) og Spoonacular API. Vi er taknemmelige over for disse samfund for at gøre madinformation tilgængelig for alle.",
+    "communityTitle": "Fællesskabsdrevet",
+    "communityText": "Hjælp med at forbedre fødevaredatanøjagtigheden ved at bidrage til Open Food Facts. Sammen kan vi gøre halal-fødevareidentifikation nemmere for alle.",
+    "contactTitle": "Kontakt & Support",
+    "contactText": "Har du spørgsmål, feedback eller brug for support? Vi vil meget gerne høre fra dig!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Vigtig ansvarsfraskrivelse",
+    "disclaimerText": "Denne app giver automatisk analyse baseret på ingredienser og ernæringsdata. Bekræft altid halal-certificering med producenter og betroede halal-certificeringsorganer. Når du er i tvivl, rådfør dig med kyndige islamiske lærde eller sundhedspersonale.",
+    "close": "Tæt"
   }
 }

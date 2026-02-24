@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Search, Camera, Globe, Zap, Loader } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -14,6 +14,77 @@ export default function SearchBar({
   setLanguage
 }) {
   const { t } = useTranslation();
+  const [openMenu, setOpenMenu] = useState(null);
+  const apiMenuRef = useRef(null);
+  const languageMenuRef = useRef(null);
+
+  const apiOptions = useMemo(() => ([
+    { value: 'auto', label: t('searchBar.api.auto') },
+    { value: 'off', label: t('searchBar.api.off') },
+    { value: 'spoonacular', label: t('searchBar.api.spoonacular') },
+    { value: 'local', label: t('searchBar.api.local') }
+  ]), [t]);
+
+  const languageOptions = useMemo(() => ([
+    { value: 'en', label: 'English' },
+    { value: 'es', label: 'Español' },
+    { value: 'de', label: 'Deutsch' },
+    { value: 'ar', label: 'العربية' },
+    { value: 'ur', label: 'اردو' },
+    { value: 'fr', label: 'Français' },
+    { value: 'it', label: 'Italiano' },
+    { value: 'nl', label: 'Nederlands' },
+    { value: 'pt', label: 'Português' },
+    { value: 'ru', label: 'Русский' },
+    { value: 'tr', label: 'Türkçe' },
+    { value: 'pl', label: 'Polski' },
+    { value: 'el', label: 'Ελληνικά' },
+    { value: 'sv', label: 'Svenska' },
+    { value: 'no', label: 'Norsk' },
+    { value: 'da', label: 'Dansk' },
+    { value: 'fi', label: 'Suomi' },
+    { value: 'ro', label: 'Română' },
+    { value: 'cs', label: 'Čeština' },
+    { value: 'hu', label: 'Magyar' },
+    { value: 'uk', label: 'Українська' },
+    { value: 'bg', label: 'Български' },
+    { value: 'sr', label: 'Srpski' },
+    { value: 'hi', label: 'हिन्दी' },
+    { value: 'bn', label: 'বাংলা' },
+    { value: 'id', label: 'Bahasa Indonesia' },
+    { value: 'ms', label: 'Bahasa Melayu' },
+    { value: 'th', label: 'ไทย' },
+    { value: 'vi', label: 'Tiếng Việt' }
+  ]), []);
+
+  const selectedApiLabel = useMemo(
+    () => apiOptions.find(option => option.value === apiSource)?.label || apiOptions[0].label,
+    [apiOptions, apiSource]
+  );
+
+  const selectedLanguageLabel = useMemo(
+    () => languageOptions.find(option => option.value === language)?.label || languageOptions[0].label,
+    [languageOptions, language]
+  );
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      const clickedApi = apiMenuRef.current?.contains(event.target);
+      const clickedLanguage = languageMenuRef.current?.contains(event.target);
+
+      if (!clickedApi && !clickedLanguage) {
+        setOpenMenu(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('touchstart', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('touchstart', handleOutsideClick);
+    };
+  }, []);
 
   return (
     <div style={{
@@ -46,36 +117,82 @@ export default function SearchBar({
           justifyContent: 'center',
           gap: '8px'
         }}>
-          <div style={{
+          <div ref={apiMenuRef} style={{
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
-            background: '#f3f4f6',
+            background: '#ecfdf5',
             borderRadius: '12px',
-            padding: '4px 12px',
-            border: '1px solid #e5e7eb'
+            padding: '6px 12px',
+            border: '1.5px solid #10b981'
           }}>
-            <Globe size={16} style={{ color: '#4b5563', marginRight: '8px' }} />
-            <select
-              value={apiSource}
-              onChange={(e) => setApiSource(e.target.value)}
+            <Zap size={16} style={{ color: '#10b981', marginRight: '8px' }} />
+            <button
+              type="button"
+              onClick={() => setOpenMenu(openMenu === 'api' ? null : 'api')}
               style={{
-                appearance: 'none',
                 background: 'transparent',
                 border: 'none',
-                fontSize: '14px',
+                fontSize: '13px',
                 fontWeight: '600',
-                color: '#374151',
+                color: '#065f46',
                 paddingRight: '24px',
                 cursor: 'pointer',
-                outline: 'none'
+                outline: 'none',
+                textAlign: 'left'
               }}
             >
-              <option value="auto">{t('searchBar.api.auto')}</option>
-              <option value="off">{t('searchBar.api.off')}</option>
-              <option value="spoonacular">{t('searchBar.api.spoonacular')}</option>
-              <option value="local">{t('searchBar.api.local')}</option>
-            </select>
+              {selectedApiLabel}
+            </button>
+            <Zap size={14} style={{ 
+              position: 'absolute', 
+              right: '8px', 
+              color: '#10b981', 
+              pointerEvents: 'none',
+              opacity: 0.7 
+            }} />
+
+            {openMenu === 'api' && (
+              <div style={{
+                position: 'absolute',
+                top: 'calc(100% + 6px)',
+                left: 0,
+                right: 0,
+                maxHeight: '180px',
+                overflowY: 'auto',
+                background: '#ecfdf5',
+                border: '1.5px solid #10b981',
+                borderRadius: '10px',
+                boxShadow: '0 8px 16px rgba(0,0,0,0.15)',
+                zIndex: 20,
+                padding: '4px'
+              }}>
+                {apiOptions.map(option => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => {
+                      setApiSource(option.value);
+                      setOpenMenu(null);
+                    }}
+                    style={{
+                      width: '100%',
+                      border: 'none',
+                      borderRadius: '8px',
+                      background: apiSource === option.value ? '#10b981' : 'transparent',
+                      color: apiSource === option.value ? 'white' : '#065f46',
+                      textAlign: 'left',
+                      padding: '8px 10px',
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -87,56 +204,84 @@ export default function SearchBar({
           justifyContent: 'center',
           gap: '8px'
         }}>
-          <span style={{ fontSize: '12px', color: '#6b7280', fontWeight: 600 }}>
-            {t('general.language')}
-          </span>
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            style={{
-              appearance: 'none',
-              background: '#f9fafb',
-              border: '1px solid #e5e7eb',
-              borderRadius: '8px',
-              fontSize: '12px',
-              fontWeight: '600',
-              color: '#374151',
-              padding: '4px 10px',
-              cursor: 'pointer',
-              outline: 'none'
-            }}
-            aria-label={t('general.language')}
-          >
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ar">العربية</option>
-            <option value="ur">اردو</option>
-            <option value="fr">Français</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="pt">Português</option>
-            <option value="ru">Русский</option>
-            <option value="tr">Türkçe</option>
-            <option value="pl">Polski</option>
-            <option value="el">Ελληνικά</option>
-            <option value="sv">Svenska</option>
-            <option value="no">Norsk</option>
-            <option value="da">Dansk</option>
-            <option value="fi">Suomi</option>
-            <option value="ro">Română</option>
-            <option value="cs">Čeština</option>
-            <option value="hu">Magyar</option>
-            <option value="uk">Українська</option>
-            <option value="bg">Български</option>
-            <option value="sr">Srpski</option>
-            <option value="hi">हिन्दी</option>
-            <option value="bn">বাংলা</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="ms">Bahasa Melayu</option>
-            <option value="th">ไทย</option>
-            <option value="vi">Tiếng Việt</option>
-          </select>
+          <div ref={languageMenuRef} style={{
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            background: '#ecfdf5',
+            borderRadius: '12px',
+            border: '1.5px solid #10b981',
+            padding: '6px 12px'
+          }}>
+            <Globe size={16} style={{ color: '#10b981', marginRight: '8px' }} />
+            <button
+              type="button"
+              onClick={() => setOpenMenu(openMenu === 'language' ? null : 'language')}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                fontSize: '13px',
+                fontWeight: '600',
+                color: '#065f46',
+                paddingRight: '24px',
+                cursor: 'pointer',
+                outline: 'none',
+                textAlign: 'left'
+              }}
+              aria-label={t('general.language')}
+            >
+              {selectedLanguageLabel}
+            </button>
+            <Globe size={14} style={{ 
+              position: 'absolute', 
+              right: '8px', 
+              color: '#10b981', 
+              pointerEvents: 'none',
+              opacity: 0.7 
+            }} />
+
+            {openMenu === 'language' && (
+              <div style={{
+                position: 'absolute',
+                top: 'calc(100% + 6px)',
+                left: 0,
+                right: 0,
+                maxHeight: '220px',
+                overflowY: 'auto',
+                background: '#ecfdf5',
+                border: '1.5px solid #10b981',
+                borderRadius: '10px',
+                boxShadow: '0 8px 16px rgba(0,0,0,0.15)',
+                zIndex: 20,
+                padding: '4px'
+              }}>
+                {languageOptions.map(option => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => {
+                      setLanguage(option.value);
+                      setOpenMenu(null);
+                    }}
+                    style={{
+                      width: '100%',
+                      border: 'none',
+                      borderRadius: '8px',
+                      background: language === option.value ? '#10b981' : 'transparent',
+                      color: language === option.value ? 'white' : '#065f46',
+                      textAlign: 'left',
+                      padding: '8px 10px',
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {apiSource !== 'local' && (
@@ -195,7 +340,12 @@ export default function SearchBar({
             placeholder={apiSource !== 'local' ? t('searchBar.placeholder.any') : t('searchBar.placeholder.local')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && onSearch()}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                console.log('[SearchBar] Enter pressed, input value:', e.currentTarget.value);
+                onSearch(e.currentTarget.value);
+              }
+            }}
             style={{
               width: '100%',
               paddingLeft: '44px',
@@ -213,7 +363,10 @@ export default function SearchBar({
           />
         </div>
         <button
-          onClick={onSearch}
+          onClick={() => {
+            console.log('[SearchBar] Search button clicked, searchQuery state:', searchQuery);
+            onSearch(searchQuery);
+          }}
           style={{
             background: '#10b981',
             color: 'white',

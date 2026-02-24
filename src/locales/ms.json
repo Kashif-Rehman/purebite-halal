@@ -95,17 +95,61 @@
     "importantNoteTitle": "Nota penting:",
     "importantNoteBody": "E‑kod yang ditanda \"Meragukan\" boleh halal atau haram bergantung pada sumber. Sentiasa sahkan dengan pengeluar atau badan halal.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Serangga", "concern": "Diperolehi dari kumbang" },
-      "E441": { "name": "Gelatin", "source": "Biasanya babi", "concern": "Semak sumbernya" },
-      "E542": { "name": "Fosfat tulang", "source": "Tulang haiwan", "concern": "Sumber bukan halal" },
-      "E621": { "name": "MSG", "source": "Tumbuhan", "concern": "Biasanya halal" },
-      "E471": { "name": "Mono/di‑gliserida", "source": "Tumbuhan atau haiwan", "concern": "Semak sumbernya" },
-      "E472e": { "name": "DATEM", "source": "Campuran", "concern": "Semak pengeluar" },
-      "E631": { "name": "Dinatrium inosinat", "source": "Mungkin haiwan", "concern": "Sahkan" },
-      "E627": { "name": "Dinatrium guanilat", "source": "Mungkin haiwan", "concern": "Sahkan" },
-      "E150d": { "name": "Warna karamel", "source": "Gula", "concern": "Halal" },
-      "E338": { "name": "Asid fosforik", "source": "Mineral", "concern": "Halal" },
-      "E171": { "name": "Titanium dioksida", "source": "Mineral", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Serangga",
+        "concern": "Diperolehi dari kumbang"
+      },
+      "E441": {
+        "name": "Gelatin",
+        "source": "Biasanya babi",
+        "concern": "Semak sumbernya"
+      },
+      "E542": {
+        "name": "Fosfat tulang",
+        "source": "Tulang haiwan",
+        "concern": "Sumber bukan halal"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Tumbuhan",
+        "concern": "Biasanya halal"
+      },
+      "E471": {
+        "name": "Mono/di‑gliserida",
+        "source": "Tumbuhan atau haiwan",
+        "concern": "Semak sumbernya"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Campuran",
+        "concern": "Semak pengeluar"
+      },
+      "E631": {
+        "name": "Dinatrium inosinat",
+        "source": "Mungkin haiwan",
+        "concern": "Sahkan"
+      },
+      "E627": {
+        "name": "Dinatrium guanilat",
+        "source": "Mungkin haiwan",
+        "concern": "Sahkan"
+      },
+      "E150d": {
+        "name": "Warna karamel",
+        "source": "Gula",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Asid fosforik",
+        "source": "Mineral",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titanium dioksida",
+        "source": "Mineral",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Kualiti pemakanan lemah",
       "very_poor": "Kualiti pemakanan sangat lemah"
     }
+  },
+  "about": {
+    "aboutTitle": "Mengenai Apl Ini",
+    "aboutText": "PureBite Halal membantu orang Islam dan pengguna yang sedar mengenal pasti produk halal dan membuat pilihan makanan termaklum. Imbas kod bar atau cari berjuta-juta produk untuk mendapatkan analisis halal segera, pandangan kesihatan dan maklumat ramuan.",
+    "dataSourcesTitle": "Sumber Data",
+    "privacyTitle": "Privasi & Keselamatan",
+    "privacyLocalStorage": "Storan Tempatan",
+    "privacyLocalStorageDesc": "Semua sejarah carian dan kegemaran anda disimpan secara setempat pada peranti anda. Kami tidak memuat naik, mengumpul atau berkongsi data anda.",
+    "privacyCamera": "Kebenaran Kamera",
+    "privacyCameraDesc": "Kamera digunakan hanya untuk pengimbasan kod bar. Kami tidak merakam, menyimpan atau mengakses imej kamera. Imbasan anda diproses secara setempat.",
+    "privacyThirdParty": "API Pihak Ketiga",
+    "privacyThirdPartyDesc": "Apabila mencari, pertanyaan dihantar ke Open Food Facts dan Spoonacular. Sila semak dasar privasi mereka di tapak web masing-masing.",
+    "privacyRights": "Hak Anda",
+    "privacyRightsDesc": "Anda boleh memadamkan data anda pada bila-bila masa, membatalkan kebenaran kamera atau menyahpasang apl. Data anda dipadamkan apabila anda menyahpasang.",
+    "readPrivacyPolicy": "Baca Dasar Privasi Penuh",
+    "acknowledgmentsTitle": "Ucapan terima kasih",
+    "acknowledgmentsText": "Apl ini menggunakan data daripada Open Food Facts (pangkalan data kolaboratif) dan API Spoonakular. Kami berterima kasih kepada komuniti ini kerana menjadikan maklumat makanan boleh diakses oleh semua orang.",
+    "communityTitle": "Didorong Komuniti",
+    "communityText": "Bantu meningkatkan ketepatan data makanan dengan menyumbang kepada Fakta Makanan Terbuka. Bersama-sama kita boleh memudahkan pengenalan makanan halal untuk semua orang.",
+    "contactTitle": "Hubungi & Sokongan",
+    "contactText": "Ada soalan, maklum balas atau perlukan sokongan? Kami ingin mendengar daripada anda!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Penafian Penting",
+    "disclaimerText": "Aplikasi ini menyediakan analisis automatik berdasarkan ramuan dan data pemakanan. Sentiasa sahkan pensijilan halal dengan pengeluar dan badan pensijilan halal yang dipercayai. Apabila ragu-ragu, berunding dengan ulama atau pakar kesihatan Islam yang berilmu.",
+    "close": "tutup"
   }
 }

@@ -1,10 +1,20 @@
 import React from 'react';
 import { Info, Globe, Shield, Mail, ExternalLink, Heart, Users, BookOpen } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Browser } from '@capacitor/browser';
 
 export default function About({ onClose }) {
   const { t } = useTranslation();
-  const appVersion = '1.0.0';
+  const appVersion = '1.0.5';
+  
+  const openPrivacyPolicy = async () => {
+    try {
+      await Browser.open({ url: 'https://eat-halal-food.web.app/privacy-policy.html' });
+    } catch (error) {
+      // Fallback to regular link if Browser plugin fails
+      window.open('https://eat-halal-food.web.app/privacy-policy.html', '_blank');
+    }
+  };
   
   return (
     <div className="about-overlay" onClick={onClose}>
@@ -64,15 +74,19 @@ export default function About({ onClose }) {
               <Shield size={20} />
               <h3>{t('about.privacyTitle')}</h3>
             </div>
-            <p>{t('about.privacyText')}</p>
-            <a 
-              href="/privacy-policy.html" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <div className="privacy-highlights">
+              <p><strong>{t('about.privacyLocalStorage')}:</strong> {t('about.privacyLocalStorageDesc')}</p>
+              <p><strong>{t('about.privacyCamera')}:</strong> {t('about.privacyCameraDesc')}</p>
+              <p><strong>{t('about.privacyThirdParty')}:</strong> {t('about.privacyThirdPartyDesc')}</p>
+              <p><strong>{t('about.privacyRights')}:</strong> {t('about.privacyRightsDesc')}</p>
+            </div>
+            <button 
+              onClick={openPrivacyPolicy}
               className="about-action-button"
+              style={{ cursor: 'pointer' }}
             >
               {t('about.readPrivacyPolicy')} <ExternalLink size={16} />
-            </a>
+            </button>
           </section>
 
           <section className="about-section">
@@ -98,7 +112,7 @@ export default function About({ onClose }) {
             </div>
             <p>{t('about.contactText')}</p>
             <a 
-              href="mailto:support@purebitehalal.com"
+              href="mailto:purebitehalal@gmail.com"
               className="about-action-button"
             >
               {t('about.contactEmail')}

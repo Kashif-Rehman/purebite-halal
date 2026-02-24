@@ -95,17 +95,61 @@
     "importantNoteTitle": "Lưu ý quan trọng:",
     "importantNoteBody": "E‑code được đánh dấu \"Đáng nghi\" có thể halal hoặc haram tùy nguồn gốc. Luôn xác minh với nhà sản xuất hoặc cơ quan halal.",
     "items": {
-      "E120": { "name": "Carmine", "source": "Côn trùng", "concern": "Từ bọ cánh cứng" },
-      "E441": { "name": "Gelatin", "source": "Thường từ thịt lợn", "concern": "Kiểm tra nguồn" },
-      "E542": { "name": "Phosphate xương", "source": "Xương động vật", "concern": "Nguồn không halal" },
-      "E621": { "name": "MSG", "source": "Thực vật", "concern": "Thường là halal" },
-      "E471": { "name": "Mono/di‑glyceride", "source": "Thực vật hoặc động vật", "concern": "Kiểm tra nguồn" },
-      "E472e": { "name": "DATEM", "source": "Hỗn hợp", "concern": "Kiểm tra nhà sản xuất" },
-      "E631": { "name": "Disodium inosinate", "source": "Có thể từ động vật", "concern": "Xác minh" },
-      "E627": { "name": "Disodium guanylate", "source": "Có thể từ động vật", "concern": "Xác minh" },
-      "E150d": { "name": "Màu caramel", "source": "Đường", "concern": "Halal" },
-      "E338": { "name": "Acid phosphoric", "source": "Khoáng", "concern": "Halal" },
-      "E171": { "name": "Titanium dioxide", "source": "Khoáng", "concern": "Halal" }
+      "E120": {
+        "name": "Carmine",
+        "source": "Côn trùng",
+        "concern": "Từ bọ cánh cứng"
+      },
+      "E441": {
+        "name": "Gelatin",
+        "source": "Thường từ thịt lợn",
+        "concern": "Kiểm tra nguồn"
+      },
+      "E542": {
+        "name": "Phosphate xương",
+        "source": "Xương động vật",
+        "concern": "Nguồn không halal"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Thực vật",
+        "concern": "Thường là halal"
+      },
+      "E471": {
+        "name": "Mono/di‑glyceride",
+        "source": "Thực vật hoặc động vật",
+        "concern": "Kiểm tra nguồn"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Hỗn hợp",
+        "concern": "Kiểm tra nhà sản xuất"
+      },
+      "E631": {
+        "name": "Disodium inosinate",
+        "source": "Có thể từ động vật",
+        "concern": "Xác minh"
+      },
+      "E627": {
+        "name": "Disodium guanylate",
+        "source": "Có thể từ động vật",
+        "concern": "Xác minh"
+      },
+      "E150d": {
+        "name": "Màu caramel",
+        "source": "Đường",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Acid phosphoric",
+        "source": "Khoáng",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titanium dioxide",
+        "source": "Khoáng",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Chất lượng dinh dưỡng kém",
       "very_poor": "Chất lượng dinh dưỡng rất kém"
     }
+  },
+  "about": {
+    "aboutTitle": "Giới thiệu về ứng dụng này",
+    "aboutText": "PureBite Halal giúp người Hồi giáo và người tiêu dùng có ý thức xác định các sản phẩm halal và đưa ra lựa chọn thực phẩm sáng suốt. Quét mã vạch hoặc tìm kiếm hàng triệu sản phẩm để nhận được phân tích halal ngay lập tức, thông tin chi tiết về sức khỏe và thông tin thành phần.",
+    "dataSourcesTitle": "Nguồn dữ liệu",
+    "privacyTitle": "Quyền riêng tư & Bảo mật",
+    "privacyLocalStorage": "Bộ nhớ cục bộ",
+    "privacyLocalStorageDesc": "Tất cả lịch sử tìm kiếm và mục yêu thích của bạn được lưu trữ cục bộ trên thiết bị của bạn. Chúng tôi không tải lên, thu thập hoặc chia sẻ dữ liệu của bạn.",
+    "privacyCamera": "Quyền của máy ảnh",
+    "privacyCameraDesc": "Máy ảnh chỉ được sử dụng để quét mã vạch. Chúng tôi không ghi lại, lưu trữ hoặc truy cập hình ảnh camera. Quá trình quét của bạn được xử lý cục bộ.",
+    "privacyThirdParty": "API của bên thứ ba",
+    "privacyThirdPartyDesc": "Khi tìm kiếm, các truy vấn sẽ được gửi đến Open Food Facts và Spoonacular. Vui lòng xem lại chính sách bảo mật của họ tại các trang web tương ứng.",
+    "privacyRights": "Quyền của bạn",
+    "privacyRightsDesc": "Bạn có thể xóa dữ liệu của mình bất cứ lúc nào, thu hồi quyền sử dụng máy ảnh hoặc gỡ cài đặt ứng dụng. Dữ liệu của bạn sẽ bị xóa khi bạn gỡ cài đặt.",
+    "readPrivacyPolicy": "Đọc đầy đủ Chính sách bảo mật",
+    "acknowledgmentsTitle": "Lời cảm ơn",
+    "acknowledgmentsText": "Ứng dụng này sử dụng dữ liệu từ Open Food Facts (cơ sở dữ liệu hợp tác) và API Spoonacular. Chúng tôi rất biết ơn những cộng đồng này vì đã giúp mọi người có thể tiếp cận thông tin thực phẩm.",
+    "communityTitle": "Hướng tới cộng đồng",
+    "communityText": "Giúp cải thiện độ chính xác của dữ liệu thực phẩm bằng cách đóng góp cho Open Food Facts. Cùng nhau, chúng ta có thể giúp mọi người nhận dạng thực phẩm halal dễ dàng hơn.",
+    "contactTitle": "Liên hệ & Hỗ trợ",
+    "contactText": "Bạn có thắc mắc, phản hồi hoặc cần hỗ trợ? Chúng tôi rất muốn nghe ý kiến ​​từ bạn!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Tuyên bố từ chối trách nhiệm quan trọng",
+    "disclaimerText": "Ứng dụng này cung cấp phân tích tự động dựa trên thành phần và dữ liệu dinh dưỡng. Luôn xác minh chứng nhận halal với nhà sản xuất và tổ chức chứng nhận halal đáng tin cậy. Khi nghi ngờ, hãy tham khảo ý kiến ​​của các học giả Hồi giáo hoặc chuyên gia y tế am hiểu.",
+    "close": "Đóng"
   }
 }

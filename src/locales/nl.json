@@ -95,17 +95,61 @@
     "importantNoteTitle": "Belangrijke opmerking:",
     "importantNoteBody": "E‑codes met status \"Twijfelachtig\" kunnen halal of haram zijn afhankelijk van de bron. Controleer altijd bij fabrikanten of halal‑instanties.",
     "items": {
-      "E120": { "name": "Carmijn", "source": "Insecten", "concern": "Afgeleid van kevers" },
-      "E441": { "name": "Gelatine", "source": "Meestal varkens", "concern": "Controleer bron" },
-      "E542": { "name": "Botfosfaat", "source": "Dierlijke botten", "concern": "Niet‑halal bron" },
-      "E621": { "name": "MSG", "source": "Plantaardig", "concern": "Over het algemeen halal" },
-      "E471": { "name": "Mono/di‑glyceriden", "source": "Plantaardig of dierlijk", "concern": "Controleer bron" },
-      "E472e": { "name": "DATEM", "source": "Gemengd", "concern": "Controleer fabrikant" },
-      "E631": { "name": "Dinatrium‑inosinaat", "source": "Kan dierlijk zijn", "concern": "Verifiëren" },
-      "E627": { "name": "Dinatrium‑guanlylaat", "source": "Kan dierlijk zijn", "concern": "Verifiëren" },
-      "E150d": { "name": "Karamelkleur", "source": "Suiker", "concern": "Halal" },
-      "E338": { "name": "Fosforzuur", "source": "Mineraal", "concern": "Halal" },
-      "E171": { "name": "Titaandioxide", "source": "Mineraal", "concern": "Halal" }
+      "E120": {
+        "name": "Carmijn",
+        "source": "Insecten",
+        "concern": "Afgeleid van kevers"
+      },
+      "E441": {
+        "name": "Gelatine",
+        "source": "Meestal varkens",
+        "concern": "Controleer bron"
+      },
+      "E542": {
+        "name": "Botfosfaat",
+        "source": "Dierlijke botten",
+        "concern": "Niet‑halal bron"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Plantaardig",
+        "concern": "Over het algemeen halal"
+      },
+      "E471": {
+        "name": "Mono/di‑glyceriden",
+        "source": "Plantaardig of dierlijk",
+        "concern": "Controleer bron"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Gemengd",
+        "concern": "Controleer fabrikant"
+      },
+      "E631": {
+        "name": "Dinatrium‑inosinaat",
+        "source": "Kan dierlijk zijn",
+        "concern": "Verifiëren"
+      },
+      "E627": {
+        "name": "Dinatrium‑guanlylaat",
+        "source": "Kan dierlijk zijn",
+        "concern": "Verifiëren"
+      },
+      "E150d": {
+        "name": "Karamelkleur",
+        "source": "Suiker",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Fosforzuur",
+        "source": "Mineraal",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titaandioxide",
+        "source": "Mineraal",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Slechte voedingskwaliteit",
       "very_poor": "Zeer slechte voedingskwaliteit"
     }
+  },
+  "about": {
+    "aboutTitle": "Over deze app",
+    "aboutText": "PureBite Halal helpt moslims en bewuste consumenten halalproducten te identificeren en weloverwogen voedselkeuzes te maken. Scan streepjescodes of doorzoek miljoenen producten om direct halalanalyses, gezondheidsinzichten en informatie over ingrediënten te krijgen.",
+    "dataSourcesTitle": "Gegevensbronnen",
+    "privacyTitle": "Privacy en veiligheid",
+    "privacyLocalStorage": "Lokale opslag",
+    "privacyLocalStorageDesc": "Al uw zoekgeschiedenis en favorieten worden lokaal op uw apparaat opgeslagen. Wij uploaden, verzamelen of delen uw gegevens niet.",
+    "privacyCamera": "Cameratoestemming",
+    "privacyCameraDesc": "Camera wordt alleen gebruikt voor het scannen van streepjescodes. Wij nemen geen camerabeelden op, slaan deze niet op en openen deze ook niet. Uw scans worden lokaal verwerkt.",
+    "privacyThirdParty": "API's van derden",
+    "privacyThirdPartyDesc": "Bij het zoeken worden vragen verzonden naar Open Food Facts en Spoonacular. Raadpleeg hun privacybeleid op hun respectieve websites.",
+    "privacyRights": "Uw rechten",
+    "privacyRightsDesc": "U kunt uw gegevens op elk gewenst moment verwijderen, de cameratoestemming intrekken of de app verwijderen. Uw gegevens worden verwijderd wanneer u de installatie ongedaan maakt.",
+    "readPrivacyPolicy": "Lees het volledige privacybeleid",
+    "acknowledgmentsTitle": "Dankbetuigingen",
+    "acknowledgmentsText": "Deze app maakt gebruik van gegevens van Open Food Facts (een samenwerkingsdatabase) en Spoonacular API. We zijn deze gemeenschappen dankbaar dat ze voedselinformatie voor iedereen toegankelijk hebben gemaakt.",
+    "communityTitle": "Gemeenschapsgedreven",
+    "communityText": "Help de nauwkeurigheid van voedselgegevens te verbeteren door bij te dragen aan Open Food Facts. Samen kunnen we de identificatie van halal voedsel voor iedereen gemakkelijker maken.",
+    "contactTitle": "Contact en ondersteuning",
+    "contactText": "Heeft u vragen, feedback of heeft u ondersteuning nodig? Wij horen graag van u!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Belangrijke disclaimer",
+    "disclaimerText": "Deze app biedt geautomatiseerde analyses op basis van ingrediënten en voedingsgegevens. Controleer altijd de halal-certificering bij fabrikanten en vertrouwde halal-certificeringsinstanties. Raadpleeg bij twijfel deskundige islamitische geleerden of gezondheidswerkers.",
+    "close": "Dichtbij"
   }
 }

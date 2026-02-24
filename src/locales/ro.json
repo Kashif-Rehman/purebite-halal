@@ -95,17 +95,61 @@
     "importantNoteTitle": "Notă importantă:",
     "importantNoteBody": "E‑codurile marcate \"Îndoielnic\" pot fi halal sau haram în funcție de sursă. Verifică întotdeauna cu producătorul sau organismele halal.",
     "items": {
-      "E120": { "name": "Carmin", "source": "Insecte", "concern": "Derivat din gândaci" },
-      "E441": { "name": "Gelatină", "source": "De obicei porc", "concern": "Verifică sursa" },
-      "E542": { "name": "Fosfat de os", "source": "Oase animale", "concern": "Sursă ne‑halal" },
-      "E621": { "name": "MSG", "source": "Pe bază vegetală", "concern": "De obicei halal" },
-      "E471": { "name": "Mono/di‑gliceride", "source": "Vegetal sau animal", "concern": "Verifică sursa" },
-      "E472e": { "name": "DATEM", "source": "Mixt", "concern": "Verifică producătorul" },
-      "E631": { "name": "Inozinat disodic", "source": "Poate fi animal", "concern": "Verifică" },
-      "E627": { "name": "Guanylat disodic", "source": "Poate fi animal", "concern": "Verifică" },
-      "E150d": { "name": "Culoare caramel", "source": "Zahăr", "concern": "Halal" },
-      "E338": { "name": "Acid fosforic", "source": "Mineral", "concern": "Halal" },
-      "E171": { "name": "Dioxid de titan", "source": "Mineral", "concern": "Halal" }
+      "E120": {
+        "name": "Carmin",
+        "source": "Insecte",
+        "concern": "Derivat din gândaci"
+      },
+      "E441": {
+        "name": "Gelatină",
+        "source": "De obicei porc",
+        "concern": "Verifică sursa"
+      },
+      "E542": {
+        "name": "Fosfat de os",
+        "source": "Oase animale",
+        "concern": "Sursă ne‑halal"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Pe bază vegetală",
+        "concern": "De obicei halal"
+      },
+      "E471": {
+        "name": "Mono/di‑gliceride",
+        "source": "Vegetal sau animal",
+        "concern": "Verifică sursa"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Mixt",
+        "concern": "Verifică producătorul"
+      },
+      "E631": {
+        "name": "Inozinat disodic",
+        "source": "Poate fi animal",
+        "concern": "Verifică"
+      },
+      "E627": {
+        "name": "Guanylat disodic",
+        "source": "Poate fi animal",
+        "concern": "Verifică"
+      },
+      "E150d": {
+        "name": "Culoare caramel",
+        "source": "Zahăr",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Acid fosforic",
+        "source": "Mineral",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Dioxid de titan",
+        "source": "Mineral",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Calitate nutrițională slabă",
       "very_poor": "Calitate nutrițională foarte slabă"
     }
+  },
+  "about": {
+    "aboutTitle": "Despre această aplicație",
+    "aboutText": "PureBite Halal îi ajută pe musulmani și pe consumatorii conștienți să identifice produsele halal și să facă alegeri alimentare informate. Scanați coduri de bare sau căutați în milioane de produse pentru a obține instantanee analize halal, informații despre sănătate și informații despre ingrediente.",
+    "dataSourcesTitle": "Surse de date",
+    "privacyTitle": "Confidențialitate și securitate",
+    "privacyLocalStorage": "Stocare locală",
+    "privacyLocalStorageDesc": "Tot istoricul căutărilor și favoritele sunt stocate local pe dispozitivul dvs. Nu încărcăm, colectăm sau distribuim datele dumneavoastră.",
+    "privacyCamera": "Permisiunea camerei",
+    "privacyCameraDesc": "Camera este utilizată numai pentru scanarea codurilor de bare. Nu înregistrăm, stocăm și nu accesăm imaginile camerei. Scanările dvs. sunt procesate local.",
+    "privacyThirdParty": "API-uri terță parte",
+    "privacyThirdPartyDesc": "La căutare, interogările sunt trimise către Open Food Facts și Spoonacular. Vă rugăm să consultați politicile lor de confidențialitate pe site-urile lor respective.",
+    "privacyRights": "Drepturile tale",
+    "privacyRightsDesc": "Puteți să vă ștergeți datele oricând, să revocați permisiunea camerei sau să dezinstalați aplicația. Datele dvs. sunt șterse când dezinstalați.",
+    "readPrivacyPolicy": "Citiți Politica de confidențialitate completă",
+    "acknowledgmentsTitle": "Mulțumiri",
+    "acknowledgmentsText": "Această aplicație folosește date de la Open Food Facts (o bază de date colaborativă) și Spoonacular API. Suntem recunoscători acestor comunități pentru că au făcut informațiile alimentare accesibile tuturor.",
+    "communityTitle": "Condus de comunitate",
+    "communityText": "Ajutați la îmbunătățirea acurateței datelor despre alimente contribuind la Open Food Facts. Împreună putem face identificarea alimentelor halal mai ușoară pentru toată lumea.",
+    "contactTitle": "Contact și asistență",
+    "contactText": "Aveți întrebări, feedback sau aveți nevoie de asistență? Ne-ar plăcea să auzim de la tine!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Disclaimer important",
+    "disclaimerText": "Această aplicație oferă analize automate bazate pe ingrediente și date nutriționale. Verificați întotdeauna certificarea halal cu producătorii și organismele de certificare halal de încredere. Dacă aveți îndoieli, consultați savanți islamici sau profesioniști din domeniul sănătății.",
+    "close": "Aproape"
   }
 }

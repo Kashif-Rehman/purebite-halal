@@ -95,17 +95,61 @@
     "importantNoteTitle": "Fontos megjegyzés:",
     "importantNoteBody": "A \"Kétes\" E‑kódok forrástól függően halal vagy haram lehetnek. Mindig ellenőrizd a gyártónál vagy halal szervezeteknél.",
     "items": {
-      "E120": { "name": "Karmin", "source": "Rovarok", "concern": "Bogarakból származik" },
-      "E441": { "name": "Zselatin", "source": "Általában sertés", "concern": "Forrás ellenőrzése" },
-      "E542": { "name": "Csontfoszfát", "source": "Állati csontok", "concern": "Nem‑halal forrás" },
-      "E621": { "name": "MSG", "source": "Növényi alapú", "concern": "Általában halal" },
-      "E471": { "name": "Mono/di‑gliceridek", "source": "Növényi vagy állati", "concern": "Forrás ellenőrzése" },
-      "E472e": { "name": "DATEM", "source": "Vegyes", "concern": "Gyártó ellenőrzése" },
-      "E631": { "name": "Dinátrium‑inozinát", "source": "Lehet állati", "concern": "Ellenőrizd" },
-      "E627": { "name": "Dinátrium‑guanilát", "source": "Lehet állati", "concern": "Ellenőrizd" },
-      "E150d": { "name": "Karamell színezék", "source": "Cukor", "concern": "Halal" },
-      "E338": { "name": "Foszforsav", "source": "Ásványi", "concern": "Halal" },
-      "E171": { "name": "Titán‑dioxid", "source": "Ásványi", "concern": "Halal" }
+      "E120": {
+        "name": "Karmin",
+        "source": "Rovarok",
+        "concern": "Bogarakból származik"
+      },
+      "E441": {
+        "name": "Zselatin",
+        "source": "Általában sertés",
+        "concern": "Forrás ellenőrzése"
+      },
+      "E542": {
+        "name": "Csontfoszfát",
+        "source": "Állati csontok",
+        "concern": "Nem‑halal forrás"
+      },
+      "E621": {
+        "name": "MSG",
+        "source": "Növényi alapú",
+        "concern": "Általában halal"
+      },
+      "E471": {
+        "name": "Mono/di‑gliceridek",
+        "source": "Növényi vagy állati",
+        "concern": "Forrás ellenőrzése"
+      },
+      "E472e": {
+        "name": "DATEM",
+        "source": "Vegyes",
+        "concern": "Gyártó ellenőrzése"
+      },
+      "E631": {
+        "name": "Dinátrium‑inozinát",
+        "source": "Lehet állati",
+        "concern": "Ellenőrizd"
+      },
+      "E627": {
+        "name": "Dinátrium‑guanilát",
+        "source": "Lehet állati",
+        "concern": "Ellenőrizd"
+      },
+      "E150d": {
+        "name": "Karamell színezék",
+        "source": "Cukor",
+        "concern": "Halal"
+      },
+      "E338": {
+        "name": "Foszforsav",
+        "source": "Ásványi",
+        "concern": "Halal"
+      },
+      "E171": {
+        "name": "Titán‑dioxid",
+        "source": "Ásványi",
+        "concern": "Halal"
+      }
     }
   },
   "status": {
@@ -163,5 +207,30 @@
       "poor": "Rossz tápérték",
       "very_poor": "Nagyon rossz tápérték"
     }
+  },
+  "about": {
+    "aboutTitle": "Erről az alkalmazásról",
+    "aboutText": "A PureBite Halal segít a muszlimoknak és a tudatos fogyasztóknak a halal termékek azonosításában és a tájékozott élelmiszerválasztásban. Olvassa be a vonalkódokat vagy keressen több millió termék között, hogy azonnali halal elemzést, egészségügyi betekintést és összetevőkre vonatkozó információkat kapjon.",
+    "dataSourcesTitle": "Adatforrások",
+    "privacyTitle": "Adatvédelem és biztonság",
+    "privacyLocalStorage": "Helyi tárolás",
+    "privacyLocalStorageDesc": "Minden keresési előzménye és kedvence helyben tárolódik az eszközén. Nem töltjük fel, gyűjtjük és nem osztjuk meg az Ön adatait.",
+    "privacyCamera": "Kamera engedély",
+    "privacyCameraDesc": "A fényképezőgép csak vonalkód-leolvasáshoz használható. Nem rögzítünk, nem tárolunk és nem férünk hozzá a kamera képeihez. A beolvasásokat helyben dolgozzuk fel.",
+    "privacyThirdParty": "Harmadik fél API-k",
+    "privacyThirdPartyDesc": "Kereséskor a rendszer lekérdezéseket küld az Open Food Facts és a Spoonacular oldalra. Kérjük, tekintse át adatvédelmi szabályzatukat a megfelelő webhelyeiken.",
+    "privacyRights": "Az Ön jogai",
+    "privacyRightsDesc": "Bármikor törölheti adatait, visszavonhatja a kamera engedélyét, vagy eltávolíthatja az alkalmazást. Az adatok törlődnek az eltávolításkor.",
+    "readPrivacyPolicy": "Olvassa el a teljes adatvédelmi szabályzatot",
+    "acknowledgmentsTitle": "Köszönetnyilvánítás",
+    "acknowledgmentsText": "Ez az alkalmazás az Open Food Facts (együttműködési adatbázis) és a Spoonacular API adatait használja. Hálásak vagyunk ezeknek a közösségeknek, hogy mindenki számára hozzáférhetővé tették az élelmiszerekkel kapcsolatos információkat.",
+    "communityTitle": "Közösségvezérelt",
+    "communityText": "Segítsen javítani az élelmiszeradatok pontosságát az Open Food Factshoz való hozzájárulással. Együtt mindenki számára könnyebbé tehetjük a halal élelmiszerek azonosítását.",
+    "contactTitle": "Kapcsolatfelvétel és támogatás",
+    "contactText": "Kérdése van, visszajelzése van, vagy támogatásra van szüksége? Szeretnénk hallani rólad!",
+    "contactEmail": "purebitehalal@gmail.com",
+    "disclaimerTitle": "Fontos Jogi nyilatkozat",
+    "disclaimerText": "Ez az alkalmazás automatizált elemzést biztosít az összetevők és a táplálkozási adatok alapján. Mindig ellenőrizze a halal tanúsítványt a gyártókkal és a megbízható halal tanúsító testületekkel. Ha kétségei vannak, forduljon hozzáértő iszlám tudósokhoz vagy egészségügyi szakemberekhez.",
+    "close": "Közeli"
   }
 }
