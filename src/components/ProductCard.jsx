@@ -23,12 +23,44 @@ const StatusIcon = ({ status }) => {
   );
 };
 
-export default function ProductCard({ product, onClick, onFavorite, isFavorite }) {
+export default function ProductCard({ product, onClick, onFavorite, isFavorite, isBestMatch = false }) {
   const { t } = useTranslation();
   const styles = getStatusStyles(product.status);
+  const confidence = product.analysisDetails?.confidence;
+  const confidenceLabel = confidence?.level
+    ? t(`product.confidence.${confidence.level}`, { defaultValue: confidence.level })
+    : '';
   const scoreText = product.health?.score?.key
     ? t(product.health.score.key)
     : product.health?.score?.text;
+
+  const evidenceList = product.analysisDetails?.evidence || [];
+  const ingredientsText = (product.ingredients || []).join(' ').toLowerCase();
+  const hasGelatinRisk = evidenceList.some(item => String(item).toLowerCase().includes('gelatin')) || ingredientsText.includes('gelatin');
+  const hasBeefRisk = evidenceList.some(item => String(item).toLowerCase().includes('beef requires halal certification'));
+  const hasUnknownIngredients = product.reasonKey === 'analysis.no_ingredients';
+  const canShowCaution = product.status === 'doubtful' || product.status === 'haram';
+
+  let quickCautionText = '';
+  if (canShowCaution) {
+    if (hasUnknownIngredients) {
+      quickCautionText = t('product.quickCautionUnknown', {
+        defaultValue: 'Ingredients unknown — check label before buying.'
+      });
+    } else if (hasGelatinRisk) {
+      quickCautionText = t('product.quickCautionGelatin', {
+        defaultValue: 'Gelatin may be pork-based — verify source.'
+      });
+    } else if (hasBeefRisk) {
+      quickCautionText = t('product.quickCautionBeef', {
+        defaultValue: 'Beef needs halal certification — verify source.'
+      });
+    } else if (product.status === 'doubtful') {
+      quickCautionText = t('product.quickCautionGeneral', {
+        defaultValue: 'Doubtful ingredients — verify halal certification.'
+      });
+    }
+  }
 
   return (
     <div
@@ -69,6 +101,19 @@ export default function ProductCard({ product, onClick, onFavorite, isFavorite }
               marginBottom: '4px',
               flexWrap: 'wrap'
             }}>
+              {isBestMatch && (
+                <span style={{
+                  fontSize: '10px',
+                  background: '#dcfce7',
+                  color: '#166534',
+                  padding: '2px 6px',
+                  borderRadius: '6px',
+                  fontWeight: '700',
+                  flexShrink: 0
+                }}>
+                  🏷️ {t('product.bestMatchLabel', { defaultValue: 'Best Match' })}
+                </span>
+              )}
               <h3 style={{
                 fontSize: 'clamp(15px, 3vw, 18px)',
                 fontWeight: 'bold',
@@ -174,6 +219,41 @@ export default function ProductCard({ product, onClick, onFavorite, isFavorite }
             }}>
               {styles.text}
             </span>
+
+            {confidence && (
+              <span style={{
+                display: 'inline-block',
+                marginTop: '8px',
+                marginLeft: '8px',
+                padding: '6px 10px',
+                borderRadius: '10px',
+                fontSize: '12px',
+                fontWeight: '600',
+                backgroundColor: '#f3f4f6',
+                color: '#374151'
+              }}>
+                {t('product.confidenceLabel', { defaultValue: 'Confidence' })}: {confidenceLabel}
+              </span>
+            )}
+
+            {quickCautionText && (
+              <p style={{
+                margin: '8px 0 0 0',
+                fontSize: '12px',
+                fontWeight: '600',
+                color: '#92400e',
+                background: '#fef3c7',
+                borderRadius: '8px',
+                padding: '6px 8px',
+                display: '-webkit-inline-box',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical'
+              }}>
+                ⚠️ {quickCautionText}
+              </p>
+            )}
           </div>
         </div>
 

@@ -4,19 +4,27 @@ import SearchBar from './components/SearchBar';
 import ProductCard from './components/ProductCard';
 import ProductDetails from './components/ProductDetails';
 import BarcodeScanner from './components/BarcodeScanner';
+import IngredientScanner from './components/IngredientScanner';
 import ECodeList from './components/ECodeList';
 import TabNavigation from './components/TabNavigation';
 import SplashScreen from './components/SplashScreen';
 import About from './components/About';
+import OfflineBanner from './components/OfflineBanner';
+import { ToastContainer, useToasts, showToast } from './components/Toast';
 import { searchProducts, fetchProductByBarcode } from './utils/api';
 import { storage } from './utils/storage';
 import { localDatabase } from './utils/database';
+import { analyzeHalalStatus, normalizeECode } from './utils/halalAnalysis';
+import { initTaxonomy, isTaxonomyReady, analyzeIngredientFromTaxonomy } from './utils/offTaxonomy';
 import { useTranslation } from 'react-i18next';
+import { Network } from '@capacitor/network';
+import { Capacitor } from '@capacitor/core';
 import i18n from './i18n';
 import './App.css';
 
 export default function App() {
   const { t } = useTranslation();
+  const { toasts, removeToast } = useToasts();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -24,15 +32,68 @@ export default function App() {
   const [searchHistory, setSearchHistory] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [showScanner, setShowScanner] = useState(false);
+  const [showIngredientScanner, setShowIngredientScanner] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [apiSource, setApiSource] = useState('auto');
   const [language, setLanguage] = useState('en');
   const [showSplash, setShowSplash] = useState(true);
   const [showAbout, setShowAbout] = useState(false);
+  const [isOffline, setIsOffline] = useState(false);
 
-  // Load saved data on mount
+  // Network status monitoring
+  useEffect(() => {
+    let wasOffline = false; // Track previous state to avoid toast on startup
+
+    const checkNetwork = async () => {
+      if (Capacitor.isNativePlatform()) {
+        const status = await Network.getStatus();
+        wasOffline = !status.connected;
+        setIsOffline(!status.connected);
+      } else {
+        wasOffline = !navigator.onLine;
+        setIsOffline(!navigator.onLine);
+      }
+    };
+
+    checkNetwork();
+
+    // Listen for network changes
+    if (Capacitor.isNativePlatform()) {
+      Network.addListener('networkStatusChange', (status) => {
+        const nowOnline = status.connected;
+        // Only show toast if we were previously offline and now online
+        if (wasOffline && nowOnline) {
+          showToast(t('app.backOnline', { defaultValue: 'Back online!' }), 'success');
+        }
+        wasOffline = !nowOnline;
+        setIsOffline(!nowOnline);
+      });
+    } else {
+      window.addEventListener('online', () => {
+        if (wasOffline) {
+          showToast(t('app.backOnline', { defaultValue: 'Back online!' }), 'success');
+        }
+        wasOffline = false;
+        setIsOffline(false);
+      });
+      window.addEventListener('offline', () => {
+        wasOffline = true;
+        setIsOffline(true);
+      });
+    }
+
+    return () => {
+      if (Capacitor.isNativePlatform()) {
+        Network.removeAllListeners();
+      }
+    };
+  }, [t]);
+
+  // Load saved data and initialize taxonomy on mount
   useEffect(() => {
     loadSavedData();
+    // Pre-load OFF taxonomy in background (non-blocking)
+    initTaxonomy().catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -72,26 +133,16 @@ export default function App() {
 
   const handleSearch = async (queryOverride) => {
     const submittedQuery = (queryOverride ?? searchQuery).trim();
-    console.log('=== SEARCH FLOW START ===');
-    console.log('QueryOverride:', queryOverride);
-    console.log('SearchQuery State:', searchQuery);
-    console.log('Submitted Query:', submittedQuery);
-    console.log('API Source:', apiSource);
 
     if (!submittedQuery) {
-      console.log('Empty query, clearing results');
       setSearchResults([]);
       return;
     }
 
     setIsLoading(true);
-    console.log('Calling searchProducts with:', submittedQuery, apiSource);
     const results = await searchProducts(submittedQuery, apiSource);
-    console.log('Results received from searchProducts:', results.length, 'items');
-    console.log('Result names:', results.map(r => r.name));
     setSearchResults(results);
     setIsLoading(false);
-    console.log('=== SEARCH FLOW END ===')
 
     // Update search history
     const newHistory = [submittedQuery, ...searchHistory.filter(h => h !== submittedQuery)].slice(0, 10);
@@ -112,13 +163,103 @@ export default function App() {
       selectProduct(product);
       setSearchQuery(product.name);
     } else {
-      alert(t('app.barcodeNotFound', { barcode }));
+      showToast(t('app.barcodeNotFound', { barcode }), 'warning');
     }
   };
 
   const selectProduct = (product) => {
     setSelectedProduct(product);
     setActiveTab('details');
+  };
+
+  const handleIngredientAnalyzed = async (ingredientsText) => {
+    const cleanedText = String(ingredientsText || '').trim();
+    if (!cleanedText) return;
+
+    // Extract E-codes from text
+    const eCodeMatches = [...new Set(
+      (cleanedText.match(/\bE\s*-?\d{3,4}[a-z]?\b/gi) || [])
+        .map(code => normalizeECode(String(code).replace(/\s+/g, '')))
+    )];
+
+    // Parse ingredients list
+    const ingredients = cleanedText
+      .split(/[,;\n]/)
+      .map(item => item.trim().replace(/\([^)]*\)/g, '').trim()) // Remove parenthetical notes
+      .filter(item => item.length > 1)
+      .slice(0, 30);
+
+    // Analyze each ingredient using OFF taxonomy (if loaded)
+    const taxonomyDetails = [];
+    if (isTaxonomyReady()) {
+      for (const ingredient of ingredients) {
+        const result = analyzeIngredientFromTaxonomy(ingredient);
+        if (result) {
+          taxonomyDetails.push({
+            ingredient,
+            ...result
+          });
+        }
+      }
+    }
+
+    // Run main halal analysis
+    const analysis = analyzeHalalStatus(cleanedText, eCodeMatches, cleanedText);
+
+    // Enhance analysis details with taxonomy findings
+    const enhancedDetails = {
+      ...analysis.details,
+      taxonomyMatches: taxonomyDetails,
+      taxonomySource: isTaxonomyReady() ? 'Open Food Facts' : 'local'
+    };
+
+    // Check if taxonomy found anything worse than our local analysis
+    const taxonomyHaram = taxonomyDetails.filter(t => t.status === 'haram');
+    const taxonomyDoubtful = taxonomyDetails.filter(t => t.status === 'doubtful');
+    
+    let finalStatus = analysis.status;
+    let finalReasonKey = analysis.reasonKey;
+    
+    // Upgrade status if taxonomy found haram ingredients we missed
+    if (taxonomyHaram.length > 0 && finalStatus !== 'haram') {
+      finalStatus = 'haram';
+      finalReasonKey = 'analysis.contains';
+      enhancedDetails.evidence = [
+        ...enhancedDetails.evidence,
+        ...taxonomyHaram.map(t => `${t.name} (${t.reason})`)
+      ];
+    } else if (taxonomyDoubtful.length > 0 && finalStatus === 'halal') {
+      finalStatus = 'doubtful';
+      finalReasonKey = 'analysis.contains_doubtful';
+      enhancedDetails.evidence = [
+        ...enhancedDetails.evidence,
+        ...taxonomyDoubtful.map(t => `${t.name}: source unclear`)
+      ];
+    }
+
+    const scannedProduct = {
+      id: `scan-${Date.now()}`,
+      barcode: 'N/A',
+      name: t('product.scannedIngredientsTitle', { defaultValue: 'Scanned Ingredients' }),
+      brand: t('product.scannedIngredientsBrand', { defaultValue: 'Ingredient Scanner' }),
+      category: t('product.scannedIngredientsCategory', { defaultValue: 'Scanned Text' }),
+      status: finalStatus,
+      reason: finalReasonKey,
+      reasonKey: finalReasonKey,
+      reasonParams: analysis.reasonParams,
+      analysisDetails: enhancedDetails,
+      ingredients: ingredients.length > 0 ? ingredients : ['Not available'],
+      eCodes: eCodeMatches,
+      image: null,
+      source: isTaxonomyReady() 
+        ? t('product.scannedIngredientsSourceEnhanced', { defaultValue: 'Ingredients Scan + OFF Database' })
+        : t('product.scannedIngredientsSource', { defaultValue: 'Ingredients Scan' }),
+      health: { issues: [], benefits: [], score: null }
+    };
+
+    setSearchQuery(t('product.scannedIngredientsQuery', { defaultValue: 'scanned ingredients' }));
+    setSearchResults([scannedProduct]);
+    selectProduct(scannedProduct);
   };
 
   const toggleFavorite = (productId) => {
@@ -134,7 +275,11 @@ export default function App() {
 
   return (
     <div className="app-container">
+      <ToastContainer toasts={toasts} removeToast={removeToast} />
       <div className="app-content">
+        {/* Offline Banner */}
+        {isOffline && <OfflineBanner />}
+
         {/* About Button */}
         <button 
           className="about-button"
@@ -150,6 +295,7 @@ export default function App() {
           setSearchQuery={setSearchQuery}
           onSearch={handleSearch}
           onScan={() => setShowScanner(true)}
+          onScanIngredients={() => setShowIngredientScanner(true)}
           apiSource={apiSource}
           setApiSource={setApiSource}
           isLoading={isLoading}
@@ -257,21 +403,39 @@ export default function App() {
               {/* No Results */}
               {searchResults.length === 0 && searchQuery && !isLoading && (
                 <div style={{ textAlign: 'center', padding: '48px', color: '#6b7280' }}>
-                  <p>
+                  <p style={{ margin: '0 0 12px 0' }}>
                     {t('app.noResults')} {apiSource === 'local' && t('app.noResultsLocalHint')}
                   </p>
+                  <div style={{
+                    display: 'inline-block',
+                    textAlign: 'left',
+                    background: '#f9fafb',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '10px',
+                    padding: '12px 14px',
+                    fontSize: '13px',
+                    color: '#4b5563'
+                  }}>
+                    <p style={{ margin: '0 0 6px 0', fontWeight: '600', color: '#374151' }}>
+                      {t('app.noResultsTipsTitle', { defaultValue: 'Try this:' })}
+                    </p>
+                    <p style={{ margin: '0 0 4px 0' }}>• {t('app.noResultsTipBrand', { defaultValue: 'Search by brand name (e.g., Oreo, Nutella)' })}</p>
+                    <p style={{ margin: '0 0 4px 0' }}>• {t('app.noResultsTipSpelling', { defaultValue: 'Try a shorter or corrected spelling' })}</p>
+                    <p style={{ margin: '0' }}>• {t('app.noResultsTipBarcode', { defaultValue: 'Scan barcode for best accuracy' })}</p>
+                  </div>
                 </div>
               )}
 
               {/* Search Results */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {searchResults.map(product => (
+                {searchResults.map((product, idx) => (
                   <ProductCard
                     key={product.id}
                     product={product}
                     onClick={() => selectProduct(product)}
                     onFavorite={toggleFavorite}
                     isFavorite={favorites.includes(product.id)}
+                    isBestMatch={idx === 0 && searchQuery.trim().length >= 3}
                   />
                 ))}
               </div>
@@ -324,6 +488,17 @@ export default function App() {
         <BarcodeScanner
           onBarcodeDetected={handleBarcodeDetected}
           onClose={() => setShowScanner(false)}
+        />
+      )}
+
+      {/* Ingredient Scanner Modal */}
+      {showIngredientScanner && (
+        <IngredientScanner
+          onClose={() => setShowIngredientScanner(false)}
+          onAnalyze={(text) => {
+            handleIngredientAnalyzed(text);
+            setShowIngredientScanner(false);
+          }}
         />
       )}
     </div>

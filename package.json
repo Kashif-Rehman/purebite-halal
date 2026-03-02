@@ -1,6 +1,6 @@
 {
-  "name": "PureBiteHalal",
-  "version": "1.0.6",
+  "name": "purebite-halal",
+  "version": "1.0.7",
   "private": true,
   "dependencies": {
     "@capacitor-mlkit/barcode-scanning": "^8.0.0",
@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.5.0",
     "react-scripts": "5.0.1",
+    "tesseract.js": "^7.0.0",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -33,6 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "fix:haptics-proguard": "node scripts/fix-haptics-proguard.js",
+    "postinstall": "npm run fix:haptics-proguard",
     "sync": "npm run build && npx cap sync && node scripts/remove-flatdir.js",
     "sync:android": "npm run build && npx cap sync android && node scripts/remove-flatdir.js",
     "symbols:android": "node scripts/generate-native-symbols.js",

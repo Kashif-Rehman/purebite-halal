@@ -1,51 +1,65 @@
-import { analyzeHalalStatus } from './halalAnalysis';
+import { analyzeHalalStatus, normalizeECode } from './halalAnalysis';
 import { analyzeHealthInfo } from './healthAnalysis';
 import { localDatabase } from './database';
 import { API_CONFIG } from './config';
 import i18n from '../i18n';
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
-const FETCH_TIMEOUT_MS = 15000; // Increased from 8000ms to 15000ms for slower networks
+const CACHE_MAX_SIZE = 100; // Prevent unbounded cache growth
+const FETCH_TIMEOUT_MS = 15000;
 const TEXT_SEARCH_TIMEOUT_MS = 15000;
 const SEARCH_PAGE_SIZE = 12;
 const responseCache = new Map();
+const SEARCH_RETRY_COUNT = 1;
+const SEARCH_RETRY_DELAY_MS = 400;
+
+const DEBUG_LOGS = false; // Set to true for verbose logging
+
+const log = (...args) => { if (DEBUG_LOGS) console.log(...args); };
+const warn = (...args) => console.warn(...args);
 
 const getCached = (key) => {
   const cached = responseCache.get(key);
   if (!cached) {
-    console.log('[Cache] Cache MISS for key:', key);
+    log('[Cache] MISS:', key);
     return null;
   }
   if (Date.now() - cached.timestamp > CACHE_TTL_MS) {
-    console.log('[Cache] Cache EXPIRED for key:', key, 'Age:', Date.now() - cached.timestamp, 'ms');
+    log('[Cache] EXPIRED:', key);
     responseCache.delete(key);
     return null;
   }
-  console.log('[Cache] Cache HIT for key:', key, 'Age:', Date.now() - cached.timestamp, 'ms');
+  log('[Cache] HIT:', key);
   return cached.value;
 };
 
 const setCached = (key, value) => {
-  console.log('[Cache] Setting cache for key:', key, 'with', value.length, 'items');
+  // Evict oldest entries if cache is full
+  if (responseCache.size >= CACHE_MAX_SIZE) {
+    const oldestKey = responseCache.keys().next().value;
+    responseCache.delete(oldestKey);
+    log('[Cache] Evicted oldest entry:', oldestKey);
+  }
+  log('[Cache] SET:', key, 'items:', value.length);
   responseCache.set(key, { value, timestamp: Date.now() });
 };
 
 const fetchWithTimeout = async (url, options = {}, timeoutMs = FETCH_TIMEOUT_MS) => {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => {
-    console.warn('[Fetch] Timeout aborting request to:', url);
+    warn('[Fetch] Timeout aborting:', url);
     controller.abort();
   }, timeoutMs);
   try {
-    console.log('[Fetch] Fetching:', url);
+    log('[Fetch]', url);
     const response = await fetch(url, { ...options, signal: controller.signal });
-    console.log('[Fetch] Response status:', response.status, 'for:', url);
+    log('[Fetch] Status:', response.status);
     return response;
   } catch (error) {
     if (error.name === 'AbortError') {
-      console.error('[Fetch] Request aborted for:', url, 'Timeout:', timeoutMs, 'ms');
+      warn('[Fetch] Aborted:', url);
     } else {
-      console.error('[Fetch] Error for:', url, error.message);
+      warn('[Fetch] Error:', error.message);
     }
     throw error;
   } finally {
@@ -53,10 +67,46 @@ const fetchWithTimeout = async (url, options = {}, timeoutMs = FETCH_TIMEOUT_MS)
   }
 };
 
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 const getLocalizedIngredientsText = (product) => {
   const lang = (i18n.language || 'en').toLowerCase();
   const key = `ingredients_text_${lang}`;
-  return product[key] || product.ingredients_text || '';
+  if (product[key]) return product[key];
+  if (product.ingredients_text) return product.ingredients_text;
+
+  if (Array.isArray(product.ingredients) && product.ingredients.length > 0) {
+    return product.ingredients
+      .map(item => item?.text || item?.id || item)
+      .filter(Boolean)
+      .join(', ');
+  }
+
+  return '';
+};
+
+const normalizeAdditivesTags = (additivesTags) => {
+  if (Array.isArray(additivesTags)) return additivesTags;
+  if (typeof additivesTags === 'string' && additivesTags.trim()) return [additivesTags.trim()];
+  if (additivesTags && typeof additivesTags === 'object') {
+    return Object.values(additivesTags).filter(Boolean);
+  }
+  return [];
+};
+
+const normalizeForMatch = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+const matchesNormalizedQuery = (product, query) => {
+  const queryLower = String(query || '').toLowerCase();
+  const queryNormalized = normalizeForMatch(queryLower);
+  if (!queryLower) return false;
+
+  const fields = [product.name, product.brand, product.category, product.barcode];
+  return fields.some(field => {
+    const text = String(field || '').toLowerCase();
+    const normalizedText = normalizeForMatch(text);
+    return text.includes(queryLower) || (queryNormalized.length >= 3 && normalizedText.includes(queryNormalized));
+  });
 };
 
 export const fetchFromOpenFoodFacts = async (barcode) => {
@@ -77,9 +127,11 @@ export const fetchFromOpenFoodFacts = async (barcode) => {
 
     const product = data.product;
     const ingredientsText = getLocalizedIngredientsText(product);
-    const analysis = analyzeHalalStatus(ingredientsText, product.additives_tags);
-    const eCodes = (product.additives_tags || [])
-      .map(tag => tag.replace('en:', '').toUpperCase())
+    const additivesTags = normalizeAdditivesTags(product.additives_tags);
+    const contextText = `${product.product_name || ''} ${product.generic_name || ''} ${product.categories || ''}`;
+    const analysis = analyzeHalalStatus(ingredientsText, additivesTags, contextText);
+    const eCodes = additivesTags
+      .map(tag => normalizeECode(tag))
       .filter(code => code.startsWith('E'));
     const health = analyzeHealthInfo(product);
 
@@ -93,6 +145,7 @@ export const fetchFromOpenFoodFacts = async (barcode) => {
       reason: analysis.reasonKey,
       reasonKey: analysis.reasonKey,
       reasonParams: analysis.reasonParams,
+      analysisDetails: analysis.details,
       ingredients: ingredientsText
         ? ingredientsText.split(',').map(i => i.trim()).slice(0, 10)
         : ['Not available'],
@@ -104,7 +157,7 @@ export const fetchFromOpenFoodFacts = async (barcode) => {
     setCached(cacheKey, result);
     return result;
   } catch (error) {
-    console.error('OpenFoodFacts Error:', error);
+    log('OpenFoodFacts not found:', barcode);
     return null;
   }
 };
@@ -116,7 +169,7 @@ export const fetchFromSpoonacular = async (barcode) => {
   const cached = getCached(cacheKey);
   if (cached) return cached;
 
-  if (API_KEY === 'YOUR_API_KEY') {
+  if (!API_KEY) {
     console.warn('Spoonacular API key not configured');
     return null;
   }
@@ -134,7 +187,8 @@ export const fetchFromSpoonacular = async (barcode) => {
     const ingredientsText = product.ingredientList ||
       (product.ingredients || []).map(i => i.name).join(', ');
 
-    const analysis = analyzeHalalStatus(ingredientsText, []);
+    const contextText = `${product.title || ''} ${product.aisle || ''}`;
+    const analysis = analyzeHalalStatus(ingredientsText, [], contextText);
     const health = {
       status: 'Unknown',
       color: '#9ca3af',
@@ -153,6 +207,7 @@ export const fetchFromSpoonacular = async (barcode) => {
       reason: analysis.reasonKey,
       reasonKey: analysis.reasonKey,
       reasonParams: analysis.reasonParams,
+      analysisDetails: analysis.details,
       ingredients: ingredientsText
         ? ingredientsText.split(',').map(i => i.trim()).slice(0, 10)
         : ['Not available'],
@@ -164,100 +219,80 @@ export const fetchFromSpoonacular = async (barcode) => {
     setCached(cacheKey, result);
     return result;
   } catch (error) {
-    console.error('Spoonacular API Error:', error);
+    log('Spoonacular not found:', barcode);
     return null;
   }
 };
 
 export const searchByName = async (query) => {
-  console.log('[searchByName] ENTRY - Query:', query);
+  log('[searchByName] Query:', query);
   const normalizedQuery = query.trim().toLowerCase();
   
-  // CRITICAL: Always clear old search results from cache for this specific query
-  // This prevents showing cached results from previous different searches
   const cacheKey = `off:search:${encodeURIComponent(normalizedQuery)}`;
-  console.log('[searchByName] Cache key:', cacheKey);
   
-  // Check cache ONLY if we have it
   const cached = getCached(cacheKey);
   if (cached) {
-    console.log('[searchByName] CACHE HIT! Returning', cached.length, 'cached products:', cached.map(p => p.name));
+    log('[searchByName] Cache hit:', cached.length, 'products');
     return cached;
   }
-  console.log('[searchByName] Cache miss, fetching from API...');
 
   try {
     const encodedQuery = encodeURIComponent(query);
     const requestHeaders = { headers: { 'User-Agent': 'HalalFoodChecker/1.0' } };
 
-    const v2Url = `https://world.openfoodfacts.org/api/v2/search?search_terms=${encodedQuery}&page_size=${SEARCH_PAGE_SIZE}`;
-    const legacyUrl = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodedQuery}&page_size=${SEARCH_PAGE_SIZE}&json=true`;
+    // IMPORTANT: Only use legacy search.pl endpoint - the v2 API does NOT support 
+    // text search properly (search_terms param is ignored, returns random products)
+    const legacyUrl = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodedQuery}&search_simple=1&action=process&page_size=${SEARCH_PAGE_SIZE}&json=1`;
 
-    const fetchAndProcess = async (label, url) => {
+    for (let attempt = 0; attempt <= SEARCH_RETRY_COUNT; attempt++) {
       try {
-        const response = await fetchWithTimeout(url, requestHeaders, TEXT_SEARCH_TIMEOUT_MS);
+        const response = await fetchWithTimeout(legacyUrl, requestHeaders, TEXT_SEARCH_TIMEOUT_MS);
         if (!response.ok) {
-          console.log(`[searchByName] ${label} API response NOT ok:`, response.status);
-          return { results: [], relevantCount: 0 };
+          log('[searchByName] API not ok:', response.status, 'attempt:', attempt + 1);
+          if (attempt < SEARCH_RETRY_COUNT) {
+            await delay(SEARCH_RETRY_DELAY_MS);
+            continue;
+          }
+          return [];
         }
 
-        const data = await response.json();
+        const bodyText = await response.text();
+        let data;
+        try {
+          data = JSON.parse(bodyText);
+        } catch (parseError) {
+          warn('[searchByName] Invalid JSON attempt', attempt + 1);
+          if (attempt < SEARCH_RETRY_COUNT) {
+            await delay(SEARCH_RETRY_DELAY_MS);
+            continue;
+          }
+          return [];
+        }
+
         const rawProducts = data?.products || [];
-        console.log(`[searchByName] ${label} API returned`, rawProducts.length, 'products');
+        log('[searchByName] API returned', rawProducts.length, 'products');
 
-        const results = processSearchResults(rawProducts);
-        const relevantCount = countRelevantResults(rawProducts, normalizedQuery);
-        console.log(`[searchByName] ${label} processed into`, results.length, 'results:', results.map(p => p.name));
-        console.log(`[searchByName] ${label} relevant matches:`, relevantCount);
-        return { results, relevantCount };
+        if (rawProducts.length === 0) {
+          return [];
+        }
+
+        const results = processSearchResults(rawProducts, normalizedQuery);
+        log('[searchByName] Processed:', results.length, 'results');
+        
+        if (results.length > 0) {
+          setCached(cacheKey, results);
+        }
+        return results;
       } catch (error) {
-        console.warn(`[searchByName] ${label} search failed:`, error.message);
-        return { results: [], relevantCount: 0 };
+        warn('[searchByName] Failed attempt', attempt + 1, error.message);
+        if (attempt < SEARCH_RETRY_COUNT) {
+          await delay(SEARCH_RETRY_DELAY_MS);
+          continue;
+        }
+        return [];
       }
-    };
-
-    const v2Promise = fetchAndProcess('v2', v2Url);
-    const legacyPromise = fetchAndProcess('legacy', legacyUrl);
-
-    const firstCompleted = await Promise.race([
-      v2Promise.then(payload => ({ source: 'v2', payload })),
-      legacyPromise.then(payload => ({ source: 'legacy', payload }))
-    ]);
-
-    const isUsable = (source, payload) => {
-      if (!payload || payload.results.length === 0) return false;
-      return source === 'legacy' || payload.relevantCount > 0;
-    };
-
-    if (isUsable(firstCompleted.source, firstCompleted.payload)) {
-      setCached(cacheKey, firstCompleted.payload.results);
-      console.log(`[searchByName] Cached ${firstCompleted.source} results and returning (early)`);
-      return firstCompleted.payload.results;
     }
 
-    const secondPayload = firstCompleted.source === 'v2'
-      ? await legacyPromise
-      : await v2Promise;
-
-    if (isUsable(firstCompleted.source === 'v2' ? 'legacy' : 'v2', secondPayload)) {
-      setCached(cacheKey, secondPayload.results);
-      console.log('[searchByName] Cached second-source results and returning');
-      return secondPayload.results;
-    }
-
-    // Last-resort fallback: return whichever source had results, even if low relevance
-    if (firstCompleted.payload.results.length > 0) {
-      setCached(cacheKey, firstCompleted.payload.results);
-      console.log('[searchByName] Returning first-source fallback results');
-      return firstCompleted.payload.results;
-    }
-    if (secondPayload.results.length > 0) {
-      setCached(cacheKey, secondPayload.results);
-      console.log('[searchByName] Returning second-source fallback results');
-      return secondPayload.results;
-    }
-
-    console.log('[searchByName] EXIT - Returning 0 results');
     return [];
   } catch (error) {
     console.error('Search failed:', error);
@@ -265,18 +300,86 @@ export const searchByName = async (query) => {
   }
 };
 
-const processSearchResults = (products) => {
+const getSearchableProductText = (product) => String([
+  product?.product_name,
+  product?.product_name_en,
+  product?.generic_name,
+  product?.brands,
+  product?.categories,
+  product?.ingredients_text,
+  product?.code
+].join(' ')).toLowerCase();
+
+const scoreProductRelevance = (product, normalizedQuery) => {
+  const query = String(normalizedQuery || '').trim().toLowerCase();
+  if (!query) return 0;
+
+  const tokens = query.split(/\s+/).filter(Boolean);
+  const name = String(product?.product_name || product?.product_name_en || product?.generic_name || '').toLowerCase();
+  const brand = String(product?.brands || '').toLowerCase();
+  const searchable = getSearchableProductText(product);
+
+  let score = 0;
+
+  if (name === query) score += 200;
+  if (name.startsWith(query)) score += 120;
+  if (name.includes(query)) score += 80;
+  if (brand.includes(query)) score += 45;
+
+  for (const token of tokens) {
+    if (token.length < 2) continue;
+    if (name.includes(token)) score += 25;
+    if (brand.includes(token)) score += 12;
+    if (searchable.includes(token)) score += 6;
+  }
+
+  return score;
+};
+
+const hasExactBrandMatch = (product, normalizedQuery) => {
+  const query = String(normalizedQuery || '').trim().toLowerCase();
+  if (!query) return false;
+
+  const rawBrands = String(product?.brands || '').toLowerCase();
+  if (!rawBrands) return false;
+
+  const brandParts = rawBrands
+    .split(/[,;|/]/)
+    .map(part => part.trim())
+    .filter(Boolean);
+
+  return brandParts.some(part => part === query) || rawBrands.includes(` ${query} `) || rawBrands.startsWith(`${query} `) || rawBrands.endsWith(` ${query}`);
+};
+
+const processSearchResults = (products, normalizedQuery = '') => {
   if (!Array.isArray(products)) return [];
   const results = [];
 
-  for (const product of products.slice(0, 20)) {
+  const rankedProducts = [...products]
+    .slice(0, 60)
+    .map(product => ({
+      product,
+      score: scoreProductRelevance(product, normalizedQuery),
+      exactBrandMatch: hasExactBrandMatch(product, normalizedQuery)
+    }))
+    .sort((a, b) => {
+      if (a.exactBrandMatch !== b.exactBrandMatch) {
+        return a.exactBrandMatch ? -1 : 1;
+      }
+      return b.score - a.score;
+    })
+    .map(item => item.product);
+
+  for (const product of rankedProducts) {
     if (!product || typeof product !== 'object') continue;
 
     try {
       const ingredientsText = getLocalizedIngredientsText(product);
-      const analysis = analyzeHalalStatus(ingredientsText, product.additives_tags);
-      const eCodes = (product.additives_tags || [])
-        .map(tag => String(tag).replace('en:', '').toUpperCase())
+      const additivesTags = normalizeAdditivesTags(product.additives_tags);
+      const contextText = `${product.product_name || ''} ${product.product_name_en || ''} ${product.generic_name || ''} ${product.categories || ''}`;
+      const analysis = analyzeHalalStatus(ingredientsText, additivesTags, contextText);
+      const eCodes = additivesTags
+        .map(tag => normalizeECode(tag))
         .filter(code => code.startsWith('E'));
       const health = analyzeHealthInfo(product);
 
@@ -290,6 +393,7 @@ const processSearchResults = (products) => {
         reason: analysis.reasonKey,
         reasonKey: analysis.reasonKey,
         reasonParams: analysis.reasonParams,
+        analysisDetails: analysis.details,
         ingredients: ingredientsText
           ? ingredientsText.split(',').map(i => i.trim()).slice(0, 15)
           : ['Not available'],
@@ -308,29 +412,6 @@ const processSearchResults = (products) => {
   return results;
 };
 
-const countRelevantResults = (products, normalizedQuery) => {
-  const tokens = String(normalizedQuery || '').split(/\s+/).filter(Boolean);
-  if (tokens.length === 0 || !Array.isArray(products)) return 0;
-
-  let count = 0;
-  for (const product of products.slice(0, 20)) {
-    const searchable = String([
-      product?.product_name,
-      product?.product_name_en,
-      product?.generic_name,
-      product?.brands,
-      product?.categories,
-      product?.ingredients_text,
-      product?.code
-    ].join(' ')).toLowerCase();
-
-    if (tokens.some(token => searchable.includes(token))) {
-      count++;
-    }
-  }
-  return count;
-};
-
 export const fetchProductByBarcode = async (barcode, apiSource = 'auto') => {
   let apiProduct = null;
 
@@ -341,7 +422,7 @@ export const fetchProductByBarcode = async (barcode, apiSource = 'auto') => {
 
   // 2. Spoonacular
   if (!apiProduct && (apiSource === 'auto' || apiSource === 'spoonacular')) {
-    if (apiSource === 'auto') console.log('Product not found in OFF, trying Spoonacular...');
+    log('Trying Spoonacular fallback...');
     apiProduct = await fetchFromSpoonacular(barcode);
   }
 
@@ -349,33 +430,58 @@ export const fetchProductByBarcode = async (barcode, apiSource = 'auto') => {
 };
 
 export const searchProducts = async (query, apiSource = 'auto') => {
-  console.log('[searchProducts] ENTRY - Query:', query, 'Source:', apiSource);
+  log('[searchProducts] Query:', query, 'Source:', apiSource);
   const normalizedQuery = query.trim();
   const numericQuery = normalizedQuery.replace(/\D/g, '');
   const isLikelyBarcode = numericQuery.length >= 8 && numericQuery.length <= 14;
-  console.log('[searchProducts] Normalized:', normalizedQuery, 'IsBarcode:', isLikelyBarcode);
 
   if (!normalizedQuery) {
-    console.log('[searchProducts] Empty query, returning empty array');
     return [];
   }
 
   // For text searches, start with fresh results (not from local DB)
-  // This prevents mixing old and new search results
   if (!isLikelyBarcode && apiSource !== 'local') {
-    console.log('[searchProducts] Text search - calling searchByName directly');
+    const getLocalMatches = (term) => localDatabase.filter(p => matchesNormalizedQuery(p, term));
+    const dedupeByBarcode = (items) => {
+      const map = new Map();
+      for (const item of items) {
+        const key = item?.barcode || item?.id;
+        if (!map.has(key)) map.set(key, item);
+      }
+      return [...map.values()];
+    };
+
+    const compactQuery = normalizeForMatch(normalizedQuery);
+    const queryTokens = normalizedQuery.split(/\s+/).filter(token => token.length >= 3);
+    const queryVariants = [normalizedQuery];
+    if (compactQuery && compactQuery !== normalizeForMatch(normalizedQuery)) {
+      queryVariants.push(compactQuery);
+    }
+    if (queryTokens.length > 1) {
+      queryVariants.push(queryTokens[0]);
+    }
+
     try {
-      const apiProducts = await searchByName(normalizedQuery);
-      console.log('[searchProducts] Got API products from searchByName:', apiProducts.length, apiProducts.map(p => p.name));
+      let apiProducts = await searchByName(normalizedQuery);
+      log('[searchProducts] API results:', apiProducts.length);
+
+      if (apiProducts.length === 0 && queryVariants.length > 1) {
+        for (const variant of queryVariants.slice(1)) {
+          log('[searchProducts] Trying variant:', variant);
+          const variantResults = await searchByName(variant);
+          if (variantResults.length > 0) {
+            apiProducts = variantResults;
+            break;
+          }
+        }
+      }
       
       // Combine with local DB only if they're not duplicates
-      let localResults = localDatabase.filter(p =>
-        p.name.toLowerCase().includes(normalizedQuery.toLowerCase()) ||
-        p.brand.toLowerCase().includes(normalizedQuery.toLowerCase()) ||
-        p.category.toLowerCase().includes(normalizedQuery.toLowerCase()) ||
-        p.barcode.includes(normalizedQuery)
-      );
-      console.log('[searchProducts] Local DB results:', localResults.length, localResults.map(r => r.name));
+      let localResults = dedupeByBarcode([
+        ...getLocalMatches(normalizedQuery),
+        ...getLocalMatches(compactQuery)
+      ]);
+      log('[searchProducts] Local results:', localResults.length);
       
       // Combine results, API first, then non-duplicate local results
       let results = [...apiProducts];
@@ -385,17 +491,19 @@ export const searchProducts = async (query, apiSource = 'auto') => {
         }
       });
       
-      console.log('[searchProducts] EXIT (Text) - Final results:', results.length, results.map(r => r.name));
+      if (results.length === 0) {
+        results = localResults;
+      }
+
+      log('[searchProducts] Final:', results.length, 'results');
       return results;
     } catch (error) {
-      console.error('API search failed:', error);
+      warn('API search failed:', error.message);
       // Fallback to local DB only if API fails
-      let fallbackResults = localDatabase.filter(p =>
-        p.name.toLowerCase().includes(normalizedQuery.toLowerCase()) ||
-        p.brand.toLowerCase().includes(normalizedQuery.toLowerCase()) ||
-        p.category.toLowerCase().includes(normalizedQuery.toLowerCase())
-      );
-      console.log('[searchProducts] EXIT (Text-Fallback) - Final results:', fallbackResults.length, fallbackResults.map(r => r.name));
+      let fallbackResults = dedupeByBarcode([
+        ...getLocalMatches(normalizedQuery),
+        ...getLocalMatches(compactQuery)
+      ]);
       return fallbackResults;
     }
   }
@@ -407,11 +515,10 @@ export const searchProducts = async (query, apiSource = 'auto') => {
     p.category.toLowerCase().includes(normalizedQuery.toLowerCase()) ||
     p.barcode.includes(normalizedQuery)
   );
-  console.log('[searchProducts] Local DB results:', results.length, results.map(r => r.name));
+  log('[searchProducts] Local matches:', results.length);
 
   // If Local Only, return immediately
   if (apiSource === 'local') {
-    console.log('[searchProducts] Local-only mode, returning:', results.length, 'results');
     return results;
   }
 
@@ -426,9 +533,9 @@ export const searchProducts = async (query, apiSource = 'auto') => {
       }
     }
   } catch (error) {
-    console.error('API search failed:', error);
+    warn('Barcode search failed:', error.message);
   }
 
-  console.log('[searchProducts] EXIT - Final results:', results.length, results.map(r => r.name));
+  log('[searchProducts] Final:', results.length, 'results');
   return results;
 };

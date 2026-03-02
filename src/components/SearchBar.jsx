@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Search, Camera, Globe, Zap, Loader } from 'lucide-react';
+import { Search, Camera, Globe, Zap, Loader, FileText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function SearchBar({
@@ -7,6 +7,7 @@ export default function SearchBar({
   setSearchQuery,
   onSearch,
   onScan,
+  onScanIngredients,
   apiSource,
   setApiSource,
   isLoading,
@@ -342,7 +343,6 @@ export default function SearchBar({
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
-                console.log('[SearchBar] Enter pressed, input value:', e.currentTarget.value);
                 onSearch(e.currentTarget.value);
               }
             }}
@@ -363,10 +363,7 @@ export default function SearchBar({
           />
         </div>
         <button
-          onClick={() => {
-            console.log('[SearchBar] Search button clicked, searchQuery state:', searchQuery);
-            onSearch(searchQuery);
-          }}
+          onClick={() => onSearch(searchQuery)}
           style={{
             background: '#10b981',
             color: 'white',
@@ -403,6 +400,28 @@ export default function SearchBar({
         >
           <Camera size={20} />
           <span>{t('searchBar.buttons.scan')}</span>
+        </button>
+        <button
+          onClick={onScanIngredients}
+          style={{
+            background: '#047857',
+            color: 'white',
+            padding: '0 16px',
+            borderRadius: '12px',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            fontWeight: '600',
+            fontSize: '15px',
+            minHeight: '50px',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          <FileText size={18} />
+          <span>{t('searchBar.buttons.scanIngredients', { defaultValue: 'Ingredients' })}</span>
         </button>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Share2, Activity, Leaf, AlertTriangle, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
-import { getStatusStyles } from '../utils/halalAnalysis';
-import { eCodeDatabase } from '../utils/database';
+import { getStatusStyles, getECodeInfo, normalizeECode } from '../utils/halalAnalysis';
 import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 import { useTranslation } from 'react-i18next';
@@ -62,6 +61,28 @@ export default function ProductDetails({ product }) {
   const scoreText = product.health?.score?.key
     ? t(product.health.score.key)
     : product.health?.score?.text;
+
+  const analysisDetails = product.analysisDetails || {};
+  const evidenceList = analysisDetails.evidence || [];
+  const analysisHaramCodes = analysisDetails.haramECodes || [];
+  const analysisDoubtfulCodes = analysisDetails.doubtfulECodes || [];
+  const confidence = analysisDetails.confidence;
+  const confidenceLabel = confidence?.level
+    ? t(`product.confidence.${confidence.level}`, { defaultValue: confidence.level })
+    : null;
+
+  const groupedProductECodes = (product.eCodes || []).reduce((acc, rawCode) => {
+    const code = normalizeECode(rawCode);
+    const eInfo = getECodeInfo(code);
+
+    if (!eInfo) {
+      acc.unknown.push({ code, info: null });
+      return acc;
+    }
+
+    acc[eInfo.status].push({ code, info: eInfo });
+    return acc;
+  }, { halal: [], haram: [], doubtful: [], unknown: [] });
 
   const handleShare = async () => {
     if (Capacitor.isNativePlatform()) {
@@ -348,6 +369,38 @@ export default function ProductDetails({ product }) {
           {t('product.halalAnalysis')}
         </h3>
         <p style={{ color: '#374151', margin: 0 }}>{reasonText}</p>
+        {confidenceLabel && (
+          <p style={{ color: '#374151', margin: '10px 0 0 0', fontSize: '14px' }}>
+            <strong>{t('product.confidenceLabel', { defaultValue: 'Confidence' })}:</strong> {confidenceLabel}
+          </p>
+        )}
+        {product.reasonKey === 'analysis.no_ingredients' && (
+          <p style={{ color: '#92400e', margin: '10px 0 0 0', fontSize: '14px', fontWeight: '600' }}>
+            {t('product.unrecognizedIngredientsWarning', {
+              defaultValue: 'We are unable to recognize ingredients for this product. Please read the label carefully and verify before buying.'
+            })}
+          </p>
+        )}
+
+        {(evidenceList.length > 0 || analysisHaramCodes.length > 0 || analysisDoubtfulCodes.length > 0) && (
+          <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {evidenceList.length > 0 && (
+              <p style={{ margin: 0, color: '#374151', fontSize: '14px' }}>
+                <strong>{t('product.analysisEvidenceLabel', { defaultValue: 'Detected ingredients:' })}</strong> {evidenceList.join(', ')}
+              </p>
+            )}
+            {analysisHaramCodes.length > 0 && (
+              <p style={{ margin: 0, color: '#374151', fontSize: '14px' }}>
+                <strong>{t('product.analysisHaramCodesLabel', { defaultValue: 'Haram E-codes:' })}</strong> {analysisHaramCodes.join(', ')}
+              </p>
+            )}
+            {analysisDoubtfulCodes.length > 0 && (
+              <p style={{ margin: 0, color: '#374151', fontSize: '14px' }}>
+                <strong>{t('product.analysisDoubtfulCodesLabel', { defaultValue: 'Doubtful E-codes:' })}</strong> {analysisDoubtfulCodes.join(', ')}
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Ingredients */}
@@ -381,49 +434,74 @@ export default function ProductDetails({ product }) {
             {t('product.eCodesFound')}
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {product.eCodes.map((code, idx) => {
-              const eInfo = eCodeDatabase[code];
-              if (!eInfo) {
-                return (
-                  <div key={idx} style={{ padding: '12px', background: 'white', borderRadius: '8px' }}>
-                    <p style={{ fontWeight: '600', margin: 0 }}>
-                      {code} - {t('product.verifyManufacturer')}
-                    </p>
-                  </div>
-                );
-              }
-              const eStyles = getStatusStyles(eInfo.status);
+            {[
+              { key: 'haram', title: t('product.haramECodesTitle', { defaultValue: 'Haram E-Codes' }) },
+              { key: 'halal', title: t('product.halalECodesTitle', { defaultValue: 'Halal E-Codes' }) },
+              { key: 'doubtful', title: t('product.doubtfulECodesTitle', { defaultValue: 'Doubtful E-Codes' }) }
+            ].map((section) => {
+              const items = groupedProductECodes[section.key];
+              if (!items || items.length === 0) return null;
+
               return (
-                <div key={idx} style={{ padding: '12px', background: 'white', borderRadius: '8px' }}>
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'start',
-                    gap: '8px'
-                  }}>
-                    <div style={{ flex: 1 }}>
-                      <p style={{ fontWeight: '600', marginBottom: '4px', margin: '0 0 4px 0' }}>
-                        {code} - {eInfo.nameKey ? t(eInfo.nameKey) : eInfo.name}
-                      </p>
-                      <p style={{ fontSize: '14px', color: '#6b7280', margin: 0 }}>
-                        {eInfo.concernKey ? t(eInfo.concernKey) : eInfo.concern}
-                      </p>
-                    </div>
-                    <span style={{ 
-                      padding: '4px 12px', 
-                      borderRadius: '8px', 
-                      fontSize: '12px', 
-                      fontWeight: '600', 
-                      backgroundColor: eStyles.bg, 
-                      color: eStyles.color,
-                      whiteSpace: 'nowrap'
-                    }}>
-                      {t(`status.${eInfo.status}`, { defaultValue: eInfo.status })}
-                    </span>
+                <div key={section.key}>
+                  <h4 style={{ fontWeight: '600', color: '#1f2937', margin: '0 0 8px 0' }}>
+                    {section.title}
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {items.map(({ code, info }, idx) => {
+                      const eStyles = getStatusStyles(info.status);
+                      return (
+                        <div key={`${section.key}-${code}-${idx}`} style={{ padding: '12px', background: 'white', borderRadius: '8px' }}>
+                          <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'start',
+                            gap: '8px'
+                          }}>
+                            <div style={{ flex: 1 }}>
+                              <p style={{ fontWeight: '600', marginBottom: '4px', margin: '0 0 4px 0' }}>
+                                {code} - {info.nameKey ? t(info.nameKey) : info.name}
+                              </p>
+                              <p style={{ fontSize: '14px', color: '#6b7280', margin: 0 }}>
+                                {info.concernKey ? t(info.concernKey) : info.concern}
+                              </p>
+                            </div>
+                            <span style={{
+                              padding: '4px 12px',
+                              borderRadius: '8px',
+                              fontSize: '12px',
+                              fontWeight: '600',
+                              backgroundColor: eStyles.bg,
+                              color: eStyles.color,
+                              whiteSpace: 'nowrap'
+                            }}>
+                              {t(`status.${info.status}`, { defaultValue: info.status })}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               );
             })}
+
+            {groupedProductECodes.unknown.length > 0 && (
+              <div>
+                <h4 style={{ fontWeight: '600', color: '#1f2937', margin: '0 0 8px 0' }}>
+                  {t('product.unknownECodesTitle', { defaultValue: 'Unknown E-Codes' })}
+                </h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {groupedProductECodes.unknown.map(({ code }, idx) => (
+                    <div key={`unknown-${code}-${idx}`} style={{ padding: '12px', background: 'white', borderRadius: '8px' }}>
+                      <p style={{ fontWeight: '600', margin: 0 }}>
+                        {code} - {t('product.verifyManufacturer')}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -6,6 +6,24 @@ import { useTranslation } from 'react-i18next';
 
 export default function ECodeList() {
   const { t } = useTranslation();
+  const groupedCodes = {
+    haram: [],
+    halal: [],
+    doubtful: []
+  };
+
+  Object.entries(eCodeDatabase).forEach(([code, info]) => {
+    if (groupedCodes[info.status]) {
+      groupedCodes[info.status].push([code, info]);
+    }
+  });
+
+  const sectionConfig = [
+    { key: 'haram', title: t('ecodes.haramSectionTitle', { defaultValue: 'Haram E-Codes' }) },
+    { key: 'halal', title: t('ecodes.halalSectionTitle', { defaultValue: 'Halal E-Codes' }) },
+    { key: 'doubtful', title: t('ecodes.doubtfulSectionTitle', { defaultValue: 'Doubtful E-Codes' }) }
+  ];
+
   return (
     <div style={{ padding: '16px' }}>
       <h2 style={{ 
@@ -22,61 +40,74 @@ export default function ECodeList() {
       </h2>
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {Object.entries(eCodeDatabase).map(([code, info]) => {
-          const styles = getStatusStyles(info.status);
+        {sectionConfig.map((section) => {
+          const sectionItems = groupedCodes[section.key] || [];
+          if (sectionItems.length === 0) return null;
+
           return (
-            <div 
-              key={code} 
-              style={{ 
-                padding: '16px', 
-                border: '1px solid #e5e7eb', 
-                borderRadius: '12px',
-                backgroundColor: 'white'
-              }}
-            >
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'space-between', 
-                alignItems: 'start',
-                gap: '12px'
-              }}>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ 
-                    fontSize: '18px', 
-                    fontWeight: 'bold', 
-                    color: '#1f2937', 
-                    marginBottom: '4px',
-                    margin: '0 0 4px 0'
-                  }}>
-                    {code}
-                  </h3>
-                  <p style={{ 
-                    fontSize: '16px', 
-                    color: '#374151', 
-                    marginBottom: '6px',
-                    margin: '0 0 6px 0'
-                  }}>
-                    {info.nameKey ? t(info.nameKey) : info.name}
-                  </p>
-                  <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '4px', margin: '0 0 4px 0' }}>
-                    <strong>{t('ecodes.sourceLabel')}</strong> {info.sourceKey ? t(info.sourceKey) : info.source}
-                  </p>
-                  <p style={{ fontSize: '14px', color: '#6b7280', margin: 0 }}>
-                    ⚠️ {info.concernKey ? t(info.concernKey) : info.concern}
-                  </p>
-                </div>
-                <span style={{ 
-                  padding: '6px 16px', 
-                  borderRadius: '12px', 
-                  fontSize: '13px', 
-                  fontWeight: '600', 
-                  backgroundColor: styles.bg, 
-                  color: styles.color, 
-                  whiteSpace: 'nowrap' 
-                }}>
-                  {styles.text}
-                </span>
-              </div>
+            <div key={section.key} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#1f2937', margin: 0 }}>
+                {section.title}
+              </h3>
+
+              {sectionItems.map(([code, info]) => {
+                const styles = getStatusStyles(info.status);
+                return (
+                  <div
+                    key={code}
+                    style={{
+                      padding: '16px',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '12px',
+                      backgroundColor: 'white'
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'start',
+                      gap: '12px'
+                    }}>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{
+                          fontSize: '18px',
+                          fontWeight: 'bold',
+                          color: '#1f2937',
+                          marginBottom: '4px',
+                          margin: '0 0 4px 0'
+                        }}>
+                          {code}
+                        </h3>
+                        <p style={{
+                          fontSize: '16px',
+                          color: '#374151',
+                          marginBottom: '6px',
+                          margin: '0 0 6px 0'
+                        }}>
+                          {info.nameKey ? t(info.nameKey) : info.name}
+                        </p>
+                        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '4px', margin: '0 0 4px 0' }}>
+                          <strong>{t('ecodes.sourceLabel')}</strong> {info.sourceKey ? t(info.sourceKey) : info.source}
+                        </p>
+                        <p style={{ fontSize: '14px', color: '#6b7280', margin: 0 }}>
+                          ⚠️ {info.concernKey ? t(info.concernKey) : info.concern}
+                        </p>
+                      </div>
+                      <span style={{
+                        padding: '6px 16px',
+                        borderRadius: '12px',
+                        fontSize: '13px',
+                        fontWeight: '600',
+                        backgroundColor: styles.bg,
+                        color: styles.color,
+                        whiteSpace: 'nowrap'
+                      }}>
+                        {styles.text}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           );
         })}

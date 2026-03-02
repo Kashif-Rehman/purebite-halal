@@ -21,4 +21,16 @@ export const eCodeDatabase = {
   'E150d': { nameKey: 'ecodes.items.E150d.name', status: 'halal', sourceKey: 'ecodes.items.E150d.source', concernKey: 'ecodes.items.E150d.concern' },
   'E338': { nameKey: 'ecodes.items.E338.name', status: 'halal', sourceKey: 'ecodes.items.E338.source', concernKey: 'ecodes.items.E338.concern' },
   'E171': { nameKey: 'ecodes.items.E171.name', status: 'halal', sourceKey: 'ecodes.items.E171.source', concernKey: 'ecodes.items.E171.concern' },
+  'E100': { nameKey: 'ecodes.items.E100.name', status: 'halal', sourceKey: 'ecodes.items.E100.source', concernKey: 'ecodes.items.E100.concern' },
+  'E101': { nameKey: 'ecodes.items.E101.name', status: 'halal', sourceKey: 'ecodes.items.E101.source', concernKey: 'ecodes.items.E101.concern' },
+  'E140': { nameKey: 'ecodes.items.E140.name', status: 'halal', sourceKey: 'ecodes.items.E140.source', concernKey: 'ecodes.items.E140.concern' },
+  'E160a': { nameKey: 'ecodes.items.E160a.name', status: 'halal', sourceKey: 'ecodes.items.E160a.source', concernKey: 'ecodes.items.E160a.concern' },
+  'E163': { nameKey: 'ecodes.items.E163.name', status: 'halal', sourceKey: 'ecodes.items.E163.source', concernKey: 'ecodes.items.E163.concern' },
+  'E322': { nameKey: 'ecodes.items.E322.name', status: 'doubtful', sourceKey: 'ecodes.items.E322.source', concernKey: 'ecodes.items.E322.concern' },
+  'E422': { nameKey: 'ecodes.items.E422.name', status: 'doubtful', sourceKey: 'ecodes.items.E422.source', concernKey: 'ecodes.items.E422.concern' },
+  'E476': { nameKey: 'ecodes.items.E476.name', status: 'doubtful', sourceKey: 'ecodes.items.E476.source', concernKey: 'ecodes.items.E476.concern' },
+  'E491': { nameKey: 'ecodes.items.E491.name', status: 'doubtful', sourceKey: 'ecodes.items.E491.source', concernKey: 'ecodes.items.E491.concern' },
+  'E904': { nameKey: 'ecodes.items.E904.name', status: 'doubtful', sourceKey: 'ecodes.items.E904.source', concernKey: 'ecodes.items.E904.concern' },
+  'E920': { nameKey: 'ecodes.items.E920.name', status: 'doubtful', sourceKey: 'ecodes.items.E920.source', concernKey: 'ecodes.items.E920.concern' },
+  'E1105': { nameKey: 'ecodes.items.E1105.name', status: 'doubtful', sourceKey: 'ecodes.items.E1105.source', concernKey: 'ecodes.items.E1105.concern' }
 };

@@ -46,6 +46,17 @@ body.barcode-scanner-active .content-card {
   }
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Prevent text selection */
 .app-container {
   -webkit-user-select: none;

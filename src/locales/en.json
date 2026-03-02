@@ -24,7 +24,8 @@
     },
     "buttons": {
       "search": "Search",
-      "scan": "Scan"
+      "scan": "Scan",
+      "scanIngredients": "Ingredients"
     }
   },
   "tabs": {
@@ -49,6 +50,10 @@
       "localEnable": "Enable Real API for millions of products!"
     },
     "noResults": "No products found.",
+    "noResultsTipsTitle": "Try this:",
+    "noResultsTipBrand": "Search by brand name (e.g., Oreo, Nutella)",
+    "noResultsTipSpelling": "Try a shorter or corrected spelling",
+    "noResultsTipBarcode": "Scan barcode for best accuracy",
     "noResultsLocalHint": "Try enabling Real API!",
     "detailsEmpty": "Scan or search to view product details",
     "disclaimerTitle": "Disclaimer:",
@@ -73,7 +78,24 @@
     "verifyManufacturer": "Verify with manufacturer",
     "shareResult": "Share Result",
     "shareDialogTitle": "Share this product",
-    "barcodeLabel": "Barcode"
+    "barcodeLabel": "Barcode",
+    "unrecognizedIngredientsWarning": "We are unable to recognize ingredients for this product. Please read the label carefully and verify before buying.",
+    "quickCautionUnknown": "Ingredients unknown — check label before buying.",
+    "quickCautionGelatin": "Gelatin may be pork-based — verify source.",
+    "quickCautionBeef": "Beef needs halal certification — verify source.",
+    "quickCautionGeneral": "Doubtful ingredients — verify halal certification.",
+    "bestMatchLabel": "Best Match",
+    "scannedIngredientsTitle": "Scanned Ingredients",
+    "scannedIngredientsBrand": "Ingredient Scanner",
+    "scannedIngredientsCategory": "Scanned Text",
+    "scannedIngredientsSource": "Ingredients Scan",
+    "scannedIngredientsQuery": "scanned ingredients",
+    "confidenceLabel": "Confidence",
+    "confidence": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
   },
   "scanner": {
     "title": "Scan Barcode",
@@ -87,7 +109,15 @@
     "cameraOnlyMobile": "Camera only works on mobile",
     "manualEntry": "Please enter barcode manually below",
     "manualPlaceholder": "Enter barcode manually",
-    "lookup": "Lookup"
+    "lookup": "Lookup",
+    "ingredientsScanTitle": "Scan Ingredients",
+    "ingredientsScanHint": "Take a clear photo of the ingredients list, or paste text manually.",
+    "uploadImage": "Upload / Capture Ingredients Photo",
+    "processingImage": "Reading image...",
+    "ingredientsTextareaPlaceholder": "Paste or edit ingredients text here...",
+    "analyzeIngredients": "Analyze Ingredients",
+    "noTextFound": "No readable text found. Try another photo.",
+    "ocrFailed": "Unable to read text from image. You can paste ingredients manually."
   },
   "ecodes": {
     "title": "E-Codes Reference",
@@ -95,17 +125,29 @@
     "importantNoteTitle": "Important Note:",
     "importantNoteBody": "E-codes marked as \"Doubtful\" can be halal or haram depending on their source. Always verify with manufacturers or halal certification bodies.",
     "items": {
+      "E100": { "name": "Curcumin", "source": "Turmeric", "concern": "Plant-based color, generally halal" },
+      "E101": { "name": "Riboflavin (Vitamin B2)", "source": "Vitamin source", "concern": "Generally halal" },
       "E120": { "name": "Carmine", "source": "Insects", "concern": "Derived from beetles" },
-      "E441": { "name": "Gelatin", "source": "Usually pork", "concern": "Check source" },
+      "E140": { "name": "Chlorophylls", "source": "Plants", "concern": "Plant-based color, generally halal" },
+      "E160a": { "name": "Beta-carotene", "source": "Plants/synthetic", "concern": "Generally halal" },
+      "E163": { "name": "Anthocyanins", "source": "Fruits/vegetables", "concern": "Plant-based color, generally halal" },
+      "E171": { "name": "Titanium Dioxide", "source": "Mineral", "concern": "Halal" },
+      "E322": { "name": "Lecithins", "source": "Soy/egg/animal", "concern": "Usually plant-based but source should be confirmed" },
+      "E338": { "name": "Phosphoric Acid", "source": "Mineral", "concern": "Halal" },
+      "E422": { "name": "Glycerol", "source": "Plant or animal fat", "concern": "May come from plant or animal fat; verify halal source" },
+      "E441": { "name": "Gelatin", "source": "Often pork unless specified", "concern": "Gelatin is often from pork. Look for halal bovine/fish source or halal certification." },
+      "E471": { "name": "Mono/Diglycerides", "source": "Plant oils or animal fat", "concern": "May be from plant fat or animal fat. Verify halal-certified source." },
+      "E472e": { "name": "DATEM", "source": "Can be plant or animal origin", "concern": "Can be from plant or animal fat derivatives. Check manufacturer halal confirmation." },
+      "E476": { "name": "PGPR", "source": "Vegetable oils (often castor)", "concern": "Often plant-derived but manufacturer confirmation is safer" },
+      "E491": { "name": "Sorbitan Monostearate", "source": "Stearic acid from plant or animal fat", "concern": "Source may be animal fat; verify halal certification" },
       "E542": { "name": "Bone Phosphate", "source": "Animal bones", "concern": "Non-halal source" },
       "E621": { "name": "MSG", "source": "Plant-based", "concern": "Generally halal" },
-      "E471": { "name": "Mono/Diglycerides", "source": "Plant or animal", "concern": "Verify source" },
-      "E472e": { "name": "DATEM", "source": "Mixed", "concern": "Check manufacturer" },
-      "E631": { "name": "Disodium Inosinate", "source": "Can be animal", "concern": "Verify" },
-      "E627": { "name": "Disodium Guanylate", "source": "Can be animal", "concern": "Verify" },
-      "E150d": { "name": "Caramel Color", "source": "Sugar", "concern": "Halal" },
-      "E338": { "name": "Phosphoric Acid", "source": "Mineral", "concern": "Halal" },
-      "E171": { "name": "Titanium Dioxide", "source": "Mineral", "concern": "Halal" }
+      "E627": { "name": "Disodium Guanylate", "source": "Can be animal", "concern": "May be from meat/fish sources. Verify halal certification." },
+      "E631": { "name": "Disodium Inosinate", "source": "Can be animal", "concern": "May be from meat/fish sources. Verify halal certification." },
+      "E904": { "name": "Shellac", "source": "Insect resin", "concern": "Insect-derived; check halal ruling/certification in your region" },
+      "E920": { "name": "L-Cysteine", "source": "Feathers/hair/synthetic/fermentation", "concern": "Source varies; verify halal-certified source" },
+      "E1105": { "name": "Lysozyme", "source": "Usually egg white", "concern": "Animal-derived enzyme; verify source and certification" },
+      "E150d": { "name": "Caramel Color", "source": "Sugar", "concern": "Halal" }
     }
   },
   "status": {
@@ -115,10 +157,10 @@
     "unknown": "Unknown"
   },
   "analysis": {
-    "no_ingredients": "No ingredient information available",
+    "no_ingredients": "Ingredients are unknown or not provided. Status is doubtful. Please check the label carefully before buying.",
     "contains": "Contains {{item}}",
     "contains_haram_ecodes": "Contains haram E-codes or additives",
-    "contains_doubtful": "Contains doubtful ingredients - verify certification",
+    "contains_doubtful": "Contains doubtful ingredients or additives. Verify halal certification and source details before buying.",
     "no_haram": "No haram ingredients detected"
   },
   "reasons": {

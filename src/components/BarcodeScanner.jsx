@@ -2,6 +2,7 @@ import { useEffect, useCallback } from 'react';
 import { BarcodeScanner as CapacitorBarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { Capacitor } from '@capacitor/core';
 import { useTranslation } from 'react-i18next';
+import { showToast } from './Toast';
 
 export default function BarcodeScanner({ onBarcodeDetected, onClose }) {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export default function BarcodeScanner({ onBarcodeDetected, onClose }) {
       const native = Capacitor.isNativePlatform();
 
       if (!native) {
-        alert(t('scanner.manualOnly'));
+        showToast(t('scanner.manualOnly'), 'info');
         return;
       }
 
@@ -30,7 +31,7 @@ export default function BarcodeScanner({ onBarcodeDetected, onClose }) {
         const { supported } = await CapacitorBarcodeScanner.isSupported();
 
         if (!supported) {
-          alert(t('scanner.notSupported'));
+          showToast(t('scanner.notSupported'), 'warning');
           return;
         }
 
@@ -54,7 +55,7 @@ export default function BarcodeScanner({ onBarcodeDetected, onClose }) {
           return;
         }
 
-        alert(t('scanner.initFailed', { error: err?.message || '' }));
+        showToast(t('scanner.initFailed', { error: err?.message || '' }), 'error');
       }
     };
 
