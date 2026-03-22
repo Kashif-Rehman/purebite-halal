@@ -18,6 +18,7 @@ android {
     packaging {
         jniLibs {
             useLegacyPackaging = false
+            excludes += ['**/libimage_processing_util_jni.so']
         }
         // Exclude duplicate files
         resources {
@@ -38,8 +39,8 @@ android {
         applicationId "com.halalfoodchecker.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 20
+        versionName "1.0.19"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
